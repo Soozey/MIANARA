@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  color: #333;
+}
+
+.header nav a:hover {
+  color: #007bff;
+}
