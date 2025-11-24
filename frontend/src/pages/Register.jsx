@@ -1,82 +1,95 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState } from 'react';
+import { useAuth } from '../context/AuthContext';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function Register() {
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+    role: 'STUDENT' // Default role
+  });
+  const [error, setError] = useState('');
+  const { register } = useAuth();
   const navigate = useNavigate();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  async function handleRegister(e) {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
     try {
-      const res = await fetch("http://localhost:3000/api/auth/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password })
-      });
-      const data = await res.json();
-      if (data.token) {
-        localStorage.setItem("token", data.token);
-        navigate("/");
-      } else {
-        alert("Email déjà utilisé");
-      }
-    } catch {
-      alert("Erreur réseau");
+      await register(formData);
+      navigate('/login'); // Redirect to login after success
+    } catch (err) {
+      setError("Erreur lors de l'inscription. Vérifiez vos données.");
     }
-  }
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <form
-        onSubmit={handleRegister}
-        className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md"
-      >
-        <h2 className="text-3xl font-bold text-center mb-6">
-          Créer un compte 📚
-        </h2>
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8">
+        <div>
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            Créer un compte
+          </h2>
+        </div>
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          <div className="rounded-md shadow-sm -space-y-px">
+            <div>
+              <input
+                name="username"
+                type="text"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="Nom d'utilisateur"
+                value={formData.username}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <input
+                name="email"
+                type="email"
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="Email (optionnel)"
+                value={formData.email}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <input
+                name="password"
+                type="password"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="Mot de passe"
+                value={formData.password}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
 
-        <input
-          type="text"
-          placeholder="Nom complet"
-          className="w-full p-3 border rounded-lg mb-4"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
+          {error && <div className="text-red-500 text-sm text-center">{error}</div>}
 
-        <input
-          type="email"
-          placeholder="Adresse email"
-          className="w-full p-3 border rounded-lg mb-4"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+          <div>
+            <button
+              type="submit"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              S'inscrire
+            </button>
+          </div>
 
-        <input
-          type="password"
-          placeholder="Mot de passe"
-          className="w-full p-3 border rounded-lg mb-6"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-
-        <button
-          className="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 transition-all"
-        >
-          S'inscrire
-        </button>
-
-        <p className="text-center mt-4 text-sm">
-          Déjà un compte ?{" "}
-          <Link to="/login" className="text-green-600 hover:underline">
-            Se connecter
-          </Link>
-        </p>
-      </form>
+          <div className="text-center text-sm">
+            <Link to="/login" className="font-medium text-indigo-600 hover:text-indigo-500">
+              Déjà un compte ? Se connecter
+            </Link>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

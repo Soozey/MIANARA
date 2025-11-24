@@ -1,0 +1,24 @@
+Entrer dans backend de mianara
+cd "C:\Users\Karibo Ressources\Desktop\Mianara\backend"
+après .\venv\Scripts\python manage.py runserver
+C:\Users\Karibo Ressources\Desktop\Mianara> cd backend
+
+Pour tester :
+
+
+Lancez le serveur : cd backend puis .\venv\Scripts\python manage.py runserver
+Allez sur : http://127.0.0.1:8000/admin
+Connectez-vous avec : superadmin / 12345678
+
+
+
+
+cd "C:\Users\Karibo Ressources\Desktop\Mianara\frontend"
+npm install
+npm run dev
+
+
+
+ée : Monétisation (Freemium) ou PWA (Mode hors ligne) ?
+
+AuthContext.jsx

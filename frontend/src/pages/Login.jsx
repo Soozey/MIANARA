@@ -1,61 +1,75 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
+import { useAuth } from '../context/AuthContext';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function Login() {
-  const [identifier, setIdentifier] = useState(""); // email OU nom
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const { login } = useAuth();
   const navigate = useNavigate();
 
-  const API = import.meta.env.VITE_API_URL || "http://localhost:3000";
-
-  const handleLogin = async () => {
-    setError("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
     try {
-      const res = await fetch(`${API}/api/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ identifier, password })
-      });
-      const data = await res.json();
-      if (!res.ok) return setError(data.error || "Erreur de connexion");
-
-      localStorage.setItem("user", JSON.stringify(data.user));
-      navigate("/admin/moderation");
-    } catch (e) {
-      setError("Impossible de joindre le serveur");
+      await login(username, password);
+      navigate('/');
+    } catch (err) {
+      setError('Identifiants incorrects');
     }
   };
 
   return (
-    <div style={{maxWidth: 420, margin: "60px auto", padding: 20, border: "1px solid #ddd", borderRadius: 12}}>
-      <h2 style={{marginBottom: 16}}>Connexion</h2>
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8">
+        <div>
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            Connexion à Mianàra
+          </h2>
+        </div>
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          <div className="rounded-md shadow-sm -space-y-px">
+            <div>
+              <input
+                type="text"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="Nom d'utilisateur"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </div>
+            <div>
+              <input
+                type="password"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                placeholder="Mot de passe"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+          </div>
 
-      <label>Identifiant (email ou nom)</label>
-      <input
-        style={{width: "100%", margin: "8px 0", padding: 10}}
-        placeholder="admin@karibo.local"
-        value={identifier}
-        onChange={e => setIdentifier(e.target.value)}
-      />
+          {error && <div className="text-red-500 text-sm text-center">{error}</div>}
 
-      <label>Mot de passe</label>
-      <input
-        style={{width: "100%", margin: "8px 0", padding: 10}}
-        type="password"
-        placeholder="********"
-        value={password}
-        onChange={e => setPassword(e.target.value)}
-      />
+          <div>
+            <button
+              type="submit"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              Se connecter
+            </button>
+          </div>
 
-      <button onClick={handleLogin} style={{width: "100%", padding: 12, marginTop: 8}}>
-        Se connecter
-      </button>
-
-      {error && <p style={{ color: "red", marginTop: 12 }}>{error}</p>}
-      <p style={{fontSize: 12, color: "#666", marginTop: 12}}>
-        API : {API}
-      </p>
+          <div className="text-center text-sm">
+            <Link to="/register" className="font-medium text-indigo-600 hover:text-indigo-500">
+              Pas encore de compte ? S'inscrire
+            </Link>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
