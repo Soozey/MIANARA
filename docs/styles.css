@@ -1,0 +1,15 @@
+body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:0;background:#0b1222;color:#e5e7eb}
+header{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:#111827;border-bottom:1px solid rgba(255,255,255,.1)}
+h1{margin:0}
+.auth input{margin-right:6px}
+main{max-width:1000px;margin:0 auto;padding:14px}
+.toolbar{display:flex;gap:8px;align-items:center;margin:8px 0}
+#list{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+#list li{background:#0f172a;border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:10px}
+.paper{background:#f6f0e8;color:#111827;border-radius:12px;border:1px solid #e2d9ca;padding:16px}
+.hidden{display:none}
+.notes textarea{width:100%;min-height:80px;margin-top:8px}
+.announcements ul{list-style:disc;padding-left:20px}
+.announcements li{margin-bottom:6px}
+.announcements input, .announcements textarea{display:block;width:100%;margin:6px 0;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,.2);background:#0f172a;color:#e5e7eb}
+.announcements button{padding:8px 12px;border-radius:8px;border:0;background:#2563eb;color:white}

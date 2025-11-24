@@ -1,0 +1,14 @@
+[Unit]
+Description=Mianàra Platform
+After=network.target
+
+[Service]
+WorkingDirectory=/var/www/mianara
+ExecStart=/usr/bin/node /var/www/mianara/src/server.js
+Restart=always
+Environment=NODE_ENV=production
+User=www-data
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target

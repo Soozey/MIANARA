@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Mianàra — Plateforme</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<header>
+  <h1>Mianàra</h1>
+  <div class="auth">
+    <input id="email" placeholder="email"/>
+    <input id="password" type="password" placeholder="mot de passe"/>
+    <button id="btnLogin">Connexion</button>
+    <button id="btnRegister">Créer compte</button>
+    <span id="who"></span>
+  </div>
+</header>
+
+<main>
+  <section class="announcements">
+    <h2>🔔 Annonces</h2>
+    <ul id="annList"></ul>
+    <div id="annForm" class="hidden">
+      <h3>Nouvelle annonce (Karibo/Admin)</h3>
+      <input id="annTitleFR" placeholder="Titre FR"/>
+      <input id="annTitleMG" placeholder="Titre MG"/>
+      <input id="annTitleEN" placeholder="Titre EN"/>
+      <textarea id="annBodyFR" placeholder="Texte FR"></textarea>
+      <textarea id="annBodyMG" placeholder="Texte MG"></textarea>
+      <textarea id="annBodyEN" placeholder="Texte EN"></textarea>
+      <label><input type="checkbox" id="annPinned"/> Épingler</label>
+      <button id="btnAnnSave">Publier</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contenus</h2>
+    <div class="toolbar">
+      <select id="lang">
+        <option value="fr">FR</option><option value="mg">MG</option><option value="en">EN</option>
+      </select>
+      <select id="ctype">
+        <option value="">Tous</option><option>article</option><option>audio</option><option>video</option>
+      </select>
+      <input id="q" placeholder="Recherche..."/>
+      <button id="btnReload">Charger</button>
+      <button id="btnNew">Nouveau (contrib+)</button>
+    </div>
+    <ul id="list"></ul>
+  </section>
+
+  <section id="reader" class="hidden">
+    <h2 id="rTitle"></h2>
+    <div id="rBody" class="paper"></div>
+    <div class="notes">
+      <textarea id="noteText" placeholder="Note personnelle..."></textarea>
+      <button id="btnAddNote">Ajouter note</button>
+      <ul id="noteList"></ul>
+    </div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
