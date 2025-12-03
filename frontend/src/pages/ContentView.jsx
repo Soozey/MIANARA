@@ -1,12 +1,14 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { contentService } from "../services/contentService";
+import QuestionWithState from "../Components/QuestionWithState";
 
 export default function ContentView() {
   const { id } = useParams();
   const [content, setContent] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [articleScores, setArticleScores] = useState({});
 
   useEffect(() => {
     const fetchContent = async () => {
@@ -24,12 +26,22 @@ export default function ContentView() {
     fetchContent();
   }, [id]);
 
+  const handleScoreChange = (questionIndex, score) => {
+    setArticleScores((prev) => ({
+      ...prev,
+      [questionIndex]: score,
+    }));
+  };
+
+  const totalScore = Object.values(articleScores).reduce((acc, curr) => acc + (curr || 0), 0);
+  const totalQuestions = content?.questions ? content.questions.length : 0;
+
   if (loading) return <div className="text-center py-20"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div></div>;
   if (error) return <div className="text-center py-20 text-red-600 font-medium">{error}</div>;
   if (!content) return <div className="text-center py-20 text-gray-500">Contenu non trouvé.</div>;
 
   return (
-    <article className="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+    <article className="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden my-8">
       {/* Header Image */}
       {content.thumbnail && (
         <div className="w-full h-64 md:h-96 overflow-hidden relative">
@@ -44,6 +56,11 @@ export default function ContentView() {
               {content.category}
             </span>
             <h1 className="text-3xl md:text-5xl font-bold leading-tight">{content.title}</h1>
+            {content.level && (
+              <span className="mt-2 inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-lg text-sm font-medium">
+                Niveau : {content.level}
+              </span>
+            )}
           </div>
         </div>
       )}
@@ -52,7 +69,10 @@ export default function ContentView() {
         {/* Meta Info */}
         {!content.thumbnail && (
           <div className="mb-8 border-b border-gray-100 pb-8">
-            <span className="text-indigo-600 font-bold tracking-wide uppercase text-sm">{content.category}</span>
+            <div className="flex gap-2 mb-2">
+              <span className="text-indigo-600 font-bold tracking-wide uppercase text-sm">{content.category}</span>
+              {content.level && <span className="text-gray-500 text-sm">• {content.level}</span>}
+            </div>
             <h1 className="text-4xl font-extrabold text-gray-900 mt-2 mb-4">{content.title}</h1>
           </div>
         )}
@@ -103,9 +123,42 @@ export default function ContentView() {
 
         {/* Rich Text Content */}
         <div
-          className="prose prose-lg prose-indigo max-w-none text-gray-800"
+          className="prose prose-lg prose-indigo max-w-none text-gray-800 mb-12"
           dangerouslySetInnerHTML={{ __html: content.body }}
         />
+
+        {/* Interactive Questions Section */}
+        {content.questions && content.questions.length > 0 && (
+          <section className="mt-12 pt-8 border-t-2 border-gray-100">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
+              <span className="bg-indigo-100 p-2 rounded-lg text-2xl">📝</span>
+              Exercices pratiques
+            </h3>
+
+            <div className="space-y-8">
+              {content.questions.map((q, index) => (
+                <QuestionWithState
+                  key={q.id || index} // Use ID if available from backend
+                  question={q}
+                  index={index}
+                  onScoreChange={(score) => handleScoreChange(index, score)}
+                />
+              ))}
+            </div>
+
+            {/* Score Summary */}
+            <div className="mt-10 p-6 bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl border border-indigo-100 flex flex-col sm:flex-row justify-between items-center gap-4 shadow-sm">
+              <div>
+                <h4 className="font-bold text-indigo-900 text-lg">Votre résultat</h4>
+                <p className="text-indigo-700">Auto-évaluation basée sur vos réponses</p>
+              </div>
+              <div className="flex items-baseline gap-2">
+                <span className="text-4xl font-black text-indigo-600">{totalScore}</span>
+                <span className="text-xl text-indigo-400 font-medium">/ {totalQuestions}</span>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Footer Actions */}
         <div className="mt-12 pt-8 border-t border-gray-100 flex justify-between items-center">

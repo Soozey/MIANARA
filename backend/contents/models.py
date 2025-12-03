@@ -45,9 +45,20 @@ class Content(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     is_premium = models.BooleanField(default=False, help_text="Is this content for premium users only?")
 
+    level = models.CharField(max_length=100, blank=True, help_text="Niveau cible (ex: Débutant, Lycée...)")
+
     # Monetization & Legal
     is_monetized = models.BooleanField(default=False, help_text="Le créateur souhaite monétiser ce contenu")
     license_accepted = models.BooleanField(default=False, help_text="Le créateur a accepté la licence de distribution")
 
     def __str__(self):
         return self.title
+
+class Question(models.Model):
+    content = models.ForeignKey(Content, on_delete=models.CASCADE, related_name='questions')
+    type = models.CharField(max_length=50, help_text="Type de question (ex: Grammaire, Vocabulaire)")
+    prompt = models.TextField(help_text="L'énoncé de la question")
+    answer = models.TextField(help_text="La réponse attendue")
+
+    def __str__(self):
+        return f"{self.type} - {self.content.title}"
