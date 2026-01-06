@@ -13,7 +13,7 @@ class ContentAdmin(admin.ModelAdmin):
             'fields': ('title', 'description', 'category', 'status', 'is_premium')
         }),
         ('Contenu', {
-            'fields': ('body', 'file_type', 'file_url', 'thumbnail')
+            'fields': ('body', 'file_type', 'file_url', 'thumbnail', 'level', 'quiz')
         }),
         ('Méta-données', {
             'fields': ('author', 'created_at', 'updated_at'),

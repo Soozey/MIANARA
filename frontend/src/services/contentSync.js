@@ -15,6 +15,7 @@ const mapDemoToApi = (demoItem) => ({
     body: demoItem.body,
     file_type: "TEXT", // Default to TEXT for these articles
     questions: demoItem.questions || [],
+    quiz: demoItem.quiz || [], // Map the new quiz field
 });
 
 const CATEGORY_MAPPING = {
@@ -77,16 +78,17 @@ export const syncDemoContent = async () => {
                     console.error(`❌ Failed to import ${item.title}:`, err.response?.data || err.message);
                 }
             } else {
-                // Update existing (specifically body to remove static questions)
+                // Update existing (body, summary/desc, AND quiz)
                 const existingItem = existing.find(c => c.title === item.title);
                 if (existingItem) {
                     try {
-                        // Only patch the body and summary to keep it clean
+                        // Only patch the body and summary to keep it clean, AND quiz
                         await api.patch(`contents/${existingItem.id}/`, {
                             body: payload.body,
-                            description: payload.description
+                            description: payload.description,
+                            quiz: payload.quiz
                         });
-                        console.log(`🔄 Updated body for: ${item.title}`);
+                        console.log(`🔄 Updated details for: ${item.title}`);
                         updatedCount++;
                     } catch (err) {
                         console.error(`❌ Failed to update ${item.title}:`, err.response?.data || err.message);

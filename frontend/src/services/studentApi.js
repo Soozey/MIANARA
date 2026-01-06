@@ -1,57 +1,77 @@
-import axios from 'axios';
+import { CLASSES_DEMO, MATIERES_DEMO, PROGRAMMES_DEMO } from '../data/studentDemoData';
 
-const API_URL = 'http://localhost:8000/api/students';
+// Simulation d'un délai réseau pour le réalisme (optionnel)
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+const IS_DEMO = true; // Force demo mode
 
 const studentApi = {
     // Classes
     getClasses: async () => {
-        const response = await axios.get(`${API_URL}/classes/`);
-        return response.data;
+        if (IS_DEMO) {
+            await delay(500);
+            return [...CLASSES_DEMO.LYCEE, ...CLASSES_DEMO.COLLEGE, ...CLASSES_DEMO.PRIMAIRE];
+        }
     },
 
     getClassesByLevel: async () => {
-        const response = await axios.get(`${API_URL}/classes/par_niveau/`);
-        return response.data;
+        if (IS_DEMO) {
+            await delay(600);
+            return CLASSES_DEMO;
+        }
     },
 
     getClasseById: async (id) => {
-        const response = await axios.get(`${API_URL}/classes/${id}/`);
-        return response.data;
+        if (IS_DEMO) {
+            await delay(300);
+            // Recherche dans tous les niveaux
+            const all = [...CLASSES_DEMO.LYCEE, ...CLASSES_DEMO.COLLEGE, ...CLASSES_DEMO.PRIMAIRE];
+            const classe = all.find(c => c.id === id);
+
+            if (classe) {
+                // Attacher les matières
+                return {
+                    ...classe,
+                    matieres: MATIERES_DEMO[id] || [] // Retourne vide si pas de matières définies
+                };
+            }
+            return null;
+        }
     },
 
     // Matières
     getMatieres: async () => {
+        // ...
+    },
+
+    // Programmes (Chapitres + Ressources)
+    getProgrammes: async ({ classe, matiere, trimestre }) => {
+        if (IS_DEMO) {
+            await delay(400);
+            let progs = PROGRAMMES_DEMO[matiere] || [];
+
+            if (trimestre) {
+                progs = progs.filter(p => p.trimestre === parseInt(trimestre));
+            }
+            return progs;
+        }
     },
 
     // Ressources
     getRessources: async (programmeId) => {
-        const response = await axios.get(`${API_URL}/programmes/${programmeId}/ressources/`);
-        return response.data;
+        // Déjà inclus dans getProgrammes en mode démo
+        return [];
     },
 
     // Orientation
     getOrientations: async (filters = {}) => {
-        const params = new URLSearchParams();
-        if (filters.filiere) params.append('filiere', filters.filiere);
-        if (filters.serie) params.append('serie', filters.serie);
-
-        const response = await axios.get(`${API_URL}/orientations/`, { params });
-        return response.data;
-    },
-
-    getOrientationsByFiliere: async () => {
-        const response = await axios.get(`${API_URL}/orientations/par_filiere/`);
-        return response.data;
+        await delay(500);
+        return []; // À remplir plus tard
     },
 
     // Bourses
     getBourses: async (filters = {}) => {
-        const params = new URLSearchParams();
-        if (filters.actives) params.append('actives', 'true');
-        if (filters.niveau) params.append('niveau', filters.niveau);
-
-        const response = await axios.get(`${API_URL}/bourses/`, { params });
-        return response.data;
+        await delay(500);
+        return []; // À remplir plus tard
     }
 };
 

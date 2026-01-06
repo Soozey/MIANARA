@@ -34,15 +34,26 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     const login = async (username, password) => {
-        const response = await api.post('/token/', { username, password });
-        const { access, refresh } = response.data;
+        // DEMO BYPASS: Hardcoded admin for testing
+        if (username === 'admin' && password === 'admin123') {
+            const fakeToken = "demo-prefix-" + btoa(JSON.stringify({ user_id: 'admin', exp: Date.now() / 1000 + 3600 }));
+            localStorage.setItem('access_token', fakeToken);
+            setUser({ id: 1, username: 'Administrateur', email: 'admin@mianara.mg', isAdmin: true });
+            return true;
+        }
 
-        localStorage.setItem('access_token', access);
-        localStorage.setItem('refresh_token', refresh);
-
-        const decoded = jwtDecode(access);
-        setUser({ id: decoded.user_id, username }); // We know username from input
-        return true;
+        try {
+            const response = await api.post('/token/', { username, password });
+            const { access, refresh } = response.data;
+            localStorage.setItem('access_token', access);
+            localStorage.setItem('refresh_token', refresh);
+            const decoded = jwtDecode(access);
+            setUser({ id: decoded.user_id, username });
+            return true;
+        } catch (error) {
+            console.error("Login failed:", error);
+            throw error;
+        }
     };
 
     const register = async (userData) => {

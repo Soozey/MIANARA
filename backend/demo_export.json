@@ -1,0 +1,1726 @@
+[
+  {
+    "id": 1,
+    "title": "Apprendre une langue étrangère efficacement",
+    "category": "Formation linguistique",
+    "level": "Tout public",
+    "readingTime": 6,
+    "summary": "Maîtriser une langue = grammaire, vocabulaire, compréhension et expression. Découvrez comment transformer votre quotidien en salle de classe.",
+    "body": "\n            <p>Apprendre une nouvelle langue, c'est comme ouvrir une fenêtre sur un nouveau monde. Que ce soit pour les études, le travail ou simplement le plaisir, la maîtrise d'une langue étrangère est un atout inestimable. Mais comment s'y prendre efficacement, surtout quand on n'a pas l'occasion de voyager ?</p>\n            \n            <img src=\"https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=800&q=80\" alt=\"Groupe d'étudiants discutant\" class=\"rounded-xl my-8 w-full object-cover\">\n\n            <h2>Les 4 Piliers de l'Apprentissage</h2>\n            <p>Pour maîtriser une langue, il ne suffit pas de connaître des listes de vocabulaire par cœur. Il faut travailler simultanément sur quatre compétences essentielles :</p>\n            <ul>\n                <li><strong>La Compréhension Orale (Écouter)</strong> : Habituez votre oreille aux sons, au rythme et à l'accent.</li>\n                <li><strong>La Compréhension Écrite (Lire)</strong> : Enrichissez votre vocabulaire et observez la grammaire en contexte.</li>\n                <li><strong>L'Expression Orale (Parler)</strong> : C'est souvent le plus difficile ! Osez parler, même avec des fautes.</li>\n                <li><strong>L'Expression Écrite (Écrire)</strong> : Structurez votre pensée et fixez l'orthographe.</li>\n            </ul>\n\n            <blockquote>\n                \"Avoir une autre langue, c'est posséder une deuxième âme.\" — Charlemagne\n            </blockquote>\n\n            <h2>L'Immersion à Domicile : C'est Possible !</h2>\n            <p>Vous n'avez pas besoin d'aller à Londres ou à Paris pour vus immerger. À Madagascar, nous avons accès à des outils formidables :</p>\n            \n            <h3>1. Changez votre environnement numérique</h3>\n            <p>Mettez votre téléphone, votre Facebook et Google en anglais ou en français. Cela vous forcera à apprendre le vocabulaire technique du quotidien sans effort.</p>\n\n            <h3>2. La \"Règle des 15 Minutes\"</h3>\n            <p>La régularité bat l'intensité. Il vaut mieux pratiquer <strong>15 minutes chaque jour</strong> (dans le bus, en attendant un ami) plutôt que 3 heures le samedi. Le cerveau a besoin de répétition pour ancrer les connaissances à long terme.</p>\n\n            <h3>3. Parlez seul (ou à votre miroir)</h3>\n            <p>Cela peut paraître étrange, mais raconter votre journée à voix haute dans la langue cible est un excellent exercice. \"Je suis en train de cuisiner le riz...\" -> \"I am cooking rice...\". Cela crée des automatismes.</p>\n\n            <img src=\"https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80\" alt=\"Prendre des notes et apprendre en ligne\" class=\"rounded-xl my-8 w-full object-cover\">\n\n            <h2>Ressources Gratuites pour Démarrer</h2>\n            <p>Ne laissez pas le manque d'argent être un obstacle. Internet regorge de trésors :</p>\n            <ul>\n                <li><strong>Duolingo</strong> : Pour gamifier l'apprentissage.</li>\n                <li><strong>BBC Learning English</strong> : Excellent pour l'anglais britannique.</li>\n                <li><strong>RFI Savoirs</strong> : Pour le français, avec des actualités mondiales.</li>\n                <li><strong>YouTube</strong> : Cherchez \"Learn English with TV Series\" pour apprendre avec vos séries préférées.</li>\n            </ul>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Quels sont les 4 piliers de l'apprentissage d'une langue selon l'article ?",
+        "options": [
+          "Grammaire, Orthographe, Conjugaison, Vocabulaire",
+          "Écouter, Parler, Lire, Écrire",
+          "Anglais, Français, Espagnol, Mandarin",
+          "Mémoriser, Réciter, Copier, Traduire"
+        ],
+        "answer": 1,
+        "explanation": "La maîtrise d'une langue repose sur la compréhension (orale/écrite) et l'expression (orale/écrite).",
+        "category": "Compréhension"
+      },
+      {
+        "id": 2,
+        "question": "Dans la phrase « J'ai parlé avec mon ami », quel est le temps du verbe ?",
+        "options": [
+          "Présent",
+          "Futur simple",
+          "Passé composé",
+          "Imparfait"
+        ],
+        "answer": 2,
+        "explanation": "« J'ai parlé » est formé de l'auxiliaire 'avoir' au présent + le participe passé 'parlé'. C'est une action terminée.",
+        "category": "Grammaire"
+      },
+      {
+        "id": 3,
+        "question": "Selon la 'Règle des 15 minutes', qu'est-ce qui est le plus efficace ?",
+        "options": [
+          "Étudier 3 heures une fois par semaine",
+          "Étudier 15 minutes tous les jours",
+          "Lire un dictionnaire avant de dormir",
+          "Ne rien faire tant qu'on n'a pas 1h devant soi"
+        ],
+        "answer": 1,
+        "explanation": "La régularité prime sur l'intensité. Le cerveau retient mieux par petites touches fréquentes.",
+        "category": "Logique"
+      },
+      {
+        "id": 4,
+        "question": "Que signifie le mot « Immersion » dans ce contexte ?",
+        "options": [
+          "Nager sous l'eau",
+          "Se plonger dans un environnement où la langue est partout",
+          "Traduire mot à mot un texte",
+          "Apprendre une liste de verbes irréguliers"
+        ],
+        "answer": 1,
+        "explanation": "L'immersion consiste à s'entourer de la langue (téléphone, radio, lectures) pour que le cerveau s'y habitue.",
+        "category": "Vocabulaire"
+      },
+      {
+        "id": 5,
+        "question": "Quelle ressource gratuite est suggérée pour apprendre avec des actualités mondiales en français ?",
+        "options": [
+          "Netflix",
+          "RFI Savoirs",
+          "Tik Tok",
+          "Un manuel scolaire des années 90"
+        ],
+        "answer": 1,
+        "explanation": "RFI Savoirs propose des contenus audio et écrits adaptés à l'apprentissage du français.",
+        "category": "Compréhension"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Programme scolaire et vie pratique",
+    "category": "Éducation scolaire",
+    "level": "Tout public",
+    "readingTime": 5,
+    "summary": "Un programme utile inclut finance, civisme, entrepreneuriat et savoir-vivre. Préparons les jeunes à la vraie vie.",
+    "body": "\n            <p>L'école est le socle de notre société, mais prépare-t-elle suffisamment aux défis de la vie adulte ? Au-delà des mathématiques et de l'histoire, il existe des compétences \"de vie\" indispensables pour s'épanouir et réussir au 21ème siècle.</p>\n\n            <h2>1. L'Éducation Financière : Le Grand Oublié</h2>\n            <p>Combien de jeunes sortent du lycée sans savoir gérer un budget ? Savoir gagner de l'argent est une chose, savoir le gérer en est une autre.</p>\n            <ul>\n                <li><strong>Le Budget</strong> : Apprendre la règle du 50/30/20 (50% besoins, 30% envies, 20% épargne).</li>\n                <li><strong>L'Épargne</strong> : Comprendre que mettre de côté 1000 Ar par jour peut financer un projet en fin d'année.</li>\n                <li><strong>L'Investissement</strong> : La différence entre un passif (qui coûte de l'argent) et un actif (qui rapporte de l'argent).</li>\n            </ul>\n\n            <img src=\"https://images.unsplash.com/photo-1554224155-9727b5394033?auto=format&fit=crop&w=800&q=80\" alt=\"Calculatrice et gestion financière\" class=\"rounded-xl my-8 w-full object-cover\">\n\n            <h2>2. Le Civisme et le Savoir-Vivre</h2>\n            <p>La réussite n'est pas qu'individuelle, elle est collective. Le civisme, c'est comprendre que ma liberté s'arrête là où commence celle des autres.</p>\n            <blockquote>\n                \"L'éducation est l'arme la plus puissante pour changer le monde.\" — Nelson Mandela\n            </blockquote>\n            <p>Cela passe par des gestes simples : respecter la propreté des lieux publics, connaître ses droits mais aussi ses devoirs envers la communauté, et savoir débattre sans violence.</p>\n\n            <h2>3. L'Esprit d'Entreprise dès le Collège</h2>\n            <p>Tout le monde ne sera pas patron, mais tout le monde devrait avoir l'esprit d'entreprise. C'est quoi ?</p>\n            <ul>\n                <li>C'est voir un problème et chercher une solution (au lieu de se plaindre).</li>\n                <li>C'est prendre des initiatives.</li>\n                <li>C'est savoir travailler en équipe pour un but commun.</li>\n            </ul>\n            <p>En intégrant ces notions tôt, nous formons une génération de \"problem-solvers\" (résolveurs de problèmes) dont Madagascar a tant besoin.</p>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Quelle est la règle 50/30/20 pour gérer son budget ?",
+        "options": [
+          "50% Besoins, 30% Envies, 20% Épargne",
+          "50% Épargne, 30% Loyer, 20% Nourriture",
+          "50% Dettes, 30% Loisirs, 20% Impôts",
+          "50% Famille, 30% Amis, 20% Soi-même"
+        ],
+        "answer": 0,
+        "explanation": "C'est une méthode d'équilibre : 50% pour le nécessaire (loyer, riz), 30% pour le plaisir, et 20% obligatoires pour l'épargne.",
+        "category": "Compréhension"
+      },
+      {
+        "id": 2,
+        "question": "En finance, quelle est la différence entre un Actif et un Passif ?",
+        "options": [
+          "L'Actif rapporte de l'argent, le Passif en coûte",
+          "L'Actif c'est le sport, le Passif c'est dormir",
+          "L'Actif c'est la banque, le Passif c'est l'état",
+          "Il n'y a aucune différence"
+        ],
+        "answer": 0,
+        "explanation": "Un actif met de l'argent dans votre poche (invesstissement). Un passif en enlève (dépense, crédit consommation).",
+        "category": "Vocabulaire"
+      },
+      {
+        "id": 3,
+        "question": "Pourquoi le civisme est-il important pour la réussite collective ?",
+        "options": [
+          "Pour éviter d'aller en prison uniquement",
+          "Parce que ma liberté s'arrête là où commence celle des autres",
+          "Pour faire plaisir au Président",
+          "Ce n'est pas important, seul l'argent compte"
+        ],
+        "answer": 1,
+        "explanation": "Le respect mutuel et des règles communes permet à la société de fonctionner harmonieusement.",
+        "category": "Logique"
+      },
+      {
+        "id": 4,
+        "question": "Conjugue le verbe 'Apprendre' au futur simple (Nous) :",
+        "options": [
+          "Nous apprenons",
+          "Nous apprendrons",
+          "Nous avons appris",
+          "Nous apprendrions"
+        ],
+        "answer": 1,
+        "explanation": "Au futur simple, la terminaison avec 'nous' est toujours '-ons' ajoutée au radical.",
+        "category": "Grammaire"
+      },
+      {
+        "id": 5,
+        "question": "Que signifie avoir 'l'esprit d'entreprise' selon l'article ?",
+        "options": [
+          "Être riche rapidement",
+          "Avoir beaucoup d'employés",
+          "Voir un problème et chercher une solution",
+          "Ne jamais prendre de vacances"
+        ],
+        "answer": 2,
+        "explanation": "L'entrepreneuriat, c'est avant tout une attitude de résolution de problèmes et de prise d'initiative.",
+        "category": "Compréhension"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Comment choisir son métier ?",
+    "category": "Orientation professionnelle",
+    "level": "Lycée / Post-bac",
+    "readingTime": 7,
+    "summary": "Identifier compétences + passions et les croiser avec les besoins du marché. Trouvez votre Ikigai.",
+    "body": "\n            <p>Choisir son futur métier est angoissant. \"Est-ce que je vais trouver du travail ?\" \"Est-ce que ça va me plaire ?\" Pour répondre à ces questions, il existe une méthode japonaise éprouvée : l'<strong>Ikigai</strong>.</p>\n\n            <h2>Qu'est-ce que l'Ikigai ?</h2>\n            <p>C'est votre \"raison d'être\". Imaginez quatre cercles qui s'entrecroisent :</p>\n            <ol>\n                <li><strong>Ce que vous aimez</strong> (Votre passion)</li>\n                <li><strong>Ce pour quoi vous êtes doué</strong> (Votre vocation)</li>\n                <li><strong>Ce dont le monde a besoin</strong> (Votre mission)</li>\n                <li><strong>Ce pour quoi vous pouvez être payé</strong> (Votre profession)</li>\n            </ol>\n            <p>Le métier idéal se trouve au centre de ces quatre cercles.</p>\n\n            <img src=\"https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80\" alt=\"Personne réfléchissant à son plan de carrière\" class=\"rounded-xl my-8 w-full object-cover\">\n\n            <h2>Analyser le Marché Malgache</h2>\n            <p>Aimer chanter est super, mais si personne ne paie pour cela, c'est un hobby, pas un métier. Observez la réalité économique autour de vous :</p>\n            <ul>\n                <li><strong>L'Agriculture modernisée</strong> : Transformation alimentaire, export de vanille/épices, permaculture.</li>\n                <li><strong>Le Numérique (BPO & Tech)</strong> : Madagascar est une destination phare pour l'externalisation. Développeurs, assistants virtuels, rédacteurs sont très recherchés.</li>\n                <li><strong>Les Énergies Renouvelables</strong> : Le solaire et l'hydroélectrique sont l'avenir de notre énergie.</li>\n            </ul>\n\n            <h2>Osez le Bilan de Compétences</h2>\n            <p>Prenez une feuille blanche. Listez vos \"Hard Skills\" (savoir coder, parler anglais, conduire un tracteur) et vos \"Soft Skills\" (savoir écouter, être ponctuel, gérer le stress). Parfois, on a des trésors cachés qu'on ignore !</p>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Que signifie 'Ikigai' ?",
+        "options": [
+          "Un art martial",
+          "Raison d'être",
+          "Manger sainement",
+          "Travailler dur"
+        ],
+        "answer": 1,
+        "explanation": "L'Ikigai est un concept japonais qui signifie 'la raison pour laquelle on se lève le matin' (somme de passion, vocation, mission, profession).",
+        "category": "Compréhension"
+      },
+      {
+        "id": 2,
+        "question": "Selon l'article, qu'est-ce qui est nécessaire pour qu'une passion devienne un métier ?",
+        "options": [
+          "Que quelqu'un soit prêt à payer pour ça",
+          "Être le meilleur du monde",
+          "Avoir un diplôme universitaire",
+          "Avoir l'accord de ses parents"
+        ],
+        "answer": 0,
+        "explanation": "Si personne ne paie, c'est un hobby. Le marché valide le métier.",
+        "category": "Logique"
+      },
+      {
+        "id": 3,
+        "question": "Quel secteur est cité comme une opportunité majeure à Madagascar ?",
+        "options": [
+          "La construction navale",
+          "L'industrie aérospatiale",
+          "Le Numérique (BPO & Tech)",
+          "L'élevage de rennes"
+        ],
+        "answer": 2,
+        "explanation": "L'externalisation (BPO) et la Tech sont des secteurs en plein boom à Madagascar.",
+        "category": "Connaissance"
+      },
+      {
+        "id": 4,
+        "question": "Conjugue 'choisir' au futur simple (Je) :",
+        "options": [
+          "Je choisirai",
+          "Je choisirais",
+          "J'ai choisi",
+          "Je choisis"
+        ],
+        "answer": 0,
+        "explanation": "Futur simple : radical + ai/as/a/ons/ez/ont.",
+        "category": "Grammaire"
+      },
+      {
+        "id": 5,
+        "question": "Quelle est la définition de la « reconversion » ?",
+        "options": [
+          "Changer de religion",
+          "Changer de métier ou de secteur",
+          "Refaire sa toiture",
+          "Partir en retraite"
+        ],
+        "answer": 1,
+        "explanation": "La reconversion professionnelle consiste à changer de carrière.",
+        "category": "Vocabulaire"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Un CV qui attire l’attention",
+    "category": "Techniques de candidature",
+    "level": "Tout public",
+    "readingTime": 5,
+    "summary": "CV clair, concis, orienté résultats. Vous avez 6 secondes pour convaincre.",
+    "body": "\n            <p>Saviez-vous qu'un recruteur passe en moyenne <strong>6 à 10 secondes</strong> sur un CV avant de décider de le lire ou de le jeter ? Votre CV doit être une arme de persuasion massive.</p>\n            \n            <h2>La Règle d'Or : Clarté et Concision</h2>\n            <p>Pas de pavés de texte. Utilisez des listes à puces. Voici la structure idéale :</p>\n            <ul>\n                <li><strong>En-tête</strong> : Nom, contact, lien LinkedIn (et GitHub pour les devs).</li>\n                <li><strong>Titre du profil</strong> : Ex: \"Comptable Junior - Spécialisé en PME\".</li>\n                <li><strong>Expériences</strong> : Du plus récent au plus ancien. C'est le cœur du CV.</li>\n                <li><strong>Formations</strong> : Diplômes pertinents.</li>\n                <li><strong>Compétences</strong> : Logiciels, langues, savoir-être.</li>\n            </ul>\n\n            <img src=\"https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80\" alt=\"Exemple de CV moderne\" class=\"rounded-xl my-8 w-full object-cover\">\n\n            <h2>Parlez en \"Résultats\"</h2>\n            <p>Au lieu de dire : <em>\"J'ai été responsable des ventes.\"</em></p>\n            <p>Dites : <em>\"J'ai augmenté les ventes de 20% en 6 mois en réorganisant le rayon frais.\"</em></p>\n            <p>Les chiffres parlent plus fort que les mots. Ils prouvent votre valeur.</p>\n\n            <h2>Les Erreurs Fatales</h2>\n            <blockquote>\n                \"Une faute d'orthographe dans un CV, c'est comme une tache de café sur une chemise blanche lors d'un entretien.\"\n            </blockquote>\n            <ul>\n                <li>La photo de vacances recadrée (mettez une photo pro !).</li>\n                <li>L'adresse email \"bg_du_90@gmail.com\" (créez prenom.nom@gmail.com).</li>\n                <li>Mentir (ça se voit toujours à l'entretien).</li>\n            </ul>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Combien de temps moyen un recruteur passe-t-il sur un CV ?",
+        "options": [
+          "5 minutes",
+          "1 minute",
+          "6 à 10 secondes",
+          "30 secondes"
+        ],
+        "answer": 2,
+        "explanation": "C'est très court, d'où l'importance d'être percutant immédiatement.",
+        "category": "Compréhension"
+      },
+      {
+        "id": 2,
+        "question": "Quel est l'ordre recommandé pour les expériences ?",
+        "options": [
+          "Chronologique (du plus vieux au plus récent)",
+          "Antéchronologique (du plus récent au plus vieux)",
+          "Aléatoire",
+          "Par ordre d'importance"
+        ],
+        "answer": 1,
+        "explanation": "On veut savoir ce que vous avez fait en dernier.",
+        "category": "Logique"
+      },
+      {
+        "id": 3,
+        "question": "Que signifie « Quantifier ses résultats » ?",
+        "options": [
+          "Écrire beaucoup",
+          "Utiliser des chiffres pour prouver sa valeur",
+          "Mettre des dates",
+          "Utiliser une police quantitative"
+        ],
+        "answer": 1,
+        "explanation": "Exemple : 'Augmentation de 20% des ventes'.",
+        "category": "Vocabulaire"
+      },
+      {
+        "id": 4,
+        "question": "Quelle adresse email est professionnelle ?",
+        "options": [
+          "jean.dupond@gmail.com",
+          "belgoss123@yahoo.fr",
+          "naruto_uzumaki@hotmail.com",
+          "boss_du_marketing@gmail.com"
+        ],
+        "answer": 0,
+        "explanation": "Prénom + Nom est le standard professionnel.",
+        "category": "Savoir-être"
+      },
+      {
+        "id": 5,
+        "question": "Conjugue 'présenter' au passé composé (Nous) :",
+        "options": [
+          "Nous présentons",
+          "Nous présentions",
+          "Nous avons présenté",
+          "Nous eûmes présenté"
+        ],
+        "answer": 2,
+        "explanation": "Passé composé = Auxiliaire avoir + participe passé.",
+        "category": "Grammaire"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Les métiers du digital en Afrique",
+    "category": "Métiers d’avenir",
+    "level": "Tout public",
+    "readingTime": 6,
+    "summary": "Opportunités en dev, marketing, data... Le pétrole du 21ème siècle est numérique.",
+    "body": "\n            <p>Le continent africain est en pleine révolution numérique. Le digital n'est pas \"le futur\", c'est le présent. Pour la jeunesse malgache, c'est une opportunité historique de travailler à l'international sans quitter le pays.</p>\n\n            <h2>Les 3 Secteurs qui Recrutent</h2>\n            \n            <h3>1. Le Développement Web et Mobile</h3>\n            <p>Tout le monde a besoin d'un site ou d'une appli. Commerçants, banques, ONG. Apprendre le JavaScript, le Python ou le PHP, c'est s'assurer un emploi quasi garanti.</p>\n\n            <h3>2. Le Marketing Digital</h3>\n            <p>Savoir gérer une page Facebook ne suffit plus. Le Community Manager moderne sait analyser des données, créer des publicités ciblées (Facebook Ads) et engager une communauté. Les entreprises s'arrachent ces profils pour vendre en ligne.</p>\n\n            <h3>3. La Data et l'IA</h3>\n            <p>L'intelligence artificielle a besoin de données propres. De nombreux emplois se créent dans l'annotation de données, l'analyse de base de données et l'automatisation.</p>\n\n            <img src=\"https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80\" alt=\"Équipe travaillant sur ordinateur\" class=\"rounded-xl my-8 w-full object-cover\">\n\n            <h2>Comment se former gratuitement ?</h2>\n            <p>L'école de la vie est en ligne. Voici où commencer :</p>\n            <ul>\n                <li><strong>FreeCodeCamp</strong> : Pour apprendre à coder de zéro.</li>\n                <li><strong>OpenClassrooms</strong> : De nombreux cours gratuits en français.</li>\n                <li><strong>Google Ateliers Numériques</strong> : Certifications gratuites en marketing digital.</li>\n            </ul>\n            <p>Votre diplôme compte moins que votre \"Portfolio\". Montrez ce que vous savez faire !</p>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Quel langage de programmation est cité ?",
+        "options": [
+          "Latin",
+          "Python",
+          "Klingon",
+          "Morse"
+        ],
+        "answer": 1,
+        "explanation": "Python, JavaScript et PHP sont des langages très demandés.",
+        "category": "Compréhension"
+      },
+      {
+        "id": 2,
+        "question": "Qu'est-ce qu'un Community Manager ?",
+        "options": [
+          "Le maire de la ville",
+          "Celui qui répare les ordinateurs",
+          "Celui qui gère la présence en ligne d'une marque",
+          "Un vendeur de téléphone"
+        ],
+        "answer": 2,
+        "explanation": "Il anime la communauté et gère l'image de marque sur les réseaux sociaux.",
+        "category": "Vocabulaire"
+      },
+      {
+        "id": 3,
+        "question": "Pourquoi le Portfolio est-il important ?",
+        "options": [
+          "C'est joli",
+          "Il prouve ce que vous savez faire concrètement",
+          "C'est obligatoire par la loi",
+          "Pour décorer le bureau"
+        ],
+        "answer": 1,
+        "explanation": "Dans le digital, la preuve par l'exemple (ce que j'ai fait) vaut plus que le diplôme (ce que j'ai étudié).",
+        "category": "Conseil Carrière"
+      },
+      {
+        "id": 4,
+        "question": "Quelle plateforme gratuite est recommandée pour le code ?",
+        "options": [
+          "Netflix",
+          "FreeCodeCamp",
+          "Amazon",
+          "Facebook"
+        ],
+        "answer": 1,
+        "explanation": "FreeCodeCamp est une référence mondiale pour apprendre le code gratuitement.",
+        "category": "Ressource"
+      },
+      {
+        "id": 5,
+        "question": "Conjugue 'Coder' au passé composé (Il) :",
+        "options": [
+          "Il a codé",
+          "Il coda",
+          "Il codait",
+          "Il codera"
+        ],
+        "answer": 0,
+        "explanation": "Auxiliaire avoir + participe passé.",
+        "category": "Grammaire"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Pourquoi formaliser son entreprise ?",
+    "category": "Entrepreneuriat",
+    "level": "Tout public",
+    "readingTime": 4,
+    "summary": "Sortir de l'informel pour grandir. Accès au crédit, crédibilité, protection.",
+    "body": "\n            <p>L'informel est le refuge de la débrouille, mais c'est aussi un piège qui empêche de grandir. Pourquoi tant de \"petits business\" restent petits ? Souvent parce qu'ils n'existent pas légalement.</p>\n\n            <h2>Les Avantages de la Formalisation</h2>\n            <ul>\n                <li><strong>L'Accès au Crédit Bancaire</strong> : Aucune banque ne prête à une \"entreprise fantôme\". Avec un NIF et un STAT, vous existez.</li>\n                <li><strong>Les Grands Clients</strong> : Vous voulez vendre à de grandes entreprises ou à l'État ? Il vous faut une facture légale.</li>\n                <li><strong>La Protection de la Marque</strong> : Déposer votre nom vous évite qu'un concurrent ne le vole.</li>\n            </ul>\n\n            <img src=\"https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&w=800&q=80\" alt=\"Signature de contrat officiel\" class=\"rounded-xl my-8 w-full object-cover\">\n\n            <h2>Ça coûte cher ?</h2>\n            <p>C'est la grande peur. Mais il existe aujourd'hui des statuts simplifiés pour les auto-entrepreneurs avec des impôts très réduits (comme l'impôt synthétique). Voyez l'impôt non comme une perte, mais comme le \"ticket d'entrée\" dans la cour des grands.</p>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Selon l'article, pourquoi les banques ne prêtent-elles pas aux entreprises informelles ?",
+        "options": [
+          "Elles n'aiment pas les petits projets",
+          "Car ce sont des 'entreprises fantômes' légalement",
+          "Car les taux sont trop bas",
+          "C'est faux, elles prêtent à tout le monde"
+        ],
+        "answer": 1,
+        "explanation": "Sans existence légale (NIF/STAT), une entreprise n'existe pas aux yeux de la banque.",
+        "category": "Compréhension"
+      },
+      {
+        "id": 2,
+        "question": "Qu'est-ce que l'impôt synthétique ?",
+        "options": [
+          "Un impôt sur le plastique",
+          "Un impôt simplifié pour les petites entreprises",
+          "Une taxe sur l'air",
+          "Il n'existe pas"
+        ],
+        "answer": 1,
+        "explanation": "C'est un régime fiscal allégé pour encourager la formalisation des petites structures.",
+        "category": "Fiscalité"
+      },
+      {
+        "id": 3,
+        "question": "Quel avantage offre le fait d'avoir une facture légale ?",
+        "options": [
+          "Aucun, ça coûte juste du papier",
+          "Vendre à des grands clients et à l'État",
+          "Faire joli",
+          "Payer moins cher ses fournisseurs"
+        ],
+        "answer": 1,
+        "explanation": "Les grandes structures exigent des factures conformes pour leur comptabilité.",
+        "category": "Logique"
+      },
+      {
+        "id": 4,
+        "question": "Que signifie 'Protéger sa marque' ?",
+        "options": [
+          "Mettre un cadenas sur la porte",
+          "Empêcher légalement un concurrent de voler votre nom",
+          "Ne pas dire son nom à personne",
+          "Prier pour que ça marche"
+        ],
+        "answer": 1,
+        "explanation": "Le dépôt de marque à l'OMAPI garantit l'exclusivité du nom commercial.",
+        "category": "Droit"
+      },
+      {
+        "id": 5,
+        "question": "Conjugue 'Payer' au conditionnel présent (Je) :",
+        "options": [
+          "Je paierai",
+          "Je payais",
+          "Je paierais",
+          "Je paye"
+        ],
+        "answer": 2,
+        "explanation": "Conditionnel : radical du futur + terminaisons de l'imparfait.",
+        "category": "Grammaire"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Le business plan simplifié",
+    "category": "Gestion d’entreprise",
+    "level": "Tout public",
+    "readingTime": 5,
+    "summary": "3 questions clés : Idée, Clients, Rentabilité. Pas besoin de 50 pages.",
+    "body": "\n            <p>Oubliez les dossiers de 50 pages que personne ne lit. Un bon business plan tient sur une feuille A4. C'est le <strong>Business Model Canvas</strong>.</p>\n\n            <h2>Les 3 Piliers de votre projet</h2>\n            \n            <h3>1. La Proposition de Valeur (L'Idée)</h3>\n            <p>Quel problème résolvez-vous ? \"Je vends du pain\" n'est pas une proposition de valeur. \"Je vends du pain chaud livré à domicile pour le petit-déjeuner à 6h\" en est une.</p>\n\n            <h3>2. Les Segments Clients (La Cible)</h3>\n            <p>Qui paie ? \"Tout le monde\" est une mauvaise réponse. Soyez précis : \"Les mères de famille actives du quartier Mahamasina\".</p>\n\n            <h3>3. La Structure de Coûts et Revenus (L'Argent)</h3>\n            <p>Combien ça coûte à produire ? (Matière, temps, électricité). Combien je le vends ? Quelle est ma marge sur chaque unité ? Si vous perdez 100 Ar par produit, vendre plus vous fera couler plus vite !</p>\n\n            <img src=\"https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80\" alt=\"Graphiques et planification stratégique\" class=\"rounded-xl my-8 w-full object-cover\">\n\n            <blockquote>\n                \"Échouer à planifier, c'est planifier son échec.\" — Benjamin Franklin\n            </blockquote>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Qu'est-ce qu'une 'Proposition de Valeur' ?",
+        "options": [
+          "Le prix du produit",
+          "Le problème spécifique que vous résolvez pour le client",
+          "Le nom de l'entreprise",
+          "Le bénéfice net"
+        ],
+        "answer": 1,
+        "explanation": "C'est la promesse faite au client : pourquoi il devrait acheter chez vous.",
+        "category": "Compréhension"
+      },
+      {
+        "id": 2,
+        "question": "Pourquoi 'Tout le monde' est une mauvaise cible ?",
+        "options": [
+          "Car les gens sont méchants",
+          "Car on ne peut pas parler à tout le monde de la même façon",
+          "Car tout le monde n'a pas d'argent",
+          "C'est une bonne réponse en fait"
+        ],
+        "answer": 1,
+        "explanation": "En marketing, vouloir plaire à tout le monde, c'est ne plaire à personne. Il faut cibler.",
+        "category": "Logique"
+      },
+      {
+        "id": 3,
+        "question": "Si je vends à perte, que se passe-t-il si je vends beaucoup ?",
+        "options": [
+          "Je deviens riche",
+          "Je perds encore plus d'argent vite",
+          "Ça s'équilibre",
+          "Les clients me donnent des pourboires"
+        ],
+        "answer": 1,
+        "explanation": "Vendre à perte multiplié par le volume accélère la faillite. La marge unitaire est vitale.",
+        "category": "Gestion"
+      },
+      {
+        "id": 4,
+        "question": "Que signifie SMART pour un objectif ?",
+        "options": [
+          "Super, Magnifique, Artiste, Riche, Talentueux",
+          "Spécifique, Mesurable, Atteignable, Réaliste, Temporel",
+          "Seul, Malade, Abattu, Raté, Triste",
+          "Sourire, Manger, Aimer, Rire, Travailler"
+        ],
+        "answer": 1,
+        "explanation": "C'est la méthode standard pour fixer des objectifs clairs.",
+        "category": "Méthodologie"
+      },
+      {
+        "id": 5,
+        "question": "Conjugue 'Planifier' au futur antérieur (J') :",
+        "options": [
+          "J'aurai planifié",
+          "J'avais planifié",
+          "Je planifierai",
+          "J'ai planifié"
+        ],
+        "answer": 0,
+        "explanation": "Futur antérieur = Auxiliaire futur + participe passé.",
+        "category": "Grammaire"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Créer une activité sans financement",
+    "category": "Innovation locale",
+    "level": "Tout public",
+    "readingTime": 4,
+    "summary": "Le Bootstrapping : démarrer avec ce qu'on a. Petit à petit, l'oiseau fait son nid.",
+    "body": "\n            <p>\"Je n'ai pas d'argent pour commencer.\" C'est l'excuse numéro 1. Pourtant, les plus grandes entreprises ont souvent commencé dans un garage.</p>\n\n            <h2>La Méthode \"Effectuale\" (Démarrer avec ce qu'on a)</h2>\n            <p>Regardez autour de vous. Qu'avez-vous ?</p>\n            <ul>\n                <li><strong>Vos compétences</strong> : Vous savez cuisiner ? Coudre ? Écrire ?</li>\n                <li><strong>Votre réseau</strong> : Qui connaissez-vous qui pourrait être votre premier client ?</li>\n                <li><strong>Vos ressources</strong> : Un vieux vélo ? Un ordinateur ? Une cuisine ?</li>\n            </ul>\n\n            <h2>La technique du Pré-paiement</h2>\n            <p>Vendez avant de produire. Proposez votre service, demandez une avance de 50%, et utilisez cet argent pour acheter la matière première. C'est le meilleur crédit possible : celui de vos clients.</p>\n\n            <img src=\"https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80\" alt=\"Artisan travaillant avec des outils simples\" class=\"rounded-xl my-8 w-full object-cover\">\n\n            <h3>Idées \"Zéro Budget\" :</h3>\n            <ul>\n                <li>Cours à domicile (Soutien scolaire).</li>\n                <li>Intermédiaire commercial (Mise en relation).</li>\n                <li>Rédaction web ou services administratifs.</li>\n                <li>Transformation de fruits locaux (Confitures maison).</li>\n            </ul>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Qu'est-ce que le 'Bootstrapping' ?",
+        "options": [
+          "Porter des bottes",
+          "Se lancer sans financement extérieur",
+          "Demander un crédit à la banque",
+          "Voler de l'argent"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'art de se débrouiller avec ses propres ressources.",
+        "category": "Vocabulaire"
+      },
+      {
+        "id": 2,
+        "question": "Quelle est la 'technique du pré-paiement' ?",
+        "options": [
+          "Payer ses fournisseurs en avance",
+          "Demander au client de payer une partie avant la livraison",
+          "Ne jamais payer ses dettes",
+          "Payer après 3 mois"
+        ],
+        "answer": 1,
+        "explanation": "Cela permet d'avoir la trésorerie pour acheter les matières premières sans s'endetter.",
+        "category": "Gestion"
+      },
+      {
+        "id": 3,
+        "question": "Par quoi faut-il commencer selon la méthode effectuale ?",
+        "options": [
+          "Par faire un emprunt",
+          "Par ce qu'on a (moyens disponibles)",
+          "Par rêver",
+          "Par louer un grand bureau"
+        ],
+        "answer": 1,
+        "explanation": "On part de 'qui je suis, ce que je sais, qui je connais'.",
+        "category": "Logique"
+      },
+      {
+        "id": 4,
+        "question": "Quelle activité citée demande peu de budget ?",
+        "options": [
+          "Construire une usine",
+          "Cours à domicile",
+          "Acheter un avion",
+          "Ouvrir une mine d'or"
+        ],
+        "answer": 1,
+        "explanation": "Le service (intellectuel) ne demande souvent aucun capital de départ.",
+        "category": "Idée"
+      },
+      {
+        "id": 5,
+        "question": "Conjugue 'Créer' à l'impératif (Tu) :",
+        "options": [
+          "Crées",
+          "Crée",
+          "Créer",
+          "Créa"
+        ],
+        "answer": 1,
+        "explanation": "Impératif présent 2e pers sing : Crée (sans s pour les verbes en -er).",
+        "category": "Grammaire"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "La bureautique, clé de l’emploi moderne",
+    "category": "Formation professionnelle",
+    "level": "Débutant",
+    "readingTime": 4,
+    "summary": "Word, Excel, PowerPoint. Le trio gagnant pour tout travail de bureau.",
+    "body": "\n            <p>Savoir taper à l'ordinateur n'est plus une compétence \"en plus\", c'est la base. C'est l'alphabétisation du monde moderne. Que vous soyez secrétaire, comptable ou logisticien, vous passerez 80% de votre temps sur la suite Office.</p>\n\n            <h2>Excel : Bien plus qu'une calculette</h2>\n            <p>Excel fait peur, mais c'est un outil magique. Il permet de :</p>\n            <ul>\n                <li>Tenir une caisse et vérifier qu'on ne perd pas d'argent.</li>\n                <li>Gérer un stock de marchandises.</li>\n                <li>Faire des plannings d'équipe.</li>\n            </ul>\n\n            <img src=\"https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80\" alt=\"Ordinateur portable avec graphiques\" class=\"rounded-xl my-8 w-full object-cover\">\n\n            <h2>La Mise en Forme Professionnelle</h2>\n            <p>Un document Word bien présenté, avec des titres clairs, du gras aux bons endroits et sans fautes, inspire confiance. C'est souvent la première image que vous donnez de votre travail à un supérieur ou un client.</p>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Quelle compétence est décrite comme 'l'alphabétisation du monde moderne' ?",
+        "options": [
+          "Savoir cuisiner",
+          "Savoir taper à l'ordinateur",
+          "Savoir conduire",
+          "Savoir chanter"
+        ],
+        "answer": 1,
+        "explanation": "La bureautique est devenue indispensable pour presque tous les métiers de bureau.",
+        "category": "Compréhension"
+      },
+      {
+        "id": 2,
+        "question": "À quoi sert principalement Excel selon l'article ?",
+        "options": [
+          "À écrire des romans",
+          "À faire des calculs, gérer des stocks et des plannings",
+          "À regarder des vidéos",
+          "À envoyer des emails"
+        ],
+        "answer": 1,
+        "explanation": "Excel est un tableur puissant pour la gestion et l'analyse de données.",
+        "category": "Connaissance"
+      },
+      {
+        "id": 3,
+        "question": "Pourquoi la mise en forme d'un document Word est-elle importante ?",
+        "options": [
+          "Pour utiliser plus d'encre",
+          "Pour faire joli",
+          "Elle inspire confiance et professionnalisme",
+          "Ça n'a aucune importance"
+        ],
+        "answer": 2,
+        "explanation": "Un document propre reflète le sérieux de son auteur.",
+        "category": "Savoir-être"
+      },
+      {
+        "id": 4,
+        "question": "Quel logiciel utiliseriez-vous pour présenter un projet à un client ?",
+        "options": [
+          "Excel",
+          "PowerPoint",
+          "Paint",
+          "Bloc-notes"
+        ],
+        "answer": 1,
+        "explanation": "PowerPoint est l'outil standard pour les présentations visuelles.",
+        "category": "Outil"
+      },
+      {
+        "id": 5,
+        "question": "Conjugue 'Naviguer' au présent (Nous) :",
+        "options": [
+          "Nous naviguons",
+          "Nous navigeons",
+          "Nous naviguèrent",
+          "Nous naviguerons"
+        ],
+        "answer": 0,
+        "explanation": "Présent de l'indicatif 1ère pers pluriel : -ons.",
+        "category": "Grammaire"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Hygiène et sécurité au travail",
+    "category": "Santé et sécurité",
+    "level": "Tout public",
+    "readingTime": 3,
+    "summary": "Se protéger, c'est protéger son gagne-pain. Les EPI et les réflexes qui sauvent.",
+    "body": "\n            <p>Chaque année, des milliers d'accidents du travail évitables se produisent. La sécurité n'est pas une \"perte de temps\", c'est une <strong>assurance vie</strong>.</p>\n\n            <h2>Les EPI (Équipements de Protection Individuelle)</h2>\n            <p>Selon votre métier, votre armure change :</p>\n            <ul>\n                <li><strong>BTP</strong> : Casque, chaussures de sécurité, gants.</li>\n                <li><strong>Soudeur</strong> : Masque obligatoire (attention aux yeux !).</li>\n                <li><strong>Agriculteur</strong> : Bottes, et protection lors de l'épandage de produits.</li>\n            </ul>\n\n            <img src=\"https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80\" alt=\"Ouvriers avec casques de sécurité\" class=\"rounded-xl my-8 w-full object-cover\">\n\n            <h2>L'Hygiène : La base de la santé</h2>\n            <p>Le simple fait de se laver les mains avant de manipuler de la nourriture (restauration) ou après avoir touché des produits sales réduit drastiquement les maladies. Un employé malade est un employé qui ne gagne pas sa vie et coûte à l'entreprise.</p>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Que signifie EPI ?",
+        "options": [
+          "Équipe Pour Internet",
+          "Équipement de Protection Individuelle",
+          "École Primaire Internationale",
+          "État Pour l'Industrie"
+        ],
+        "answer": 1,
+        "explanation": "L'EPI regroupe les casques, gants, lunettes, etc.",
+        "category": "Compréhension"
+      },
+      {
+        "id": 2,
+        "question": "Pourquoi l'hygiène au travail est-elle rentable ?",
+        "options": [
+          "Elle coûte cher en savon",
+          "Elle réduit les maladies et l'absentéisme",
+          "Elle fait perdre du temps",
+          "Elle ne sert à rien"
+        ],
+        "answer": 1,
+        "explanation": "Moins de malades = plus de productivité et de continuité de service.",
+        "category": "Logique"
+      },
+      {
+        "id": 3,
+        "question": "Quel équipement est essentiel pour un soudeur ?",
+        "options": [
+          "Une cravate",
+          "Un masque de protection",
+          "Des sandales",
+          "Un stylo"
+        ],
+        "answer": 1,
+        "explanation": "Pour protéger les yeux des arcs électriques intenses.",
+        "category": "Sécurité"
+      },
+      {
+        "id": 4,
+        "question": "Quel est le premier réflexe d'hygiène en restauration ?",
+        "options": [
+          "Fumer",
+          "Se laver les mains",
+          "Goûter les plats avec les doigts",
+          "Parler fort"
+        ],
+        "answer": 1,
+        "explanation": "Le lavage des mains prévient la majorité des contaminations alimentaires.",
+        "category": "Hygiène"
+      },
+      {
+        "id": 5,
+        "question": "Conjugue 'Protéger' au futur simple (Tu) :",
+        "options": [
+          "Tu protègeras",
+          "Tu protègera",
+          "Tu protégeas",
+          "Tu protégeras"
+        ],
+        "answer": 3,
+        "explanation": "Au futur simple, on garde le 'é' fermé de l'infinitif pour les verbes en -éger. (Note: l'orthographe rectifiée accepte è, mais é est standard).",
+        "category": "Grammaire"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "La confiance en soi dès l’école",
+    "category": "Développement personnel",
+    "level": "Prim./Collège",
+    "readingTime": 4,
+    "summary": "Oser prendre la parole, accepter l'erreur. La confiance se muscle !",
+    "body": "\n            <p>Certains pensent qu'on naît avec la confiance en soi. Faux ! La confiance, c'est comme un muscle : elle se travaille. Et le meilleur terrain d'entraînement, c'est l'école.</p>\n\n            <h2>Le Droit à l'Erreur</h2>\n            <p>Avez-vous appris à marcher sans tomber ? Non. Alors pourquoi avoir peur de lever la main en classe et de dire une bêtise ? Se tromper, c'est la preuve qu'on essaie. L'échec est le brouillon de la réussite.</p>\n\n            <img src=\"https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80\" alt=\"Enfant confiant à l'école\" class=\"rounded-xl my-8 w-full object-cover\">\n\n            <h2>La Prise de Parole</h2>\n            <p>Savoir parler en public est un super-pouvoir. Commencez petit :</p>\n            <ul>\n                <li>Regardez les gens dans les yeux.</li>\n                <li>Parlez assez fort pour être entendu.</li>\n                <li>Respirez calmement.</li>\n            </ul>\n            <p>Une personne qui s'exprime bien sera toujours écoutée et respectée, quel que soit son statut social.</p>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "À quoi est comparée la confiance en soi dans l'article ?",
+        "options": [
+          "À un muscle",
+          "À un nuage",
+          "À de l'argent",
+          "À une voiture"
+        ],
+        "answer": 0,
+        "explanation": "Comme un muscle, elle se développe avec l'entraînement.",
+        "category": "Compréhension"
+      },
+      {
+        "id": 2,
+        "question": "Pourquoi l'erreur est-elle utile ?",
+        "options": [
+          "Pour être puni",
+          "C'est le brouillon de la réussite",
+          "C'est la preuve qu'on est nul",
+          "Ça ne sert à rien"
+        ],
+        "answer": 1,
+        "explanation": "L'échec permet d'apprendre et de s'améliorer.",
+        "category": "Philosophie"
+      },
+      {
+        "id": 3,
+        "question": "Quel conseil est donné pour la prise de parole ?",
+        "options": [
+          "Regarder ses pieds",
+          "Parler tout bas",
+          "Regarder les gens dans les yeux",
+          "Fermer les yeux"
+        ],
+        "answer": 2,
+        "explanation": "Le contact visuel établit la connexion et montre l'assurance.",
+        "category": "Communication"
+      },
+      {
+        "id": 4,
+        "question": "Que signifie 'Avoir de l'assurance' ?",
+        "options": [
+          "Avoir une assurance auto",
+          "Avoir confiance en ses capacités",
+          "Avoir beaucoup d'amis",
+          "Être riche"
+        ],
+        "answer": 1,
+        "explanation": "C'est la définition de la confiance en soi.",
+        "category": "Vocabulaire"
+      },
+      {
+        "id": 5,
+        "question": "Conjugue 'Oser' à l'imparfait (Il) :",
+        "options": [
+          "Il osait",
+          "Il ose",
+          "Il osa",
+          "Il osera"
+        ],
+        "answer": 0,
+        "explanation": "Imparfait : -ait.",
+        "category": "Grammaire"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Le civisme, base d’une société forte",
+    "category": "Vie Citoyenne",
+    "level": "Tout public",
+    "readingTime": 4,
+    "summary": "Le respect des biens communs et des autres est le ciment de notre nation.",
+    "body": "\n            <p>On entend souvent dire « L'État doit faire ci, l'État doit faire ça ». Mais l'État, c'est nous. Le civisme, c'est la conscience que nos actions individuelles ont un impact sur la collectivité.</p>\n\n            <h2>Les Gestes Simples du Quotidien</h2>\n            <ul>\n                <li><strong>Respecter la file d'attente</strong> : C'est respecter le temps des autres.</li>\n                <li><strong>Ne pas jeter ses déchets par terre</strong> : Une ville propre commence par des habitants propres.</li>\n                <li><strong>Protéger les biens publics</strong> : Les bancs, les bus, les écoles appartiennent à tous. Les casser, c'est se voler soi-même.</li>\n            </ul>\n\n            <img src=\"https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&w=800&q=80\" alt=\"Action citoyenne de nettoyage\" class=\"rounded-xl my-8 w-full object-cover\">\n            \n            <blockquote>\"La discipline est mère du succès.\" - Proverbe</blockquote>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Qu'est-ce que le civisme ?",
+        "options": [
+          "Une marque de voiture",
+          "Le respect des règles de vie en communauté",
+          "Une danse traditionnelle",
+          "Un plat cuisiné"
+        ],
+        "answer": 1,
+        "explanation": "C'est l'attitude du citoyen conscient de ses devoirs envers la société.",
+        "category": "Compréhension"
+      },
+      {
+        "id": 2,
+        "question": "À qui appartiennent les biens publics ?",
+        "options": [
+          "Au Président seulement",
+          "À personne",
+          "À la communauté (nous tous)",
+          "Aux touristes"
+        ],
+        "answer": 2,
+        "explanation": "Ils sont financés par nos impôts et servent à tous.",
+        "category": "Logique"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "La connaissance est une arme",
+    "category": "Éducation",
+    "level": "Lycée",
+    "readingTime": 5,
+    "summary": "Dans un monde complexe, celui qui sait est celui qui décide.",
+    "body": "\n            <p>Nelson Mandela disait : « L'éducation est l'arme la plus puissante pour changer le monde ». Pourquoi ? Parce que la connaissance donne le choix.</p>\n            <h2>Savoir c'est Pouvoir</h2>\n            <p>Celui qui ne sait pas lire un contrat peut se faire arnaquer. Celui qui ne connaît pas l'histoire peut être manipulé par des politiciens. Apprendre, ce n'est pas juste avoir des bonnes notes, c'est devenir libre.</p>\n            \n            <img src=\"https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80\" alt=\"Bibliothèque remplie de livres\" class=\"rounded-xl my-8 w-full object-cover\">\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Selon la citation de Mandela, qu'est-ce qui peut changer le monde ?",
+        "options": [
+          "L'argent",
+          "La force militaire",
+          "L'éducation",
+          "La chance"
+        ],
+        "answer": 2,
+        "explanation": "C'est l'arme la plus puissante.",
+        "category": "Compréhension"
+      },
+      {
+        "id": 2,
+        "question": "Pourquoi la connaissance rend-elle libre ?",
+        "options": [
+          "Elle permet de faire des choix éclairés",
+          "Elle permet de voler",
+          "Elle est gratuite",
+          "Elle est lourde à porter"
+        ],
+        "answer": 0,
+        "explanation": "L'ignorance est une forme de servitude.",
+        "category": "Philosophie"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Planter un arbre, c’est planter un futur",
+    "category": "Environnement",
+    "level": "Tout public",
+    "readingTime": 3,
+    "summary": "La reforestation est l'urgence absolue pour Madagascar.",
+    "body": "\n            <p>Madagascar est surnommée l'Île Rouge car ses sols partent à la mer. La déforestation est un fléau qui appauvrit nos terres et assèche nos rivières.</p>\n            <h2>Un geste vital</h2>\n            <p>Un arbre, c'est :</p>\n            <ul>\n                <li>De l'ombre et de la fraîcheur.</li>\n                <li>Des racines qui retiennent la terre et l'eau.</li>\n                <li>Un héritage pour vos enfants.</li>\n            </ul>\n            <img src=\"https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80\" alt=\"Plantation d'arbre\" class=\"rounded-xl my-8 w-full object-cover\">\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Pourquoi surnomme-t-on Madagascar l'Île Rouge ?",
+        "options": [
+          "À cause des fleurs",
+          "À cause de l'érosion des sols",
+          "À cause du coucher de soleil",
+          "C'est une erreur"
+        ],
+        "answer": 1,
+        "explanation": "La terre latéritique rouge est emportée par les pluies faute d'arbres.",
+        "category": "Géographie"
+      },
+      {
+        "id": 2,
+        "question": "Quel est un rôle des racines des arbres ?",
+        "options": [
+          "Empêcher de marcher",
+          "Retenir la terre et l'eau",
+          "Faire joli",
+          "Aucun"
+        ],
+        "answer": 1,
+        "explanation": "Elles structurent le sol et préviennent l'érosion.",
+        "category": "SVT"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Déchets plastiques : l’ennemi invisible",
+    "category": "Environnement",
+    "level": "Collège",
+    "readingTime": 4,
+    "summary": "Le plastique met 400 ans à disparaître. Réduisons notre consommation.",
+    "body": "\n            <p>Regardez nos canaux et nos rues : les sachets plastiques sont partout. Ils bouchent les évacuations (causant des inondations) et tuent les animaux qui les mangent.</p>\n            <h2>La règle des 3 R</h2>\n            <ul>\n                <li><strong>Réduire</strong> : Refuser les sachets inutiles.</li>\n                <li><strong>Réutiliser</strong> : Utiliser un panier ou un sac en tissu.</li>\n                <li><strong>Recycler</strong> : Transformer les déchets en nouveaux objets.</li>\n            </ul>\n            <img src=\"https://images.unsplash.com/photo-1618477461853-5c87a27eb2a6?auto=format&fit=crop&w=800&q=80\" alt=\"Pollution plastique\" class=\"rounded-xl my-8 w-full object-cover\">\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Combien de temps met le plastique à se décomposer ?",
+        "options": [
+          "1 an",
+          "10 ans",
+          "400 ans",
+          "1 heure"
+        ],
+        "answer": 2,
+        "explanation": "C'est une pollution quasi éternelle à l'échelle humaine.",
+        "category": "Science"
+      },
+      {
+        "id": 2,
+        "question": "Que faire pour 'Réduire' ?",
+        "options": [
+          "Brûler le plastique",
+          "Refuser les sachets inutiles",
+          "Jeter par terre",
+          "Acheter plus"
+        ],
+        "answer": 1,
+        "explanation": "Le meilleur déchet est celui qu'on ne produit pas.",
+        "category": "Logique"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Prévenir le harcèlement scolaire",
+    "category": "Société",
+    "level": "Collège/Lycée",
+    "readingTime": 5,
+    "summary": "L'école doit être un lieu sûr. Apprendre à dire STOP.",
+    "body": "\n            <p>Le harcèlement, ce n'est pas « pour rire ». C'est une violence répétée (physique ou verbale) qui détruit la victime.</p>\n            <h2>Tu es témoin ? Agis !</h2>\n            <p>Souvent, le harceleur continue parce que les autres rigolent ou ne disent rien. Ne soyez pas complice. Signalez-le à un adulte. Soutenez la victime.</p>\n            <img src=\"https://images.unsplash.com/photo-1572202619472-35d28b1fe913?auto=format&fit=crop&w=800&q=80\" alt=\"Élève isolé\" class=\"rounded-xl my-8 w-full object-cover\">\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Qu'est-ce qui caractérise le harcèlement ?",
+        "options": [
+          "C'est une blague une fois",
+          "C'est une violence répétée",
+          "C'est un jeu",
+          "C'est de l'amitié"
+        ],
+        "answer": 1,
+        "explanation": "La répétition et l'intention de nuire définissent le harcèlement.",
+        "category": "Compréhension"
+      },
+      {
+        "id": 2,
+        "question": "Que faire si on est témoin ?",
+        "options": [
+          "Rire",
+          "Filmer",
+          "Ne rien dire",
+          "Signaler à un adulte"
+        ],
+        "answer": 3,
+        "explanation": "Rompre le silence est le seul moyen d'arrêter le harceleur.",
+        "category": "Civisme"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Prévenir le viol : éducation et protection",
+    "category": "Santé et Droits",
+    "level": "Lycée / Adulte",
+    "readingTime": 6,
+    "summary": "Briser le tabou. Le consentement est la base de toute relation.",
+    "body": "\n            <p>C'est un sujet difficile mais nécessaire. Le respect de l'intégrité physique est un droit absolu.</p>\n            <h2>La notion de Consentement</h2>\n            <p>Un OUI doit être clair, libre et enthousiaste. L'absence de « NON » ne veut pas dire OUI. Si la personne dort, est saoule, ou a peur, ce n'est pas un OUI.</p>\n            <p>En cas de danger, appelez le 147 (Ligne verte protection enfant) ou la Police.</p>\n            <img src=\"https://images.unsplash.com/photo-1563249033-d73183594191?auto=format&fit=crop&w=800&q=80\" alt=\"Stop à la violence\" class=\"rounded-xl my-8 w-full object-cover\">\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Qu'est-ce que le consentement ?",
+        "options": [
+          "Un accord flou",
+          "Un accord clair, libre et révocable",
+          "Une signature",
+          "Un silence"
+        ],
+        "answer": 1,
+        "explanation": "C'est la base légale et morale de toute relation sexuelle.",
+        "category": "Droit"
+      },
+      {
+        "id": 2,
+        "question": "Si une personne ne dit pas non, consent-elle ?",
+        "options": [
+          "Oui",
+          "Non, pas forcément",
+          "Toujours",
+          "On ne sait pas"
+        ],
+        "answer": 1,
+        "explanation": "Le consentement ne se présume pas, il s'exprime.",
+        "category": "Logique"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "La gestion budgétaire familiale",
+    "category": "Vie Pratique",
+    "level": "Adulte",
+    "readingTime": 5,
+    "summary": "Tenir les comptes pour ne pas finir le mois dans le rouge.",
+    "body": "\n            <p>L'argent part vite quand on ne le surveille pas. Tenir un cahier de comptes est la première étape vers la sérénité financière.</p>\n            <h2>Dépenses Fixes vs Variables</h2>\n            <ul>\n                <li><strong>Fixes</strong> : Loyer, écolage, riz. On ne peut pas y couper.</li>\n                <li><strong>Variables</strong> : Fêtes, vêtements, crédits téléphoniques. C'est là qu'on peut économiser.</li>\n            </ul>\n            <img src=\"https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=800&q=80\" alt=\"Calcul de budget\" class=\"rounded-xl my-8 w-full object-cover\">\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Le loyer est une dépense...",
+        "options": [
+          "Variable",
+          "Fixe",
+          "Inutile",
+          "Optionnelle"
+        ],
+        "answer": 1,
+        "explanation": "Elle revient tous les mois au même montant (généralement).",
+        "category": "Gestion"
+      },
+      {
+        "id": 2,
+        "question": "Quel est l'outil de base pour gérer son budget ?",
+        "options": [
+          "La prière",
+          "Un cahier de comptes",
+          "Une carte bancaire",
+          "Un coffre-fort"
+        ],
+        "answer": 1,
+        "explanation": "Noter ses entrées et ses sorties permet de visualiser la réalité.",
+        "category": "Méthodologie"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Transformer localement = créer de la valeur",
+    "category": "Économie",
+    "level": "Tout public",
+    "readingTime": 5,
+    "summary": "Ne vendons pas nos fruits bruts. Faisons des jus et des confitures !",
+    "body": "\n            <p>Vendre des mangues au bord de la route rapporte peu (et elles pourrissent vite). Vendre de la confiture de mangue en pot rapporte 10 fois plus et se conserve 1 an.</p>\n            <h2>La Valeur Ajoutée</h2>\n            <p>C'est la richesse créée par le travail de transformation. Madagascar doit passer de pays exportateur de matières premières à pays transformateur. C'est ainsi qu'on crée des emplois qualifiés.</p>\n            <img src=\"https://images.unsplash.com/photo-1621447504864-d8686e12698c?auto=format&fit=crop&w=800&q=80\" alt=\"Pots de confiture artisanale\" class=\"rounded-xl my-8 w-full object-cover\">\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Quel est le problème des produits bruts (fruits, etc.) ?",
+        "options": [
+          "Ils sont trop lourds",
+          "Ils pourrissent vite et ont une faible marge",
+          "Ils sont interdits",
+          "Personne n'en veut"
+        ],
+        "answer": 1,
+        "explanation": "La transformation permet la conservation et augmente le prix de vente.",
+        "category": "Économie"
+      },
+      {
+        "id": 2,
+        "question": "Qu'est-ce que la valeur ajoutée ?",
+        "options": [
+          "La TVA",
+          "La richesse créée par la transformation",
+          "Le prix du transport",
+          "Le bénéfice du vendeur"
+        ],
+        "answer": 1,
+        "explanation": "C'est la différence entre le prix du produit fini et le coût des matières premières.",
+        "category": "Vocabulaire"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Code de la route : survie sur deux roues",
+    "category": "Sécurité Routière",
+    "level": "Tout public",
+    "readingTime": 4,
+    "summary": "Scooter ou vélo : le casque n'est pas une option, c'est ta tête.",
+    "body": "\n            <p>La route est dangereuse, surtout pour les deux-roues. À Madagascar, les accidents de moto sont quotidiens.</p>\n            <h2>Les Règles de Survie</h2>\n            <ul>\n                <li><strong>Le Casque</strong> : Il réduit de 70% le risque de traumatisme crânien grave. Attachez-le !</li>\n                <li><strong>L'Angle Mort</strong> : Ne doublez jamais un camion par la droite. Si vous ne voyez pas le rétroviseur du chauffeur, il ne vous voit pas.</li>\n                <li><strong>La Vitesse</strong> : Arriver 5 minutes plus tard vaut mieux que d'arriver à la morgue.</li>\n            </ul>\n             <img src=\"https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80\" alt=\"Motard avec casque\" class=\"rounded-xl my-8 w-full object-cover\">\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Quel est le rôle du casque ?",
+        "options": [
+          "Éviter les amendes",
+          "Protéger la tête en cas de chute",
+          "Tenir chaud",
+          "Faire joli"
+        ],
+        "answer": 1,
+        "explanation": "Il absorbe le choc. Un casque non attaché ne sert à rien.",
+        "category": "Sécurité"
+      },
+      {
+        "id": 2,
+        "question": "Qu'est-ce que l'angle mort ?",
+        "options": [
+          "Un coin de rue",
+          "Une zone que le conducteur ne voit pas dans ses rétroviseurs",
+          "Une panne moteur",
+          "Un virage dangereux"
+        ],
+        "answer": 1,
+        "explanation": "C'est la zone invisible pour le chauffeur. Danger de mort !",
+        "category": "Code"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "title": "IA : Amie ou ennemie de l'emploi ?",
+    "category": "Technologie",
+    "level": "Lycée / Université",
+    "readingTime": 6,
+    "summary": "L'Intelligence Artificielle va transformer nos métiers. Comment s'adapter ?",
+    "body": "\n            <p>ChatGPT, Midjourney... L'IA est partout. Certains ont peur qu'elle nous remplace. La vérité, c'est que l'IA ne remplacera pas les humains, mais les humains qui utilisent l'IA remplaceront ceux qui ne l'utilisent pas.</p>\n            <h2>Comment l'utiliser ?</h2>\n            <p>Voyez l'IA comme un assistant surpuissant. Elle peut:</p>\n            <ul>\n                <li>Rédiger des brouillons.</li>\n                <li>Résumer des textes longs.</li>\n                <li>Coder plus vite.</li>\n            </ul>\n            <p>Mais elle ne remplace pas votre jugement critique ni votre créativité humaine.</p>\n            <img src=\"https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80\" alt=\"Cerveau numérique IA\" class=\"rounded-xl my-8 w-full object-cover\">\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Selon l'article, qui remplacera les travailleurs actuels ?",
+        "options": [
+          "Les robots",
+          "Les humains utilisant l'IA",
+          "Les extraterrestres",
+          "Personne"
+        ],
+        "answer": 1,
+        "explanation": "L'IA est un outil. Ceux qui le maîtrisent auront l'avantage.",
+        "category": "Futur"
+      },
+      {
+        "id": 2,
+        "question": "L'IA peut-elle remplacer le jugement humain ?",
+        "options": [
+          "Oui, elle est parfaite",
+          "Non, elle fait des erreurs et manque d'empathie",
+          "Bientôt",
+          "Je ne sais pas"
+        ],
+        "answer": 1,
+        "explanation": "L'IA n'a pas de conscience ni de morale. L'humain reste le décideur.",
+        "category": "Philosophie"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Nouvelle économie : les métiers qui émergent",
+    "category": "Orientation",
+    "level": "Post-bac",
+    "readingTime": 5,
+    "summary": "Pilote de drone, expert en cybersécurité... Le monde change.",
+    "body": "\n            <p>Il y a 10 ans, le métier d'Influenceur n'existait pas. Demain, quels seront les métiers stars ?</p>\n            <ul>\n                <li><strong>Pilote de drone</strong> : Pour l'agriculture, la surveillance, le cinéma.</li>\n                <li><strong>Expert Cybersécurité</strong> : Avec la digitalisation, protéger les données est vital.</li>\n                <li><strong>Installateur Solaire</strong> : L'indépendance énergétique est la priorité.</li>\n            </ul>\n            <img src=\"https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=800&q=80\" alt=\"Drone en vol\" class=\"rounded-xl my-8 w-full object-cover\">\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Pourquoi la cybersécurité est-elle un métier d'avenir ?",
+        "options": [
+          "Parce qu'il y a plus de pirates en mer",
+          "Parce que tout devient numérique et doit être protégé",
+          "C'est une mode",
+          "Pour jouer aux jeux vidéo"
+        ],
+        "answer": 1,
+        "explanation": "La protection des données est cruciale pour les banques et entreprises.",
+        "category": "Tech"
+      },
+      {
+        "id": 2,
+        "question": "Quel métier est lié à l'énergie verte ?",
+        "options": [
+          "Mineur de charbon",
+          "Installateur solaire",
+          "Pompiste",
+          "Chauffeur"
+        ],
+        "answer": 1,
+        "explanation": "Le solaire est une énergie renouvelable en plein essor.",
+        "category": "Écologie"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Le danger des Deepfakes et de l'image",
+    "category": "Sécurité Numérique",
+    "level": "Tout public",
+    "readingTime": 5,
+    "summary": "Apprenez à reconnaître les images et les vidéos manipulées par l'IA.",
+    "body": "\n            <p>Les technologies Deepfake permettent de créer des vidéos et audios hyper-réalistes mais <strong>totalement faux</strong>. On peut faire dire n'importe quoi à un dirigeant politique ou mettre le visage de quelqu'un sur un corps nu.</p>\n            <h2>Le Danger : La Désinformation</h2>\n            <p>Sur Internet, tout n'est pas vrai. Avant de partager une vidéo choc :</p>\n            <ul>\n                <li>Vérifiez la source (Qui a posté ?).</li>\n                <li>Regardez les détails (Les mains ont-elles 6 doigts ? Les lèvres bougent-elles bizarrement ?).</li>\n                <li>Cherchez si d'autres médias en parlent.</li>\n            </ul>\n             <img src=\"https://images.unsplash.com/photo-1633419461186-7d40a2e50594?auto=format&fit=crop&w=800&q=80\" alt=\"Reconnaissance faciale et analyse\" class=\"rounded-xl my-8 w-full object-cover\">\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Qu'est-ce qu'un Deepfake ?",
+        "options": [
+          "Une fausse vidéo créée par IA",
+          "Un virus informatique",
+          "Un logiciel de montage classique",
+          "Un filtre Instagram"
+        ],
+        "answer": 0,
+        "explanation": "Les technologies Deepfake permettent de créer des faux hyper-réalistes.",
+        "category": "Compréhension"
+      },
+      {
+        "id": 2,
+        "question": "Quel est le bon réflexe avant de partager ?",
+        "options": [
+          "Partager immédiatement",
+          "Vérifier la source",
+          "Éteindre son téléphone",
+          "Mettre un like"
+        ],
+        "answer": 1,
+        "explanation": "Le doute est la première défense contre la désinformation.",
+        "category": "Pratique"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Lutte contre le Racisme et l'Exclusion",
+    "category": "Société",
+    "level": "Tout public",
+    "readingTime": 5,
+    "summary": "Le racisme est une violence. Apprendre à respecter les différences.",
+    "body": "\n            <p>Le racisme est une idéologie basée sur la supériorité d'un groupe, source de violence et d'inégalités. À Madagascar, comme ailleurs, la discrimination basée sur l'origine (régionale, sociale, etc.) ralentit le progrès national.</p>\n            <p><strong>La diversité est une richesse.</strong> Une équipe composée de gens différents est plus créative et performante qu'une équipe uniforme.</p>\n            <img src=\"https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80\" alt=\"Groupe de mains unies\" class=\"rounded-xl my-8 w-full object-cover\">\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Sur quoi est basé le racisme ?",
+        "options": [
+          "La science",
+          "Une idéologie de supériorité fausse",
+          "La réalité biologique",
+          "L'amitié"
+        ],
+        "answer": 1,
+        "explanation": "Il n'y a pas de races biologiques humaines, seulement une espèce humaine.",
+        "category": "Compréhension"
+      },
+      {
+        "id": 2,
+        "question": "Pourquoi la diversité est-elle une force ?",
+        "options": [
+          "Elle apporte différents points de vue et compétences",
+          "Elle fait perdre du temps",
+          "Elle crée des problèmes",
+          "C'est joli pour les photos"
+        ],
+        "answer": 0,
+        "explanation": "La mixité favorise l'innovation et la compréhension mutuelle.",
+        "category": "Sociologie"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "title": "La Politesse : Clé de la réussite professionnelle",
+    "category": "Savoir-être",
+    "level": "Tout public",
+    "readingTime": 3,
+    "summary": "Dire bonjour n'est pas optionnel. Les soft skills comptent autant que le diplôme.",
+    "body": "\n            <p>On vous embauche pour vos compétences (Hard Skills), mais on vous licencie pour votre comportement (Soft Skills). La politesse est la base des relations humaines.</p>\n            <h2>Les Indispensables</h2>\n            <ul>\n                <li><strong>La Ponctualité</strong> : Être à l'heure, c'est respecter l'autre.</li>\n                <li><strong>Le Sourire</strong> : Il ouvre plus de portes que n'importe quelle clé.</li>\n                <li><strong>L'Écoute</strong> : Savoir se taire pour écouter est une preuve d'intelligence.</li>\n            </ul>\n             <img src=\"https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80\" alt=\"Poignée de main professionnelle\" class=\"rounded-xl my-8 w-full object-cover\">\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Pourquoi la politesse est-elle importante au travail ?",
+        "options": [
+          "Pour faire plaisir au patron",
+          "Pour créer un climat de confiance et de respect",
+          "Pour avoir une augmentation",
+          "C'est démodé"
+        ],
+        "answer": 1,
+        "explanation": "Les relations fluides améliorent l'efficacité et le bien-être.",
+        "category": "Savoir-être"
+      },
+      {
+        "id": 2,
+        "question": "Que signifie être ponctuel ?",
+        "options": [
+          "Arriver en avance",
+          "Arriver à l'heure convenue",
+          "Arriver en retard mais s'excuser",
+          "Ne pas venir"
+        ],
+        "answer": 1,
+        "explanation": "C'est la première marque de respect.",
+        "category": "Savoir-vivre"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Dangers cachés des Réseaux Sociaux",
+    "category": "Santé Mentale",
+    "level": "Ados/Adultes",
+    "readingTime": 4,
+    "summary": "Ne comparez pas votre vie aux coulisses des autres.",
+    "body": "\n            <p>Instagram et TikTok sont des vitrines. Les gens n'y montrent que le meilleur. Si vous comparez votre vie quotidienne (avec ses hauts et ses bas) à la vie 'parfaite' des influenceurs, vous serez malheureux.</p>\n            <h2>L'Addiction aux écrans</h2>\n            <p>Les réseaux sont conçus pour vous rendre accro (dopamine). Fixez-vous des limites : pas d'écran 1h avant de dormir.</p>\n             <img src=\"https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80\" alt=\"Personne sur son téléphone\" class=\"rounded-xl my-8 w-full object-cover\">\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Pourquoi ne faut-il pas se comparer aux réseaux sociaux ?",
+        "options": [
+          "Car les gens mentent",
+          "Car on ne voit qu'une sélection des meilleurs moments",
+          "Car ils sont plus riches",
+          "Car c'est interdit"
+        ],
+        "answer": 1,
+        "explanation": "C'est une réalité filtrée et mise en scène.",
+        "category": "Psychologie"
+      },
+      {
+        "id": 2,
+        "question": "Quel effet ont les réseaux sur le cerveau ?",
+        "options": [
+          "Ils rendent plus intelligent",
+          "Ils créent une addiction via la dopamine",
+          "Ils font dormir",
+          "Aucun effet"
+        ],
+        "answer": 1,
+        "explanation": "Le mécanisme de 'like' active le circuit de la récompense comme une drogue.",
+        "category": "Santé"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "title": "L'Importance Vraie des Études (long terme)",
+    "category": "Orientation",
+    "level": "Collège/Lycée",
+    "readingTime": 4,
+    "summary": "Le diplôme est un passeport, mais c'est le voyage qui compte.",
+    "body": "\n            <p>« À quoi ça sert Pythagore ? ». On s'est tous posé la question. L'école ne sert pas juste à apprendre des formules, elle sert à <strong>apprendre à apprendre</strong>.</p>\n            <p>Les études développent :</p>\n            <ul>\n                <li>La rigueur.</li>\n                <li>La capacité d'analyse.</li>\n                <li>La persévérance face à la difficulté.</li>\n            </ul>\n            <p>Ce sont ces qualités qui vous serviront toute votre vie, même si vous oubliez Pythagore. L'éducation est un investissement qui paie les meilleurs intérêts.</p>\n             <img src=\"https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80\" alt=\"Diplômés jetant leurs chapeaux\" class=\"rounded-xl my-8 w-full object-cover\">\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Quel est le but profond de l'école ?",
+        "options": [
+          "Obéir",
+          "Apprendre à apprendre et structurer sa pensée",
+          "Avoir des vacances",
+          "Remplir des cahiers"
+        ],
+        "answer": 1,
+        "explanation": "C'est acquérir une méthode de travail intellectuel.",
+        "category": "Pédagogie"
+      },
+      {
+        "id": 2,
+        "question": "Quelle qualité développe-t-on en résolvant un problème difficile ?",
+        "options": [
+          "La colère",
+          "La persévérance",
+          "L'ennui",
+          "La triche"
+        ],
+        "answer": 1,
+        "explanation": "Ne pas abandonner devant l'effort est une clé de réussite.",
+        "category": "Soft Skill"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Qu’est-ce que le civisme ?",
+    "category": "Vie Citoyenne",
+    "level": "Tout public",
+    "readingTime": 3,
+    "summary": "Être citoyen, ce n'est pas juste voter. C'est un comportement de tous les jours.",
+    "body": "\n            <p>Beaucoup pensent que le civisme est une affaire politique. C'est faux. Le civisme, c'est l'art de vivre ensemble.</p>\n            <h2>Civisme ≠ Politique</h2>\n            <p>Le civisme ne dépend pas de votre parti politique. C'est le respect de la cité (la ville, le village, le quartier). C'est dire « Bonjour », ne pas jeter ses ordures par terre, et aider une personne âgée à traverser.</p>\n            <h2>Le Respect : La Base</h2>\n            <p>Sans respect, la société devient une jungle. Le respect des règles, des autres et de l'environnement est ce qui nous permet de vivre en paix et en sécurité.</p>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Le civisme est-il réservé aux politiciens ?",
+        "options": [
+          "Oui",
+          "Non, c'est l'affaire de tous",
+          "Seulement aux maires",
+          "Seulement aux policiers"
+        ],
+        "answer": 1,
+        "explanation": "Chaque citoyen est acteur du civisme.",
+        "category": "Compréhension"
+      },
+      {
+        "id": 2,
+        "question": "Quelle est la base de la vie en société ?",
+        "options": [
+          "L'argent",
+          "La force",
+          "Le respect",
+          "La vitesse"
+        ],
+        "answer": 2,
+        "explanation": "Le respect mutuel permet la cohabitation.",
+        "category": "Philosophie"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "title": "Respecter les autres : la base de la vie en société",
+    "category": "Vie Citoyenne",
+    "level": "Tout public",
+    "readingTime": 4,
+    "summary": "La politesse et le respect des différences sont les clés de l'harmonie.",
+    "body": "\n            <p>« La liberté des uns s'arrête là où commence celle des autres ». Cette phrase résume tout.</p>\n            <h2>Politesse et Savoir-Vivre</h2>\n            <p>Le respect commence par la reconnaissance de l'autre. Un sourire, un merci, une excuse quand on bouscule quelqu'un. Ces petits gestes huilent les rouages de la société.</p>\n            <h2>Vivre ensemble</h2>\n            <p>Que l'on soit en ville ou à la campagne, riche ou pauvre, nous partageons le même espace. Accepter que l'autre soit différent (religion, origine, avis) est une preuve d'intelligence et de maturité citoyenne.</p>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Que faire si je bouscule quelqu'un ?",
+        "options": [
+          "L'insulter",
+          "L'ignorer",
+          "M'excuser",
+          "Courir"
+        ],
+        "answer": 2,
+        "explanation": "C'est la base de la politesse.",
+        "category": "Savoir-vivre"
+      },
+      {
+        "id": 2,
+        "question": "La diversité est-elle un problème ?",
+        "options": [
+          "Oui",
+          "Non, c'est une richesse",
+          "Seulement à l'école",
+          "Je ne sais pas"
+        ],
+        "answer": 1,
+        "explanation": "Nos différences nous complètent.",
+        "category": "Sociologie"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "title": "Pourquoi les règles existent ?",
+    "category": "Vie Citoyenne",
+    "level": "Tout public",
+    "readingTime": 4,
+    "summary": "Les règles ne sont pas là pour nous embêter, mais pour nous protéger.",
+    "body": "\n            <p>Imaginez un match de foot sans règles. Ce serait le chaos et la violence. La société, c'est pareil.</p>\n            <h2>Protéger le Plus Faible</h2>\n            <p>La règle (la loi) est la meilleure amie du faible. Sans loi, c'est la loi du plus fort qui règne. En respectant les règles du quartier ou de l'école, on protège tout le monde.</p>\n            <h2>Conséquences du Non-Respect</h2>\n            <p>Quand on grille un stop, on risque sa vie et celle des autres. Quand on jette des ordures dans le canal, on provoque des inondations. Chaque incivisme a un prix que la communauté paie.</p>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "À quoi servent les règles ?",
+        "options": [
+          "À punir",
+          "À organiser et protéger",
+          "À rien",
+          "À embêter les jeunes"
+        ],
+        "answer": 1,
+        "explanation": "Elles garantissent la sécurité et l'ordre.",
+        "category": "Logique"
+      },
+      {
+        "id": 2,
+        "question": "Qui souffre le plus de l'absence de règles ?",
+        "options": [
+          "Les plus forts",
+          "Les plus faibles",
+          "Les riches",
+          "Personne"
+        ],
+        "answer": 1,
+        "explanation": "La loi protège ceux qui ne peuvent pas se défendre par la force.",
+        "category": "Société"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "title": "La propreté : une responsabilité individuelle",
+    "category": "Vie Citoyenne",
+    "level": "Tout public",
+    "readingTime": 5,
+    "summary": "N'attendons pas tout de l'État. La propreté commence devant notre porte.",
+    "body": "\n            <p>C'est facile de blâmer la commune quand c'est sale. Mais qui a jeté le sachet par terre ?</p>\n            <h2>Mon Déchet, Ma Responsabilité</h2>\n            <p>Garder son déchet dans sa poche jusqu'à la prochaine poubelle est un acte héroïque du quotidien. Si chacun balaie devant sa porte et ne jette rien, la ville devient propre instantanément.</p>\n            <h2>Impact Sanitaire</h2>\n            <p>Les déchets bouchés dans les canaux créent de l'eau stagnante. L'eau stagnante attire les moustiques. Les moustiques amènent le Palu. <strong>Jeter un sachet, c'est semer la maladie.</strong></p>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Qui est le premier responsable de la propreté ?",
+        "options": [
+          "Le Président",
+          "Le Maire",
+          "Moi-même",
+          "Les éboueurs"
+        ],
+        "answer": 2,
+        "explanation": "Si je ne salis pas, c'est propre.",
+        "category": "Responsabilité"
+      },
+      {
+        "id": 2,
+        "question": "Quel est le lien entre déchets et maladies ?",
+        "options": [
+          "Aucun",
+          "Les déchets attirent les touristes",
+          "Les déchets favorisent les moustiques et maladies",
+          "Les déchets sentent bon"
+        ],
+        "answer": 2,
+        "explanation": "L'insalubrité est la première cause de maladies évitables.",
+        "category": "Santé"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "title": "Être citoyen à l’école",
+    "category": "Vie Citoyenne",
+    "level": "Collège/Lycée",
+    "readingTime": 4,
+    "summary": "L'école est une mini-société. C'est là que tout commence.",
+    "body": "\n            <p>L'école n'est pas juste un lieu pour apprendre les maths. C'est le lieu où l'on apprend à vivre avec des gens qu'on n'a pas choisis.</p>\n            <h2>Respect et Discipline</h2>\n            <p>Respecter le professeur, c'est respecter le savoir. Respecter ses camarades, c'est se respecter soi-même. La discipline permet à tout le monde d'étudier dans de bonnes conditions.</p>\n            <h2>Non au Harcèlement</h2>\n            <p>Se moquer, isoler ou frapper un camarade n'est pas un jeu. C'est une violence. Un citoyen protège celui qui est attaqué. Si tu vois du harcèlement, parles-en.</p>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "L'école sert à apprendre...",
+        "options": [
+          "Uniquement les maths",
+          "À se battre",
+          "À vivre ensemble et s'instruire",
+          "À dormir"
+        ],
+        "answer": 2,
+        "explanation": "C'est le premier lieu de socialisation républicaine.",
+        "category": "Éducation"
+      },
+      {
+        "id": 2,
+        "question": "Que faire si je suis témoin de harcèlement ?",
+        "options": [
+          "Rire",
+          "Filmer pour Facebook",
+          "Prévenir un adulte",
+          "Participer"
+        ],
+        "answer": 2,
+        "explanation": "Le silence est complice.",
+        "category": "Civisme"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "title": "Ignorer la loi n’excuse pas",
+    "category": "Vie Citoyenne",
+    "level": "Adulte",
+    "readingTime": 4,
+    "summary": "« Nul n'est censé ignorer la loi ». Comprendre ses droits et ses devoirs.",
+    "body": "\n            <p>Dire « Je ne savais pas » ne suffit pas devant un juge. Connaître les règles de base est un devoir.</p>\n            <h2>Petites Infractions, Grandes Conséquences</h2>\n            <p>Brûler des ordures semble anodin, mais c'est interdit car ça empoisonne l'air des voisins. Construire sans permis met en danger les occupants. La loi est là pour éviter ces dangers.</p>\n            <h2>Le Fokontany</h2>\n            <p>C'est la cellule de base de l'administration. Participer aux réunions de quartier, c'est exercer son pouvoir de citoyen pour améliorer son environnement immédiat.</p>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Peut-on dire 'Je ne savais pas' pour éviter une punition légale ?",
+        "options": [
+          "Oui, toujours",
+          "Non, nul n'est censé ignorer la loi",
+          "Seulement si on est jeune",
+          "Ça dépend du juge"
+        ],
+        "answer": 1,
+        "explanation": "C'est un principe juridique fondamental.",
+        "category": "Droit"
+      },
+      {
+        "id": 2,
+        "question": "Quel est le rôle du citoyen au Fokontany ?",
+        "options": [
+          "Participer et s'impliquer",
+          "Juste payer des impôts",
+          "Ignorer les réunions",
+          "Critiquer sans agir"
+        ],
+        "answer": 0,
+        "explanation": "La démocratie commence au niveau local.",
+        "category": "Institutions"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "title": "La politesse au travail",
+    "category": "Vie Citoyenne",
+    "level": "Tout public",
+    "readingTime": 3,
+    "summary": "Les compétences techniques ne suffisent pas. Le savoir-être est roi.",
+    "body": "\n            <p>On peut être un génie de l'informatique, si on est impoli, personne ne voudra travailler avec nous.</p>\n            <h2>La Ponctualité</h2>\n            <p>Arriver en retard, c'est voler le temps des autres. Être à l'heure est la première marque de respect professionnel.</p>\n            <h2>L'Honnêteté</h2>\n            <p>Refuser la petite corruption du quotidien, ne pas voler de matériel, être loyal. C'est ce qui construit une réputation solide et une carrière durable.</p>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Qu'est-ce qui est aussi important que les diplômes ?",
+        "options": [
+          "La voiture",
+          "Le savoir-être (Soft Skills)",
+          "Les vêtements",
+          "Le piston"
+        ],
+        "answer": 1,
+        "explanation": "Le comportement détermine l'ambiance et l'efficacité.",
+        "category": "Travail"
+      },
+      {
+        "id": 2,
+        "question": "Que signifie être ponctuel ?",
+        "options": [
+          "Arriver quand on veut",
+          "Arriver à l'heure pile ou avant",
+          "Arriver 10 minutes après",
+          "Envoyer un SMS"
+        ],
+        "answer": 1,
+        "explanation": "C'est le respect de base du temps d'autrui.",
+        "category": "Savoir-vivre"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "title": "Comment devenir un citoyen actif ?",
+    "category": "Vie Citoyenne",
+    "level": "Jeunes",
+    "readingTime": 4,
+    "summary": "Pas besoin d'argent pour changer les choses. Juste de la volonté.",
+    "body": "\n            <p>Vous trouvez votre quartier sale ? Organisez un nettoyage avec 3 amis. Vous trouvez que les jeunes s'ennuient ? Créez un club de lecture ou de sport.</p>\n            <h2>L'Initiative</h2>\n            <p>N'attendez pas que les « grands » fassent les choses. Les grands changements viennent souvent de petites actions répétées.</p>\n            <h2>L'Exemple</h2>\n            <p>Soyez le changement que vous voulez voir. Si vous ramassez un papier, quelqu'un d'autre le fera peut-être aussi. Le civisme est contagieux.</p>\n        ",
+    "quiz": [
+      {
+        "id": 1,
+        "question": "Faut-il de l'argent pour être un bon citoyen ?",
+        "options": [
+          "Oui, beaucoup",
+          "Non, la volonté suffit",
+          "Seulement pour les taxes",
+          "Oui, pour payer les autres"
+        ],
+        "answer": 1,
+        "explanation": "Le bénévolat et l'exemple ne coûtent rien.",
+        "category": "Action"
+      },
+      {
+        "id": 2,
+        "question": "Que faire si on veut changer son quartier ?",
+        "options": [
+          "Attendre le Maire",
+          "Se plaindre sur Facebook",
+          "Déménager",
+          "Agir localement avec ses voisins"
+        ],
+        "answer": 3,
+        "explanation": "L'action collective locale est le moteur du changement.",
+        "category": "Engagement"
+      }
+    ]
+  }
+]

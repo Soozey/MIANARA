@@ -13,7 +13,7 @@ class ContentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Content
-        fields = ['id', 'title', 'description', 'body', 'level', 'category', 'status', 'file_type', 'file_url', 'thumbnail', 'author', 'created_at', 'is_premium', 'questions']
+        fields = ['id', 'title', 'description', 'body', 'level', 'category', 'status', 'file_type', 'file_url', 'thumbnail', 'author', 'created_at', 'is_premium', 'questions', 'quiz']
 
     def create(self, validated_data):
         questions_data = validated_data.pop('questions', [])

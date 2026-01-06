@@ -46,6 +46,7 @@ class Content(models.Model):
     is_premium = models.BooleanField(default=False, help_text="Is this content for premium users only?")
 
     level = models.CharField(max_length=100, blank=True, help_text="Niveau cible (ex: Débutant, Lycée...)")
+    quiz = models.JSONField(default=list, blank=True, help_text="Liste des questions du quiz au format JSON")
 
     # Monetization & Legal
     is_monetized = models.BooleanField(default=False, help_text="Le créateur souhaite monétiser ce contenu")

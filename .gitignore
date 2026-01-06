@@ -1,0 +1,13 @@
+node_modules/
+.env
+*.db
+*.sqlite
+__pycache__/
+.VSCode/
+.idea/
+dist/
+build/
+mianara/git_backup/
+.DS_Store
+coverage/
+*.log

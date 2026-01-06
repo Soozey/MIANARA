@@ -1,23 +1,80 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { contentService } from "../services/contentService";
+import { useAuth } from "../context/AuthContext";
 import QuestionWithState from "../Components/QuestionWithState";
+import { DEMO_CONTENTS } from "../data/demoContent";
 
 export default function ContentView() {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const { user } = useAuth();
+
   const [content, setContent] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [articleScores, setArticleScores] = useState({});
 
+  const handleDelete = async () => {
+    if (window.confirm("Êtes-vous sûr de vouloir supprimer cet article ?")) {
+      await contentService.delete(id);
+      navigate('/library');
+    }
+  };
+
+  const handleEdit = () => {
+    navigate('/contribute', { state: { editMode: true, article: content } });
+  };
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: content.title,
+          text: content.description,
+          url: window.location.href,
+        });
+      } catch (err) {
+        console.log('Share canceled');
+      }
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      alert("Lien copié dans le presse-papier !");
+    }
+  };
+
   useEffect(() => {
     const fetchContent = async () => {
       try {
         const data = await contentService.getById(id);
+        const ratingData = await contentService.getRating(id); // Fetch Rating
+
         setContent(data);
+        setArticleScores(prev => ({ ...prev, ratingData })); // Set initial rating
       } catch (err) {
-        setError("Impossible de charger le contenu.");
-        console.error(err);
+        console.warn("Backend unavailable, falling back to demo content");
+        // ... fallback logic
+        const found = DEMO_CONTENTS.find(c => c.id == id);
+
+        if (found) {
+          // ... normalization
+          const normalized = {
+            ...found,
+            description: found.summary,
+            questions: found.quiz || [],
+            created_at: new Date().toISOString(),
+            file_type: "TEXT",
+            author: { username: "Mianara Team" }
+          };
+
+          const ratingData = await contentService.getRating(id); // Fetch Rating for demo too
+          setContent(normalized);
+          setArticleScores(prev => ({ ...prev, ratingData }));
+          setError(null);
+        } else {
+          // ... error
+          setError("Contenu introuvable (local ou distant).");
+        }
       } finally {
         setLoading(false);
       }
@@ -69,9 +126,29 @@ export default function ContentView() {
         {/* Meta Info */}
         {!content.thumbnail && (
           <div className="mb-8 border-b border-gray-100 pb-8">
-            <div className="flex gap-2 mb-2">
-              <span className="text-indigo-600 font-bold tracking-wide uppercase text-sm">{content.category}</span>
-              {content.level && <span className="text-gray-500 text-sm">• {content.level}</span>}
+            <div className="flex justify-between items-start">
+              <div className="flex gap-2 mb-2">
+                <span className="text-indigo-600 font-bold tracking-wide uppercase text-sm">{content.category}</span>
+                {content.level && <span className="text-gray-500 text-sm">• {content.level}</span>}
+              </div>
+
+              {/* Admin Actions */}
+              {user?.isAdmin && (
+                <div className="flex gap-2">
+                  <button
+                    onClick={handleEdit}
+                    className="flex items-center gap-1 px-3 py-1.5 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 font-medium text-sm transition-colors"
+                  >
+                    ✏️ Modifier
+                  </button>
+                  <button
+                    onClick={handleDelete}
+                    className="flex items-center gap-1 px-3 py-1.5 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 font-medium text-sm transition-colors"
+                  >
+                    🗑️ Supprimer
+                  </button>
+                </div>
+              )}
             </div>
             <h1 className="text-4xl font-extrabold text-gray-900 mt-2 mb-4">{content.title}</h1>
           </div>
@@ -127,6 +204,37 @@ export default function ContentView() {
           dangerouslySetInnerHTML={{ __html: content.body }}
         />
 
+        {/* Rating Section */}
+        <div className="mb-12 p-6 bg-yellow-50 rounded-2xl border border-yellow-100 text-center">
+          <h3 className="text-lg font-bold text-gray-900 mb-2">Notez ce contenu</h3>
+          <div className="flex justify-center gap-2 mb-2" onMouseLeave={() => setHoverRating(0)}>
+            {[1, 2, 3, 4, 5].map((star) => {
+              // Determine if this star should be lit
+              // Priority: Hover > UserRating > Average
+              const effectiveRating = hoverRating || ratingData.userRating || Math.round(ratingData.average);
+              const isFilled = star <= effectiveRating;
+
+              return (
+                <button
+                  key={star}
+                  onMouseEnter={() => setHoverRating(star)}
+                  onClick={async () => {
+                    const newRating = await contentService.submitRating(content.id, star);
+                    setRatingData(newRating);
+                  }}
+                  className={`text-3xl transition-transform duration-200 hover:scale-125 focus:outline-none ${isFilled ? "text-yellow-400 drop-shadow-sm" : "text-gray-300"
+                    }`}
+                >
+                  ★
+                </button>
+              );
+            })}
+          </div>
+          <p className="text-sm text-gray-500">
+            Note moyenne : {ratingData.average?.toFixed(1) || "0.0"} / 5 ({ratingData.count || 0} avis)
+          </p>
+        </div>
+
         {/* Interactive Questions Section */}
         {content.questions && content.questions.length > 0 && (
           <section className="mt-12 pt-8 border-t-2 border-gray-100">
@@ -168,8 +276,11 @@ export default function ContentView() {
           >
             ← Retour à la bibliothèque
           </Link>
-          <button className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
-            Partager
+          <button
+            onClick={handleShare}
+            className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors flex items-center gap-2"
+          >
+            <span>🔗</span> Partager
           </button>
         </div>
       </div>

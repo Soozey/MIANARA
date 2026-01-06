@@ -1,6 +1,6 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import MainLayout from "./Layouts/MainLayout";
-import Home from "./pages/Home";
+// import Home from "./pages/Home"; // Home page removed as requested
 import Library from "./pages/Library";
 import ContentView from "./pages/ContentView";
 import Contribute from "./pages/Contribute";
@@ -15,8 +15,15 @@ import ClassPage from "./pages/StudentSpace/ClassPage";
 import SubjectPage from "./pages/StudentSpace/SubjectPage";
 import OrientationPage from "./pages/StudentSpace/OrientationPage";
 import ScholarshipsPage from "./pages/StudentSpace/ScholarshipsPage";
+import LanguesPage from "./pages/StudentSpace/LanguesPage";
 import MianaraDemoPage from "./pages/MianaraDemoPage";
 import AddArticle from "./pages/AddArticle";
+import OrientationCarrierePage from "./pages/OrientationCarrierePage";
+import EntrepreneuriatPage from "./pages/EntrepreneuriatPage";
+import DeveloppementPersonnelPage from "./pages/DeveloppementPersonnelPage";
+import CitoyennetePage from "./pages/CitoyennetePage";
+import SantePage from "./pages/SantePage";
+import SocieteCulturePage from "./pages/SocieteCulturePage";
 import { AuthProvider } from "./context/AuthContext";
 import { useEffect } from "react";
 import { syncDemoContent } from "./services/contentSync";
@@ -32,7 +39,7 @@ function App() {
       <AuthProvider>
         <Routes>
           <Route path="/" element={<MainLayout />}>
-            <Route index element={<Home />} />
+            <Route index element={<Navigate to="/library" replace />} />
             <Route path="library" element={<Library />} />
             <Route path="content/:id" element={<ContentView />} />
             <Route path="contribute" element={<Contribute />} />
@@ -49,6 +56,16 @@ function App() {
             <Route path="etudiants/programmes/:classe/:matiere" element={<SubjectPage />} />
             <Route path="etudiants/orientation" element={<OrientationPage />} />
             <Route path="etudiants/bourses" element={<ScholarshipsPage />} />
+            <Route path="etudiants/langues" element={<LanguesPage />} />
+
+            {/* Category Pages */}
+            <Route path="orientation" element={<OrientationCarrierePage />} />
+            <Route path="entrepreneuriat" element={<EntrepreneuriatPage />} />
+            <Route path="developpement-personnel" element={<DeveloppementPersonnelPage />} />
+            <Route path="citoyennete" element={<CitoyennetePage />} />
+            <Route path="sante" element={<SantePage />} />
+            <Route path="societe-culture" element={<SocieteCulturePage />} />
+
             <Route path="mianara-demo" element={<MianaraDemoPage />} />
             <Route path="add-article" element={<AddArticle />} />
           </Route>

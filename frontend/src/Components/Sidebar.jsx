@@ -1,17 +1,27 @@
 import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import {
+    Home, Library, GraduationCap, Compass, Briefcase,
+    Hammer, Sprout, Landmark, Heart, Globe, Mic, PenTool
+} from 'lucide-react';
 
 export default function Sidebar({ isOpen, setIsOpen }) {
     const location = useLocation();
     const { user, logout } = useAuth();
 
     const menuItems = [
-        { name: "Accueil", path: "/", icon: "🏠" },
-        { name: "Bibliothèque", path: "/library", icon: "📚" },
-        { name: "Étudiant", path: "/student", icon: "🎓" },
-        { name: "Formation", path: "/training", icon: "🛠️" },
-        { name: "Conférence", path: "/conference", icon: "🎤" },
-        { name: "Contribuer", path: "/contribute", icon: "✍️" },
+        // { name: "Accueil", path: "/", icon: <Home size={20} /> }, // Removed
+        { name: "Bibliothèque", path: "/library", icon: <Library size={20} /> },
+        { name: "Espace Étudiant", path: "/student", icon: <GraduationCap size={20} /> },
+        { name: "Orientation & Carrière", path: "/orientation", icon: <Compass size={20} /> },
+        { name: "Entrepreneuriat", path: "/entrepreneuriat", icon: <Briefcase size={20} /> },
+        { name: "Formations", path: "/training", icon: <Hammer size={20} /> },
+        { name: "Développement Personnel", path: "/developpement-personnel", icon: <Sprout size={20} /> },
+        { name: "Citoyenneté", path: "/citoyennete", icon: <Landmark size={20} /> },
+        { name: "Santé & Bien-être", path: "/sante", icon: <Heart size={20} /> },
+        { name: "Société & Culture", path: "/societe-culture", icon: <Globe size={20} /> },
+        { name: "Conférence", path: "/conference", icon: <Mic size={20} /> },
+        { name: "Contribuer", path: "/contribute", icon: <PenTool size={20} /> },
     ];
 
     const isActive = (path) => location.pathname === path;
