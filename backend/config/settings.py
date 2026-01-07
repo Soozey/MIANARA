@@ -31,8 +31,8 @@ ALLOWED_HOSTS = [
     'backend',
     'mianàra.com',      # Avec accent
     'www.mianàra.com',  # Avec accent
-    'mianara.com',      # Sans accent (au cas où)
-    'www.mianara.com',  # Sans accent
+    'xn--mianra-lta.com',  # ← AJOUTEZ CECI
+    'www.xn--mianra-lta.com', 
     '92.112.193.117',   # IP
 ]
 
