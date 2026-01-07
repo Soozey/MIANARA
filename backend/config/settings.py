@@ -25,15 +25,18 @@ SECRET_KEY = 'django-insecure-e+x9guuk4d$*qg*nu12*$991km+lkk=t=uakqtu-+%bct!3e^p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'backend', '0.0.0.0']
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5177",
-    "http://127.0.0.1:5177",
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'backend',
+    'mianàra.com',      # Avec accent
+    'www.mianàra.com',  # Avec accent
+    'mianara.com',      # Sans accent (au cas où)
+    'www.mianara.com',  # Sans accent
+    '92.112.193.117',   # IP
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Application definition
 
