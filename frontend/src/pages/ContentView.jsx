@@ -2,7 +2,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { contentService } from "../services/contentService";
 import { useAuth } from "../context/AuthContext";
-import QuestionWithState from "../Components/QuestionWithState";
+import QuestionWithState from "../components/QuestionWithState";
 import { DEMO_CONTENTS } from "../data/demoContent";
 
 export default function ContentView() {

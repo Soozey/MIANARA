@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { DEMO_CONTENTS } from "../data/demoContent";
-import QuestionWithState from "../Components/QuestionWithState";
+import QuestionWithState from "../components/QuestionWithState";
 
 const MianaraDemoPage = () => {
     const [expandedId, setExpandedId] = useState(null);

@@ -1,7 +1,9 @@
-# Dockerfile.nodeapi
-FROM node:18-alpine
+FROM node:20-alpine
 
 WORKDIR /app
+
+# Installer python et make pour bcrypt
+RUN apk add --no-cache python3 make g++
 
 COPY package*.json ./
 RUN npm ci --only=production
