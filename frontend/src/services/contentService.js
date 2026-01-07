@@ -45,6 +45,16 @@ export const contentService = {
         // Mock creation
         await new Promise(resolve => setTimeout(resolve, 1000)); // Fake delay
 
+        let thumbnailBase64 = null;
+        const thumbnailFile = formData.get('thumbnail');
+        if (thumbnailFile && thumbnailFile instanceof File) {
+            thumbnailBase64 = await new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onloadend = () => resolve(reader.result);
+                reader.readAsDataURL(thumbnailFile);
+            });
+        }
+
         const newArticle = {
             id: 'local-' + Date.now(),
             title: formData.get('title'),
@@ -54,7 +64,8 @@ export const contentService = {
             body: formData.get('body'), // Assuming it's simple text for demo
             created_at: new Date().toISOString(),
             is_premium: formData.get('is_monetized') === 'true',
-            author_name: "Administrateur" // Mock author
+            author_name: "Administrateur", // Mock author
+            thumbnail: thumbnailBase64
         };
 
         const current = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || '[]');
@@ -115,6 +126,17 @@ export const contentService = {
         let local = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || '[]');
         const index = local.findIndex(i => i.id == id);
 
+        // Handle Thumbnail
+        let thumbnailBase64 = undefined;
+        const thumbnailFile = formData.get('thumbnail');
+        if (thumbnailFile && thumbnailFile instanceof File) {
+            thumbnailBase64 = await new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onloadend = () => resolve(reader.result);
+                reader.readAsDataURL(thumbnailFile);
+            });
+        }
+
         const updatedArticle = {
             id: id,
             title: formData.get('title'),
@@ -124,8 +146,15 @@ export const contentService = {
             body: formData.get('body'),
             created_at: new Date().toISOString(), // Update date? Or keep original? Let's update.
             is_premium: formData.get('is_monetized') === 'true',
-            author_name: "Administrateur (Modifié)"
+            author_name: "Administrateur (Modifié)",
         };
+
+        if (thumbnailBase64) {
+            updatedArticle.thumbnail = thumbnailBase64;
+        } else if (index !== -1 && local[index].thumbnail) {
+            // Preserve existing if not updated
+            updatedArticle.thumbnail = local[index].thumbnail;
+        }
 
         if (index !== -1) {
             local[index] = { ...local[index], ...updatedArticle };
@@ -134,14 +163,12 @@ export const contentService = {
         } else {
             // If it's a demo content being edited, we must "promote" it to local content
             // effectively shadowing the demo content
-            localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify([updatedArticle, ...local]));
-            // And ensuring the original demo content is "hidden" if we treat ID uniqueness strictly
-            // But simpler: just add it to local, and `getAll` sends local first.
-            // If ID is same, we need logic in getAll to dedup.
-            // The current getAll merges: `return [...local, ...DEMO_CONTENTS];`
-            // We should dedup in getAll.
 
-            // For this hack, let's just save it.
+            // For demo content promotion, if no new thumbnail, we can't really "preserve" easily unless we fetched it which we didn't here. 
+            // But usually demo content has 'thumbnail' property if defined in DEMO_CONTENTS.
+            // For simplicity, we just save what we have.
+
+            localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify([updatedArticle, ...local]));
             return updatedArticle;
         }
     },

@@ -14,6 +14,8 @@ export default function ContentView() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [articleScores, setArticleScores] = useState({});
+  const [hoverRating, setHoverRating] = useState(0);
+  const [ratingData, setRatingData] = useState({ average: 0, count: 0, userRating: 0 });
 
   const handleDelete = async () => {
     if (window.confirm("Êtes-vous sûr de vouloir supprimer cet article ?")) {
@@ -47,10 +49,10 @@ export default function ContentView() {
     const fetchContent = async () => {
       try {
         const data = await contentService.getById(id);
-        const ratingData = await contentService.getRating(id); // Fetch Rating
+        const fetchedRating = await contentService.getRating(id); // Fetch Rating
 
         setContent(data);
-        setArticleScores(prev => ({ ...prev, ratingData })); // Set initial rating
+        setRatingData(fetchedRating || { average: 0, count: 0, userRating: 0 });
       } catch (err) {
         console.warn("Backend unavailable, falling back to demo content");
         // ... fallback logic
@@ -67,9 +69,9 @@ export default function ContentView() {
             author: { username: "Mianara Team" }
           };
 
-          const ratingData = await contentService.getRating(id); // Fetch Rating for demo too
+          const fetchedRating = await contentService.getRating(id); // Fetch Rating for demo too
           setContent(normalized);
-          setArticleScores(prev => ({ ...prev, ratingData }));
+          setRatingData(fetchedRating || { average: 0, count: 0, userRating: 0 });
           setError(null);
         } else {
           // ... error

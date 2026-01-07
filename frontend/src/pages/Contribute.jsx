@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"; // Added useEffect
+import imageCompression from 'browser-image-compression';
 import { contentService } from "../services/contentService";
 import { useNavigate, useLocation } from "react-router-dom"; // Added useLocation
 import Stepper from "../components/Stepper";
@@ -46,6 +47,8 @@ export default function Contribute() {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const navigate = useNavigate();
 
+  const [thumbnailPreview, setThumbnailPreview] = useState(null);
+
   // New Step Labels
   const steps = ["Qualification", "Informations", "Contenu", "Finalisation"];
 
@@ -60,6 +63,37 @@ export default function Contribute() {
 
   const handleFileSelect = (file) => {
     setFormData({ ...formData, file_url: file });
+  };
+
+  const handleThumbnailUpload = async (e) => {
+    const imageFile = e.target.files[0];
+    if (!imageFile) return;
+
+    try {
+      const options = {
+        maxSizeMB: 1,
+        maxWidthOrHeight: 1920,
+        useWebWorker: true,
+      };
+
+      const compressedFile = await imageCompression(imageFile, options);
+
+      setFormData({
+        ...formData,
+        thumbnail: compressedFile
+      });
+
+      // Create preview
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setThumbnailPreview(reader.result);
+      };
+      reader.readAsDataURL(compressedFile);
+
+    } catch (error) {
+      console.log('Error compressing image:', error);
+      setMessage("Erreur lors de la compression de l'image.");
+    }
   };
 
   const nextStep = () => setStep(step + 1);
@@ -108,8 +142,8 @@ export default function Contribute() {
         data.append("file_url", formData.file_url);
       }
 
-      if (formData.file_url) {
-        data.append("file_url", formData.file_url);
+      if (formData.thumbnail) {
+        data.append("thumbnail", formData.thumbnail);
       }
 
       if (isEditing) {
@@ -351,6 +385,43 @@ export default function Contribute() {
                 {formData.description.trim().length > 0 && formData.description.trim().length < 10 && (
                   <p className="text-red-500 text-xs mt-1">La description doit contenir au moins 10 caractères.</p>
                 )}
+              </div>
+
+              {/* Thumbnail Upload */}
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">Photo de couverture (Optionnel)</label>
+                <div className="flex items-center gap-4">
+                  <div className="p-4 border-2 border-dashed border-gray-300 rounded-xl bg-gray-50 hover:bg-white transition-colors cursor-pointer relative group w-full md:w-1/2">
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleThumbnailUpload}
+                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                    />
+                    <div className="text-center p-4">
+                      <span className="text-3xl block mb-2">📸</span>
+                      <span className="text-sm text-gray-500 font-medium">Cliquez pour ajouter une photo</span>
+                      <span className="text-xs text-gray-400 block mt-1">(Max 1MB, compressé auto.)</span>
+                    </div>
+                  </div>
+
+                  {thumbnailPreview && (
+                    <div className="w-32 h-32 rounded-xl overflow-hidden border border-gray-200 shadow-sm relative">
+                      <img src={thumbnailPreview} alt="Aperçu" className="w-full h-full object-cover" />
+                      <button
+                        onClick={() => {
+                          setThumbnailPreview(null);
+                          setFormData({ ...formData, thumbnail: null });
+                        }}
+                        className="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 shadow-md hover:bg-red-600 transition-colors"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>

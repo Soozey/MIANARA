@@ -179,6 +179,10 @@ const CONTENT_NORMALIZER = {
   "Société & Culture": "SOCIAL",
   "Espace Étudiant": "SCOLAIRE",
   "Orientation & Carrière": "ORIENTATION",
+  "Vie sociale et citoyenneté": "CITOYEN",
+  "Société / Sécurité": "SOCIAL",
+  "Éducation / Sécurité": "SOCIAL",
+  "Environnement": "CITOYEN",
   "Autre": "AUTRE"
 };
 

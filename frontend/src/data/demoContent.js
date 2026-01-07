@@ -2349,5 +2349,231 @@ export const DEMO_CONTENTS = [
                 category: "Économie"
             }
         ]
+    },
+    // 🌍 CIBLE 4 : Sensibilisation & Civisme
+    {
+        id: 60,
+        title: "L’incivisme tue lentement : quand les petits gestes détruisent un pays",
+        category: "Vie sociale et citoyenneté",
+        level: "Tout public",
+        readingTime: 4,
+        summary: "L’incivisme n’est pas anodin. Il détruit la santé, l’économie et la cohésion sociale, jour après jour.",
+        body: `
+            <p>Jeter un déchet dans un canal, brûler sans réfléchir, rouler sans respecter les règles… Ces gestes semblent petits. Pourtant, leurs conséquences sont énormes.</p>
+
+            <img src="C:/Users/Karibo Ressources/.gemini/antigravity/brain/eaafd90f-14bf-433c-b614-f9daaa6810ad/incivisme_dechets_1767783427868.png" alt="Canal pollué à Madagascar" class="rounded-xl my-8 w-full object-cover">
+
+            <h3>À Madagascar :</h3>
+            <ul>
+                <li>Les canaux bouchés provoquent des <strong>inondations meurtrières</strong>.</li>
+                <li>Les déchets attirent moustiques et rats → <strong>paludisme, peste, diarrhées</strong>.</li>
+                <li>L’anarchie routière coûte <strong>des milliers de vies chaque année</strong>.</li>
+            </ul>
+
+            <p>L’incivisme n’est pas un manque d’éducation scolaire, c’est un <strong>manque de responsabilité</strong>. Quand chacun pense « ce n’est pas grave », le pays entier paie le prix.</p>
+
+            <blockquote>👉 Un pays ne s’effondre pas toujours à cause de grandes crises, mais souvent à cause de <strong>millions de petits gestes irresponsables répétés</strong>.</blockquote>
+
+            <h3>❓ Questions de réflexion</h3>
+            <ol>
+                <li>Quel geste incivique te choque le plus dans ton quotidien ?</li>
+                <li>Qui en subit vraiment les conséquences à long terme ?</li>
+            </ol>
+
+            <h3>🚨 Appel à l’action</h3>
+            <ul>
+                <li>Refuse de banaliser l’incivisme, même chez tes proches.</li>
+                <li>Corrige <strong>au moins un comportement incivique</strong> dans ta routine quotidienne.</li>
+            </ul>
+        `,
+        quiz: []
+    },
+    {
+        id: 61,
+        title: "Corruption du quotidien : pourquoi “donner un petit quelque chose” détruit l’avenir",
+        category: "Vie sociale et citoyenneté",
+        level: "Tout public",
+        readingTime: 5,
+        summary: "La corruption commence souvent par des gestes banalisés, mais ses conséquences sont graves et durables.",
+        body: `
+            <p>La corruption n’est pas seulement les grands détournements. Elle commence par :</p>
+            <ul>
+                <li>Le “petit billet” pour éviter une amende.</li>
+                <li>Le “cadeau” pour accélérer un dossier.</li>
+                <li>Le favoritisme entre connaissances.</li>
+            </ul>
+
+            <img src="C:/Users/Karibo Ressources/.gemini/antigravity/brain/eaafd90f-14bf-433c-b614-f9daaa6810ad/corruption_handshake_1767783443223.png" alt="Échange d'argent discret" class="rounded-xl my-8 w-full object-cover">
+
+            <h3>Chaque acte de corruption :</h3>
+            <ul>
+                <li>Prive l’État de ressources pour la santé et l’éducation.</li>
+                <li>Encourage l’injustice.</li>
+                <li>Détruit la confiance entre citoyens.</li>
+            </ul>
+
+            <p>À long terme, cela crée des services publics inefficaces, une jeunesse découragée, et une société où le mérite n’a plus de valeur.</p>
+
+            <blockquote>👉 Tolérer la corruption aujourd’hui, c’est <strong>voler l’avenir de ses propres enfants</strong>.</blockquote>
+
+            <h3>❓ Questions de réflexion</h3>
+            <ol>
+                <li>As-tu déjà été témoin d’une corruption “banale” ?</li>
+                <li>Pourquoi est-elle si difficile à refuser ?</li>
+            </ol>
+
+            <h3>🚨 Appel à l’action</h3>
+            <ul>
+                <li>Dire non, même si c’est inconfortable.</li>
+                <li>Valoriser l’honnêteté comme une force, pas une faiblesse.</li>
+            </ul>
+        `,
+        quiz: []
+    },
+    {
+        id: 62,
+        title: "Feux de brousse : brûler aujourd’hui, mourir de faim demain",
+        category: "Environnement",
+        level: "Tout public",
+        readingTime: 4,
+        summary: "Les feux de brousse détruisent les sols, l’eau et l’agriculture, mettant en danger la sécurité alimentaire.",
+        body: `
+            <p>Les feux sont souvent justifiés par la rapidité ou la tradition. Pourtant, leurs effets sont catastrophiques :</p>
+            <ul>
+                <li>Destruction des nutriments du sol.</li>
+                <li>Disparition des sources d’eau.</li>
+                <li>Baisse des rendements agricoles.</li>
+                <li>Aggravation du changement climatique.</li>
+            </ul>
+
+            <img src="C:/Users/Karibo Ressources/.gemini/antigravity/brain/eaafd90f-14bf-433c-b614-f9daaa6810ad/bush_fire_madagascar_1767783461038.png" alt="Feu de brousse sur une colline" class="rounded-xl my-8 w-full object-cover">
+
+            <p>À Madagascar, les feux répétés transforment des terres fertiles en sols morts. Ce sont les paysans, puis toute la population, qui en paient le prix.</p>
+
+            <blockquote>👉 Brûler une colline aujourd’hui, c’est <strong>affamer des familles demain</strong>.</blockquote>
+
+            <h3>❓ Questions de réflexion</h3>
+            <ol>
+                <li>Pourquoi les feux sont-ils encore pratiqués malgré les dégâts ?</li>
+                <li>Qui souffre réellement de ces pratiques ?</li>
+            </ol>
+
+            <h3>🚨 Appel à l’action</h3>
+            <ul>
+                <li>Refuser de participer ou de banaliser les feux de brousse.</li>
+                <li>Sensibiliser au moins une personne sur leurs conséquences réelles.</li>
+            </ul>
+        `,
+        quiz: []
+    },
+    {
+        id: 63,
+        title: "Violence et loi du plus fort : quand l’absence de civisme détruit la paix sociale",
+        category: "Société / Sécurité",
+        level: "Tout public",
+        readingTime: 5,
+        summary: "La violence quotidienne est souvent le résultat d’un manque de respect des règles et des autres.",
+        body: `
+            <p>Insultes, bagarres, règlements de compte, lynchages… Quand le civisme disparaît, la violence prend sa place.</p>
+            
+            <img src="C:/Users/Karibo Ressources/.gemini/antigravity/brain/eaafd90f-14bf-433c-b614-f9daaa6810ad/conflict_violence_1767783479122.png" alt="Tensions sociales dans un village" class="rounded-xl my-8 w-full object-cover">
+
+            <h3>Une société qui accepte la violence :</h3>
+            <ul>
+                <li>Vit dans la peur.</li>
+                <li>Perd la confiance.</li>
+                <li>Détruit ses propres communautés.</li>
+            </ul>
+
+            <p>La justice ne peut fonctionner sans citoyens responsables. La force ne résout rien : elle <strong>aggrave toujours les conflits</strong>.</p>
+
+            <blockquote>👉 Là où la loi recule, la barbarie avance.</blockquote>
+
+            <h3>❓ Questions de réflexion</h3>
+            <ol>
+                <li>Pourquoi la violence est-elle souvent applaudie ou excusée ?</li>
+                <li>Quelles alternatives existent pour résoudre les conflits ?</li>
+            </ol>
+
+            <h3>🚨 Appel à l’action</h3>
+            <ul>
+                <li>Refuser toute forme de violence, même verbale.</li>
+                <li>Encourager le dialogue et la médiation dans ton entourage.</li>
+            </ul>
+        `,
+        quiz: []
+    },
+    {
+        id: 64,
+        title: "Famille, solidarité, respect : le civisme commence à la maison",
+        category: "Éducation / Sécurité",
+        level: "Tout public",
+        readingTime: 4,
+        summary: "Le civisme ne s’apprend pas seulement à l’école, mais d’abord au sein de la famille.",
+        body: `
+            <p>Le comportement d’un adulte dans la rue, au travail ou face à la loi est souvent le reflet de ce qu’il a appris à la maison.</p>
+
+            <img src="C:/Users/Karibo Ressources/.gemini/antigravity/brain/eaafd90f-14bf-433c-b614-f9daaa6810ad/family_education_civisme_1767783496205.png" alt="Famille malgache éduquant ses enfants" class="rounded-xl my-8 w-full object-cover">
+
+            <h3>Une famille qui enseigne :</h3>
+            <ul>
+                <li>Le respect.</li>
+                <li>La discipline.</li>
+                <li>La solidarité.</li>
+            </ul>
+            <p>...forme des citoyens responsables.</p>
+
+            <p>À l’inverse, banaliser le mensonge, la violence ou l’irrespect prépare une société instable.</p>
+
+            <blockquote>👉 On ne peut pas demander à un enfant d’être citoyen si l’adulte ne l’est pas.</blockquote>
+
+            <h3>❓ Questions de réflexion</h3>
+            <ol>
+                <li>Quels comportements transmets-tu sans t’en rendre compte ?</li>
+                <li>Que voudrais-tu changer pour les générations futures ?</li>
+            </ol>
+
+            <h3>🚨 Appel à l’action</h3>
+            <ul>
+                <li>Montrer l’exemple avant de donner des leçons.</li>
+                <li>Corriger un comportement incivique dans ton cercle familial.</li>
+            </ul>
+        `,
+        quiz: []
+    },
+    {
+        id: 65,
+        title: "Ignorer la loi n’excuse pas : comprendre sa responsabilité citoyenne",
+        category: "Société / Sécurité",
+        level: "Tout public",
+        readingTime: 4,
+        summary: "Ne pas connaître la loi ne protège pas de ses conséquences.",
+        body: `
+            <p>Beaucoup pensent : « Je ne savais pas ». Pourtant :</p>
+            <ul>
+                <li>La loi s’applique à tous.</li>
+                <li>L’ignorance n’annule pas les sanctions.</li>
+                <li>La responsabilité est individuelle.</li>
+            </ul>
+
+            <img src="C:/Users/Karibo Ressources/.gemini/antigravity/brain/eaafd90f-14bf-433c-b614-f9daaa6810ad/justice_law_malagasy_1767783513320.png" alt="Symbole de justice et loi" class="rounded-xl my-8 w-full object-cover">
+
+            <p>Infractions routières, violences, délits économiques… Les conséquences peuvent être : amendes, prison, exclusion sociale, destruction de carrières.</p>
+
+            <blockquote>👉 Être citoyen, c’est <strong>chercher à comprendre les règles qui nous gouvernent</strong>.</blockquote>
+
+            <h3>❓ Questions de réflexion</h3>
+            <ol>
+                <li>Quelle loi est souvent ignorée autour de toi ?</li>
+                <li>Comment mieux informer les citoyens ?</li>
+            </ol>
+
+            <h3>🚨 Appel à l’action</h3>
+            <ul>
+                <li>S’informer sur ses droits et devoirs.</li>
+                <li>Respecter la loi même quand elle dérange.</li>
+            </ul>
+        `,
+        quiz: []
     }
 ];
