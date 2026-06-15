@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { contentService } from "../services/contentService";
-import { DEMO_CONTENTS } from "../data/demoContent";
 
 const CATEGORY_MAP = {
   "Toutes": "ALL",
@@ -210,33 +209,25 @@ export default function Library() {
     }
   }, [searchParams]);
 
-  useEffect(() => {
-    const fetchContents = async () => {
-      try {
-        const data = await contentService.getAll();
-        // Normalize Categories to Codes
-        const normalized = data.map(d => ({
-          ...d,
-          category: CONTENT_NORMALIZER[d.category] || CATEGORY_MAP[d.category] || d.category
-        }));
-        setArticles(normalized);
-      } catch {
-        console.warn("Backend unavailable, falling back to demo content");
-        const normalized = DEMO_CONTENTS.map(d => ({
-          ...d,
-          category: CONTENT_NORMALIZER[d.category] || CATEGORY_MAP[d.category] || "AUTRE",
-          description: d.summary,
-          created_at: new Date().toISOString(),
-          file_type: "TEXT",
-          is_premium: false
-        }));
-        setArticles(normalized);
-        setError(null);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const fetchContents = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const data = await contentService.getAll();
+      const normalized = data.map(d => ({
+        ...d,
+        category: CONTENT_NORMALIZER[d.category] || CATEGORY_MAP[d.category] || d.category
+      }));
+      setArticles(normalized);
+    } catch (err) {
+      setArticles([]);
+      setError(err.message || "Impossible de charger la bibliothèque. Vérifiez votre connexion puis réessayez.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchContents();
   }, []);
 
@@ -343,8 +334,14 @@ export default function Library() {
       )}
 
       {error && (
-        <div className="bg-red-50 text-red-600 p-4 rounded-xl text-center mb-8">
-          {error}
+        <div className="bg-red-50 text-red-700 p-6 rounded-xl text-center mb-8 border border-red-100">
+          <p className="font-semibold mb-3">{error}</p>
+          <button
+            onClick={fetchContents}
+            className="px-5 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+          >
+            Réessayer
+          </button>
         </div>
       )}
 

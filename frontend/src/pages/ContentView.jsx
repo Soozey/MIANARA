@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { contentService } from "../services/contentService";
 import { useAuth } from "../context/AuthContext";
 import QuestionWithState from "../components/QuestionWithState";
-import { DEMO_CONTENTS } from "../data/demoContent";
 
 export default function ContentView() {
   const { id } = useParams();
@@ -53,30 +52,9 @@ export default function ContentView() {
 
         setContent(data);
         setRatingData(fetchedRating || { average: 0, count: 0, userRating: 0 });
-      } catch {
-        console.warn("Backend unavailable, falling back to demo content");
-        // ... fallback logic
-        const found = DEMO_CONTENTS.find(c => c.id == id);
-
-        if (found) {
-          // ... normalization
-          const normalized = {
-            ...found,
-            description: found.summary,
-            questions: found.quiz || [],
-            created_at: new Date().toISOString(),
-            file_type: "TEXT",
-            author: { username: "Mianara Team" }
-          };
-
-          const fetchedRating = await contentService.getRating(id); // Fetch Rating for demo too
-          setContent(normalized);
-          setRatingData(fetchedRating || { average: 0, count: 0, userRating: 0 });
-          setError(null);
-        } else {
-          // ... error
-          setError("Contenu introuvable (local ou distant).");
-        }
+      } catch (err) {
+        setContent(null);
+        setError(err.message || "Impossible de charger ce contenu. Vérifiez votre connexion puis réessayez.");
       } finally {
         setLoading(false);
       }

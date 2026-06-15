@@ -66,6 +66,6 @@ Le cahier des charges du Drive reste la référence principale. Tant que son con
 - Optimisation performance frontend : code splitting, bundle size.
 - Observabilité minimale : logs applicatifs et erreurs serveur.
 
-## Priorité recommandée après la branche 2026-06-15
+## Priorité recommandée après la branche 2026-06-16
 
-P0 : vérifier la configuration production réelle sur le VPS/Hostinger, compléter README.md, puis ajouter les tests manquants sur tous les endpoints créateur/admin/modération.
+P0 : implémenter la persistance backend des favoris, notes personnelles et analytics simples, puis connecter les pages frontend aux nouveaux endpoints.

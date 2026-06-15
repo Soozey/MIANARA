@@ -43,6 +43,50 @@ class ContentTests(APITestCase):
         self.assertEqual(Content.objects.count(), 1)
         self.assertEqual(Content.objects.get().title, 'Test Content')
 
+    def test_creator_content_is_pending_by_default(self):
+        self.client.force_authenticate(user=self.user)
+        response = self.client.post(reverse('content-list'), self.content_data, format='multipart')
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertEqual(Content.objects.get().status, Content.Status.PENDING)
+
+    def test_creator_cannot_request_direct_publication_on_create(self):
+        self.client.force_authenticate(user=self.user)
+        payload = {**self.content_data, 'status': Content.Status.PUBLISHED}
+        response = self.client.post(reverse('content-list'), payload, format='multipart')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertEqual(Content.objects.count(), 0)
+
+    def test_moderator_can_publish_content(self):
+        moderator = User.objects.create_user(
+            username='moderator', password='testpassword', role=User.Role.MODERATOR
+        )
+        content = Content.objects.create(
+            author=self.user, title='Pending', file_type='TEXT', status=Content.Status.PENDING
+        )
+        self.client.force_authenticate(user=moderator)
+        response = self.client.patch(
+            reverse('content-detail', args=[content.pk]),
+            {'status': Content.Status.PUBLISHED},
+            format='json',
+        )
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        content.refresh_from_db()
+        self.assertEqual(content.status, Content.Status.PUBLISHED)
+
+    def test_creator_cannot_publish_existing_content(self):
+        content = Content.objects.create(
+            author=self.user, title='Pending', file_type='TEXT', status=Content.Status.PENDING
+        )
+        self.client.force_authenticate(user=self.user)
+        response = self.client.patch(
+            reverse('content-detail', args=[content.pk]),
+            {'status': Content.Status.PUBLISHED},
+            format='json',
+        )
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        content.refresh_from_db()
+        self.assertEqual(content.status, Content.Status.PENDING)
+
     def test_list_content(self):
         Content.objects.create(author=self.user, **self.content_data)
         url = reverse('content-list')

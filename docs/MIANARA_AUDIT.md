@@ -34,6 +34,13 @@ Reste à faire :
 - Vérifier tous les endpoints créateur/admin/modération.
 - Ajouter un endpoint profil utilisateur ou personnaliser le token JWT pour exposer proprement le rôle utile au frontend.
 
+Correction complémentaire du 2026-06-16 :
+- Ajout du rôle `MODERATOR` côté backend.
+- Ajout de `GET/PATCH /api/users/me/`.
+- JWT enrichi avec username, email, rôle, is_staff et is_superuser ; la réponse de connexion contient aussi le profil normalisé.
+- Règles de publication renforcées : un créateur peut soumettre, mais seuls MODERATOR/ADMIN/staff/superuser peuvent publier.
+- Tests de régression ajoutés pour profil, token, création en attente, refus de publication directe et publication par modérateur.
+
 ### P1 — Qualité frontend
 
 Constat initial :
@@ -44,10 +51,15 @@ Correction démarrée le 2026-06-15 :
 - Library.jsx stabilisé.
 - Les appels de lecture contenus utilisent maintenant l’API réelle avant fallback UX.
 
+Correction complémentaire du 2026-06-16 :
+- Les lectures principales de contenus passent par l’API réelle.
+- La bibliothèque et la lecture de contenu affichent une erreur humaine et un bouton de reprise au lieu d’un fallback demo silencieux.
+- La synchronisation automatique des contenus demo au démarrage a été supprimée.
+- Le proxy Vite pointe vers Django local `127.0.0.1:8000`.
+- Les warnings build @import, import demo et bundle > 500 kB ont été corrigés ; Browserslist/caniuse-lite a été mis à jour.
+
 Reste à faire :
-- Réduire la dépendance aux données de démonstration.
-- Harmoniser les messages d’erreur et états vides.
-- Vérifier responsive mobile sur les pages clés.
+- Migrer commentaires, notes/favoris et analytics vers des endpoints backend persistés.
 
 ### P1 — Documentation et déploiement
 
@@ -63,7 +75,7 @@ Reste à faire :
 ## Risques actifs
 
 - Vérifier les vraies valeurs d’environnement sur le serveur avant production.
-- npm audit signale des vulnérabilités à qualifier.
+- npm audit : 0 vulnérabilité après mise à jour ciblée des dépendances frontend.
 - Des données de démonstration restent utilisées dans plusieurs services frontend.
 
 ## Recommandation immédiate

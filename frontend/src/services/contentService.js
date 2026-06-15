@@ -1,83 +1,67 @@
 import api from './api';
 
-const LOCAL_STORAGE_KEY = 'mianara_local_contents';
+const apiError = (message, error) => {
+    const detail = error?.response?.data?.detail || error?.response?.data?.message;
+    return new Error(detail || message);
+};
 
 export const contentService = {
     getAll: async () => {
         try {
             const response = await api.get('contents/');
             return response.data;
-        } catch {
-            // Fallback temporaire pour conserver une UX lisible si l'API est indisponible.
-            const { DEMO_CONTENTS } = await import('../data/demoContent');
-            const local = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || '[]') || [];
-            const deletedDemos = JSON.parse(localStorage.getItem('mianara_deleted_demos') || '[]') || [];
-
-            // Filter demo contents: remove deleted ones AND those that are shadowed by local edits (same ID)
-            const activeDemos = DEMO_CONTENTS.filter(d =>
-                !deletedDemos.includes(d.id) &&
-                !local.some(l => l.id == d.id)
-            );
-
-            // Merge: Local items first
-            return [...local, ...activeDemos];
+        } catch (error) {
+            throw apiError("Impossible de charger les contenus. Vérifiez votre connexion puis réessayez.", error);
         }
     },
+
     getById: async (id) => {
         try {
             const response = await api.get(`contents/${id}/`);
             return response.data;
-        } catch {
-            const { DEMO_CONTENTS } = await import('../data/demoContent');
-            // Check local first
-            const local = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || '[]');
-            const foundLocal = local.find(i => i.id == id); // Loose equality for string/int ids
-            if (foundLocal) return foundLocal;
-
-            // Check demo
-            return DEMO_CONTENTS.find(i => i.id == id);
+        } catch (error) {
+            if (error?.response?.status === 404) {
+                throw new Error("Ce contenu est introuvable ou n'est plus disponible.");
+            }
+            throw apiError("Impossible de charger ce contenu. Vérifiez votre connexion puis réessayez.", error);
         }
     },
+
     create: async (formData) => {
-        // Mock creation
-        await new Promise(resolve => setTimeout(resolve, 1000)); // Fake delay
-
-        let thumbnailBase64 = null;
-        const thumbnailFile = formData.get('thumbnail');
-        if (thumbnailFile && thumbnailFile instanceof File) {
-            thumbnailBase64 = await new Promise((resolve) => {
-                const reader = new FileReader();
-                reader.onloadend = () => resolve(reader.result);
-                reader.readAsDataURL(thumbnailFile);
-            });
+        try {
+            const response = await api.post('contents/', formData);
+            return response.data;
+        } catch (error) {
+            throw apiError("Impossible de créer ce contenu. Vérifiez vos droits et les champs saisis.", error);
         }
-
-        const newArticle = {
-            id: 'local-' + Date.now(),
-            title: formData.get('title'),
-            description: formData.get('description'),
-            category: formData.get('category'),
-            file_type: formData.get('file_type'),
-            body: formData.get('body'), // Assuming it's simple text for demo
-            created_at: new Date().toISOString(),
-            is_premium: formData.get('is_monetized') === 'true',
-            author_name: "Administrateur", // Mock author
-            thumbnail: thumbnailBase64
-        };
-
-        const current = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || '[]');
-        const updated = [newArticle, ...current];
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updated));
-
-        return newArticle;
     },
 
-    // --- Mock Engagement Features (Local Storage) ---
+    update: async (id, formData) => {
+        try {
+            const response = await api.patch(`contents/${id}/`, formData);
+            return response.data;
+        } catch (error) {
+            throw apiError("Impossible de modifier ce contenu. Vérifiez vos droits et les champs saisis.", error);
+        }
+    },
+
+    delete: async (id) => {
+        try {
+            await api.delete(`contents/${id}/`);
+            return true;
+        } catch (error) {
+            throw apiError("Impossible de supprimer ce contenu. Vérifiez vos droits puis réessayez.", error);
+        }
+    },
+
+    // Fonctionnalités locales temporaires en attente d'endpoints dédiés.
+    // Elles ne remplacent pas les contenus API et seront migrées backend.
     getComments: async (id) => {
         const key = `mianara_comments_${id}`;
         const stored = localStorage.getItem(key);
         return stored ? JSON.parse(stored) : [];
     },
+
     addComment: async (id, commentData) => {
         const key = `mianara_comments_${id}`;
         const current = await contentService.getComments(id);
@@ -90,97 +74,27 @@ export const contentService = {
         localStorage.setItem(key, JSON.stringify(updated));
         return newComment;
     },
+
     getRating: async (id) => {
         const key = `mianara_ratings_${id}`;
         const stored = localStorage.getItem(key);
-        // Returns { average: 4.5, count: 12, userRating: null }
         return stored ? JSON.parse(stored) : { average: 0, count: 0, userRating: null };
     },
-    delete: async (id) => {
-        // Mock delete
-        await new Promise(resolve => setTimeout(resolve, 500));
 
-        let local = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || '[]');
-        const initialLength = local.length;
-        local = local.filter(i => i.id != id);
-
-        if (local.length < initialLength) {
-            // It was a local item
-            localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(local));
-            return true;
-        } else {
-            // It might be a demo item, store in "deleted_demo_ids"
-            const deletedDemos = JSON.parse(localStorage.getItem('mianara_deleted_demos') || '[]');
-            deletedDemos.push(id);
-            localStorage.setItem('mianara_deleted_demos', JSON.stringify(deletedDemos));
-            return true;
-        }
-    },
-
-    update: async (id, formData) => {
-        await new Promise(resolve => setTimeout(resolve, 1000));
-
-        let local = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || '[]');
-        const index = local.findIndex(i => i.id == id);
-
-        // Handle Thumbnail
-        let thumbnailBase64 = undefined;
-        const thumbnailFile = formData.get('thumbnail');
-        if (thumbnailFile && thumbnailFile instanceof File) {
-            thumbnailBase64 = await new Promise((resolve) => {
-                const reader = new FileReader();
-                reader.onloadend = () => resolve(reader.result);
-                reader.readAsDataURL(thumbnailFile);
-            });
-        }
-
-        const updatedArticle = {
-            id: id,
-            title: formData.get('title'),
-            description: formData.get('description'),
-            category: formData.get('category'),
-            file_type: formData.get('file_type'),
-            body: formData.get('body'),
-            created_at: new Date().toISOString(), // Update date? Or keep original? Let's update.
-            is_premium: formData.get('is_monetized') === 'true',
-            author_name: "Administrateur (Modifié)",
+    submitRating: async (id, rating) => {
+        const key = `mianara_ratings_${id}`;
+        const current = await contentService.getRating(id);
+        const next = {
+            average: rating,
+            count: current.userRating ? current.count : current.count + 1,
+            userRating: rating
         };
-
-        if (thumbnailBase64) {
-            updatedArticle.thumbnail = thumbnailBase64;
-        } else if (index !== -1 && local[index].thumbnail) {
-            // Preserve existing if not updated
-            updatedArticle.thumbnail = local[index].thumbnail;
-        }
-
-        if (index !== -1) {
-            local[index] = { ...local[index], ...updatedArticle };
-            localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(local));
-            return updatedArticle;
-        } else {
-            // If it's a demo content being edited, we must "promote" it to local content
-            // effectively shadowing the demo content
-
-            // For demo content promotion, if no new thumbnail, we can't really "preserve" easily unless we fetched it which we didn't here. 
-            // But usually demo content has 'thumbnail' property if defined in DEMO_CONTENTS.
-            // For simplicity, we just save what we have.
-
-            localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify([updatedArticle, ...local]));
-            return updatedArticle;
-        }
+        localStorage.setItem(key, JSON.stringify(next));
+        return next;
     },
+
     getTrending: async () => {
-        // Mocking "Trending" by picking random high-quality items or strictly by rating if available
-        // For now, we fetch all and sort by a fake "popularity" score mixed with real mock ratings
         const all = await contentService.getAll();
-
-        // Enhance with local ratings
-        const enhanced = await Promise.all(all.map(async (item) => {
-            const ratingData = await contentService.getRating(item.id);
-            return { ...item, rating: ratingData.average, ratingCount: ratingData.count };
-        }));
-
-        // Sort by Rating then by ID (pseudo-random but stable)
-        return enhanced.filter(i => i.is_premium || i.rating > 0).slice(0, 3);
+        return all.filter(item => item.is_premium || item.status === 'PUBLISHED').slice(0, 3);
     }
 };

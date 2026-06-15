@@ -1,77 +1,90 @@
-import { CLASSES_DEMO, MATIERES_DEMO, PROGRAMMES_DEMO } from '../data/studentDemoData';
+import api from './api';
 
-// Simulation d'un délai réseau pour le réalisme (optionnel)
-const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-const IS_DEMO = true; // Force demo mode
+const apiError = (message, error) => {
+    const detail = error?.response?.data?.detail || error?.response?.data?.message;
+    return new Error(detail || message);
+};
 
 const studentApi = {
-    // Classes
     getClasses: async () => {
-        if (IS_DEMO) {
-            await delay(500);
-            return [...CLASSES_DEMO.LYCEE, ...CLASSES_DEMO.COLLEGE, ...CLASSES_DEMO.PRIMAIRE];
+        try {
+            const response = await api.get('students/classes/');
+            return response.data;
+        } catch (error) {
+            throw apiError("Impossible de charger les classes. Vérifiez votre connexion puis réessayez.", error);
         }
     },
 
     getClassesByLevel: async () => {
-        if (IS_DEMO) {
-            await delay(600);
-            return CLASSES_DEMO;
+        try {
+            const response = await api.get('students/classes/par_niveau/');
+            return response.data;
+        } catch (error) {
+            throw apiError("Impossible de charger les classes par niveau. Vérifiez votre connexion puis réessayez.", error);
         }
     },
 
     getClasseById: async (id) => {
-        if (IS_DEMO) {
-            await delay(300);
-            // Recherche dans tous les niveaux
-            const all = [...CLASSES_DEMO.LYCEE, ...CLASSES_DEMO.COLLEGE, ...CLASSES_DEMO.PRIMAIRE];
-            const classe = all.find(c => c.id === id);
-
-            if (classe) {
-                // Attacher les matières
-                return {
-                    ...classe,
-                    matieres: MATIERES_DEMO[id] || [] // Retourne vide si pas de matières définies
-                };
+        try {
+            const response = await api.get(`students/classes/${id}/`);
+            return response.data;
+        } catch (error) {
+            if (error?.response?.status === 404) {
+                return null;
             }
-            return null;
+            throw apiError("Impossible de charger cette classe. Vérifiez votre connexion puis réessayez.", error);
         }
     },
 
-    // Matières
     getMatieres: async () => {
-        // ...
-    },
-
-    // Programmes (Chapitres + Ressources)
-    getProgrammes: async ({ matiere, trimestre }) => {
-        if (IS_DEMO) {
-            await delay(400);
-            let progs = PROGRAMMES_DEMO[matiere] || [];
-
-            if (trimestre) {
-                progs = progs.filter(p => p.trimestre === parseInt(trimestre));
-            }
-            return progs;
+        try {
+            const response = await api.get('students/matieres/');
+            return response.data;
+        } catch (error) {
+            throw apiError("Impossible de charger les matières. Vérifiez votre connexion puis réessayez.", error);
         }
     },
 
-    // Ressources
-    getRessources: async () => {
-        // Déjà inclus dans getProgrammes en mode démo
-        return [];
+    getProgrammes: async ({ classe, matiere, trimestre } = {}) => {
+        try {
+            const params = {};
+            if (classe) params.classe = classe;
+            if (matiere) params.matiere = matiere;
+            if (trimestre) params.trimestre = trimestre;
+            const response = await api.get('students/programmes/', { params });
+            return response.data;
+        } catch (error) {
+            throw apiError("Impossible de charger les programmes. Vérifiez votre connexion puis réessayez.", error);
+        }
     },
 
-    // Orientation
-    getOrientations: async () => {
-        await delay(500);
-        return []; // À remplir plus tard
+    getRessources: async (programmeId) => {
+        try {
+            const response = await api.get('students/ressources/', {
+                params: programmeId ? { programme: programmeId } : {}
+            });
+            return response.data;
+        } catch (error) {
+            throw apiError("Impossible de charger les ressources. Vérifiez votre connexion puis réessayez.", error);
+        }
     },
 
-    // Bourses
-    getBourses: async () => {
-        await delay(500);
-        return []; // À remplir plus tard
+    getOrientations: async (filters = {}) => {
+        try {
+            const response = await api.get('students/orientations/', { params: filters });
+            return response.data;
+        } catch (error) {
+            throw apiError("Impossible de charger les orientations. Vérifiez votre connexion puis réessayez.", error);
+        }
+    },
+
+    getBourses: async (filters = {}) => {
+        try {
+            const response = await api.get('students/bourses/', { params: filters });
+            return response.data;
+        } catch (error) {
+            throw apiError("Impossible de charger les bourses. Vérifiez votre connexion puis réessayez.", error);
+        }
     }
 };
 

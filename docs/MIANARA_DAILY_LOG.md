@@ -47,10 +47,74 @@ Corriger une priorité P0/P1 réelle : sécuriser l’authentification, les rôl
 
 - Vérifier les vraies variables d’environnement sur le serveur avant production.
 - Plusieurs services frontend conservent encore des fallbacks de démonstration.
-- README.md n’est pas aligné avec l’architecture Django + React actuelle.
-- npm audit signale des vulnérabilités à qualifier.
+- README.md n’était pas aligné avec l’architecture Django + React actuelle.
+- npm audit signalait des vulnérabilités à qualifier.
 - Des fichiers médias de test non suivis existent localement dans backend/media/contents ; ils n’ont pas été supprimés sans validation spécifique.
 
 ### Priorité recommandée demain
 
 P0 : vérifier la configuration production sur VPS/Hostinger, compléter README.md, puis couvrir tous les endpoints créateur/admin/modération par des tests.
+
+## 2026-06-16 — Branche daily/mianara-2026-06-16
+
+### Objectif
+
+Finaliser la préparation production P0/P1 : documentation, suppression des fallbacks demo silencieux, correction des warnings build, qualification npm audit, rôles MODERATOR, profil utilisateur et workflow de modération backend.
+
+### Contexte
+
+- La branche `daily/mianara-2026-06-15` était propre et poussée.
+- Le commit précédent `8e69940` a été repris par cherry-pick sur `daily/mianara-2026-06-16` car `main` ne contenait pas encore ce travail.
+- Le Drive reste inaccessible sans connexion Google ; le cadrage fonctionnel fourni par la discussion sert de référence de travail.
+
+### Réalisé
+
+- README.md réaligné avec l’architecture actuelle Django/DRF + React/Vite.
+- Ajout de `frontend/.env.example`.
+- Ajout du rôle backend `MODERATOR` avec migration Django.
+- Ajout de `GET/PATCH /api/users/me/`.
+- JWT enrichi avec rôle et informations utilisateur ; la réponse de connexion contient le profil normalisé.
+- Frontend AuthContext aligné avec les rôles backend : `isAdmin`, `isModerator`, `isCreator`.
+- Règles backend de modération renforcées :
+  - créateur = soumission de contenu ;
+  - publication = MODERATOR/ADMIN/staff/superuser uniquement ;
+  - publication directe par créateur refusée.
+- Suppression de la synchronisation automatique de contenus demo au démarrage frontend.
+- `contentService` utilise l’API réelle pour contenus CRUD et affiche des erreurs humaines.
+- `Library.jsx` et `ContentView.jsx` n’utilisent plus de fallback demo silencieux.
+- `studentApi` utilise les endpoints `/api/students/...` au lieu du mode demo forcé.
+- Correction du proxy Vite vers Django local `127.0.0.1:8000`.
+- Correction des warnings build :
+  - @import CSS ;
+  - import demo dynamique/statique ;
+  - Browserslist/caniuse-lite obsolète ;
+  - bundle > 500 kB via manualChunks.
+- npm audit ramené à 0 vulnérabilité.
+
+### Tests exécutés
+
+- Backend : `python manage.py check`
+- Backend : `python manage.py test -v 2`
+- Frontend : `npm install`
+- Frontend : `npm run lint`
+- Frontend : `npm run build`
+- Frontend : `npm audit --json`
+
+### Résultat
+
+- Backend check : OK.
+- Backend tests : OK, 16 tests exécutés.
+- Frontend lint : OK.
+- Frontend build : OK sans warning bloquant.
+- npm audit : 0 vulnérabilité.
+
+### Problèmes restants
+
+- Favoris, notes personnelles, analytics et commentaires doivent être persistés côté backend.
+- Certaines pages étudiant doivent encore afficher des états d’erreur/retry plus complets.
+- Les données demo restent présentes pour page de démonstration/seed dev explicite, mais ne doivent plus être source principale silencieuse.
+- PWA/offline et protection des mineurs restent à implémenter.
+
+### Priorité recommandée demain
+
+P0 : implémenter les endpoints backend persistés pour favoris, notes personnelles et analytics simples, puis connecter le frontend sans localStorage de production.

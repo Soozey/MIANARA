@@ -6,6 +6,7 @@ class User(AbstractUser):
         STUDENT = 'STUDENT', 'Student'
         JOB_SEEKER = 'JOB_SEEKER', 'Job Seeker'
         CREATOR = 'CREATOR', 'Content Creator'
+        MODERATOR = 'MODERATOR', 'Moderator'
         ADMIN = 'ADMIN', 'Administrator'
 
     role = models.CharField(

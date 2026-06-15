@@ -2,38 +2,46 @@ from rest_framework import permissions
 
 
 SAFE_METHODS = permissions.SAFE_METHODS
+ADMIN_ROLES = {"ADMIN"}
+MODERATION_ROLES = {"MODERATOR", "ADMIN"}
+CONTENT_AUTHOR_ROLES = {"CREATOR", "MODERATOR", "ADMIN"}
+
+
+def has_admin_access(user):
+    return bool(
+        user
+        and user.is_authenticated
+        and (user.is_staff or user.is_superuser or getattr(user, "role", None) in ADMIN_ROLES)
+    )
+
+
+def has_moderation_access(user):
+    return bool(
+        user
+        and user.is_authenticated
+        and (user.is_staff or user.is_superuser or getattr(user, "role", None) in MODERATION_ROLES)
+    )
 
 
 class IsAdminRoleOrReadOnly(permissions.BasePermission):
     """
-    Allow public read access, but reserve writes to staff/superusers or
-    authenticated users carrying the ADMIN platform role.
+    Lecture publique, écriture réservée aux admins/staff/superusers.
     """
 
     def has_permission(self, request, view):
         if request.method in SAFE_METHODS:
             return True
-        user = request.user
-        return bool(
-            user
-            and user.is_authenticated
-            and (
-                user.is_staff
-                or user.is_superuser
-                or getattr(user, "role", None) == "ADMIN"
-            )
-        )
+        return has_admin_access(request.user)
 
 
-class IsCreatorOrAdminForCreateAuthorOrAdminForObject(permissions.BasePermission):
+class IsContentActorOrReadOnly(permissions.BasePermission):
     """
-    Content permissions:
-    - reads are public;
-    - creates require CREATOR/ADMIN or Django staff/superuser;
-    - updates/deletes are limited to the content author or admins.
+    Permissions des contenus MIANARA :
+    - lecture publique ;
+    - création réservée CREATOR/MODERATOR/ADMIN/staff/superuser ;
+    - modification/suppression réservée à l'auteur ou aux modérateurs/admins.
+    Les transitions de statut sont validées dans le serializer/vue.
     """
-
-    creator_roles = {"CREATOR", "ADMIN"}
 
     def has_permission(self, request, view):
         if request.method in SAFE_METHODS:
@@ -47,7 +55,7 @@ class IsCreatorOrAdminForCreateAuthorOrAdminForObject(permissions.BasePermission
             return True
 
         if request.method == "POST":
-            return getattr(user, "role", None) in self.creator_roles
+            return getattr(user, "role", None) in CONTENT_AUTHOR_ROLES
 
         return True
 
@@ -60,8 +68,10 @@ class IsCreatorOrAdminForCreateAuthorOrAdminForObject(permissions.BasePermission
             return False
 
         return bool(
-            user.is_staff
-            or user.is_superuser
-            or getattr(user, "role", None) == "ADMIN"
+            has_moderation_access(user)
             or obj.author_id == user.id
         )
+
+
+# Alias conservé pour compatibilité avec les imports existants/cherry-picks.
+IsCreatorOrAdminForCreateAuthorOrAdminForObject = IsContentActorOrReadOnly
