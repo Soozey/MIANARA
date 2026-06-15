@@ -1,17 +1,15 @@
 import api from './api';
-import { DEMO_CONTENTS } from '../data/demoContent';
 
 const LOCAL_STORAGE_KEY = 'mianara_local_contents';
 
 export const contentService = {
     getAll: async () => {
         try {
-            // Try fetching from API first
-            // const response = await api.get('contents/');
-            // return response.data;
-            throw new Error("Demo Mode: Skip API");
-        } catch (error) {
-            // Fallback: Return DEMO_CONTENTS + LocalStorage Contents
+            const response = await api.get('contents/');
+            return response.data;
+        } catch {
+            // Fallback temporaire pour conserver une UX lisible si l'API est indisponible.
+            const { DEMO_CONTENTS } = await import('../data/demoContent');
             const local = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || '[]') || [];
             const deletedDemos = JSON.parse(localStorage.getItem('mianara_deleted_demos') || '[]') || [];
 
@@ -27,11 +25,10 @@ export const contentService = {
     },
     getById: async (id) => {
         try {
-            // Try API
-            // const response = await api.get(`contents/${id}/`);
-            // return response.data;
-            throw new Error("Demo Mode: Skip API");
-        } catch (error) {
+            const response = await api.get(`contents/${id}/`);
+            return response.data;
+        } catch {
+            const { DEMO_CONTENTS } = await import('../data/demoContent');
             // Check local first
             const local = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY) || '[]');
             const foundLocal = local.find(i => i.id == id); // Loose equality for string/int ids
