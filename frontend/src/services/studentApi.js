@@ -44,7 +44,7 @@ const studentApi = {
     },
 
     // Programmes (Chapitres + Ressources)
-    getProgrammes: async ({ classe, matiere, trimestre }) => {
+    getProgrammes: async ({ matiere, trimestre }) => {
         if (IS_DEMO) {
             await delay(400);
             let progs = PROGRAMMES_DEMO[matiere] || [];
@@ -57,19 +57,19 @@ const studentApi = {
     },
 
     // Ressources
-    getRessources: async (programmeId) => {
+    getRessources: async () => {
         // Déjà inclus dans getProgrammes en mode démo
         return [];
     },
 
     // Orientation
-    getOrientations: async (filters = {}) => {
+    getOrientations: async () => {
         await delay(500);
         return []; // À remplir plus tard
     },
 
     // Bourses
-    getBourses: async (filters = {}) => {
+    getBourses: async () => {
         await delay(500);
         return []; // À remplir plus tard
     }

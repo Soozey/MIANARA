@@ -11,3 +11,6 @@ mianara/git_backup/
 .DS_Store
 coverage/
 *.log
+
+# Artefacts générés par les tests backend de FileField.
+backend/media/contents/test_*.txt

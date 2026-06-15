@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Languages as LanguagesIcon, BookOpen, Headphones, Mic, PenTool, Video, Globe, ChevronRight, Briefcase, Plane, Lightbulb } from 'lucide-react';
 

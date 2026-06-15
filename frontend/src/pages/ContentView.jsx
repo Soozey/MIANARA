@@ -36,7 +36,7 @@ export default function ContentView() {
           text: content.description,
           url: window.location.href,
         });
-      } catch (err) {
+      } catch {
         console.log('Share canceled');
       }
     } else {
@@ -53,7 +53,7 @@ export default function ContentView() {
 
         setContent(data);
         setRatingData(fetchedRating || { average: 0, count: 0, userRating: 0 });
-      } catch (err) {
+      } catch {
         console.warn("Backend unavailable, falling back to demo content");
         // ... fallback logic
         const found = DEMO_CONTENTS.find(c => c.id == id);

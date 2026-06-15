@@ -3,6 +3,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from django.db.models import Q, Count
+from config.permissions import IsAdminRoleOrReadOnly
 from .models import Classe, Matiere, Programme, Ressource, Orientation, Bourse
 from .serializers import (
     ClasseSerializer, ClasseListSerializer,
@@ -20,6 +21,7 @@ class ClasseViewSet(viewsets.ModelViewSet):
     Permet de lister, créer, modifier et supprimer des classes
     """
     queryset = Classe.objects.all()
+    permission_classes = [IsAdminRoleOrReadOnly]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['niveau', 'serie']
     search_fields = ['nom', 'description']
@@ -47,6 +49,7 @@ class MatiereViewSet(viewsets.ModelViewSet):
     """
     queryset = Matiere.objects.all()
     serializer_class = MatiereSerializer
+    permission_classes = [IsAdminRoleOrReadOnly]
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
     search_fields = ['nom', 'code']
     ordering_fields = ['nom', 'code']
@@ -59,6 +62,7 @@ class ProgrammeViewSet(viewsets.ModelViewSet):
     Avec recherche full-text et filtres avancés
     """
     queryset = Programme.objects.select_related('classe', 'matiere').prefetch_related('ressources')
+    permission_classes = [IsAdminRoleOrReadOnly]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['classe', 'matiere', 'trimestre']
     search_fields = ['titre_chapitre', 'objectifs', 'competences']
@@ -126,6 +130,7 @@ class RessourceViewSet(viewsets.ModelViewSet):
     ViewSet pour les ressources pédagogiques
     """
     queryset = Ressource.objects.select_related('programme', 'programme__classe', 'programme__matiere')
+    permission_classes = [IsAdminRoleOrReadOnly]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['type_contenu', 'programme']
     search_fields = ['titre', 'description', 'tags', 'auteur']
@@ -155,6 +160,7 @@ class OrientationViewSet(viewsets.ModelViewSet):
     ViewSet pour les orientations et métiers
     """
     queryset = Orientation.objects.all()
+    permission_classes = [IsAdminRoleOrReadOnly]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['filiere', 'niveau_etudes']
     search_fields = ['titre', 'description', 'debouches', 'competences_requises']
@@ -192,6 +198,7 @@ class BourseViewSet(viewsets.ModelViewSet):
     ViewSet pour les bourses et aides
     """
     queryset = Bourse.objects.all()
+    permission_classes = [IsAdminRoleOrReadOnly]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['organisme', 'est_active']
     search_fields = ['titre', 'description', 'conditions', 'organisme']

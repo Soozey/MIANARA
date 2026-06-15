@@ -1,7 +1,6 @@
 import { Check } from "lucide-react";
-import { useEffect } from "react";
 
-export default function SuccessModal({ isOpen, onClose, title, message, actions }) {
+export default function SuccessModal({ isOpen, title, message, actions }) {
     if (!isOpen) return null;
 
     return (

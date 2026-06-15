@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { contentService } from "../services/contentService";
 import api from "../services/api";
 
 export default function AddArticle() {
