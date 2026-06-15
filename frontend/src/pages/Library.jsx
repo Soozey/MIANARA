@@ -1,6 +1,5 @@
-import { useRef, useEffect, useMemo, useState } from "react";
-import { Link, useSearchParams, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useEffect, useMemo, useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import { contentService } from "../services/contentService";
 import { DEMO_CONTENTS } from "../data/demoContent";
 
@@ -221,7 +220,7 @@ export default function Library() {
           category: CONTENT_NORMALIZER[d.category] || CATEGORY_MAP[d.category] || d.category
         }));
         setArticles(normalized);
-      } catch (err) {
+      } catch {
         console.warn("Backend unavailable, falling back to demo content");
         const normalized = DEMO_CONTENTS.map(d => ({
           ...d,
@@ -243,7 +242,7 @@ export default function Library() {
 
   const filtered = useMemo(() => {
     const qq = norm(query);
-    return articles.filter((a) => {
+    const result = articles.filter((a) => {
       // Enhanced Search: checks title, description AND tags
       const hasTag = a.tags && a.tags.some(t => norm(t).includes(qq));
 

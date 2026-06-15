@@ -23,7 +23,7 @@ export default function Register() {
     try {
       await register(formData);
       navigate('/login'); // Redirect to login after success
-    } catch (err) {
+    } catch {
       setError("Erreur lors de l'inscription. Vérifiez vos données.");
     }
   };
