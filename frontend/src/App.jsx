@@ -25,14 +25,8 @@ import CitoyennetePage from "./pages/CitoyennetePage";
 import SantePage from "./pages/SantePage";
 import SocieteCulturePage from "./pages/SocieteCulturePage";
 import { AuthProvider } from "./context/AuthContext";
-import { useEffect } from "react";
-import { syncDemoContent } from "./services/contentSync";
 
 function App() {
-  useEffect(() => {
-    // Sync demo content to backend on app load
-    syncDemoContent();
-  }, []);
 
   return (
     <BrowserRouter>
