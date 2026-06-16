@@ -10,7 +10,7 @@ export default defineConfig({
       // Redirige toutes les requêtes qui commencent par /api
       // vers votre serveur backend sur le port 3000.
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'http://localhost:8002',
         changeOrigin: true,
       },
     },
