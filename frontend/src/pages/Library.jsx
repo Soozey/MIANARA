@@ -211,16 +211,21 @@ export default function Library() {
   }, [searchParams]);
 
   useEffect(() => {
+    let cancelled = false;
+
     const fetchContents = async () => {
       try {
         const data = await contentService.getAll();
-        // Normalize Categories to Codes
+        if (cancelled) return;
+        // Normalize Categories to Codes + deduplicate by id
         const normalized = data.map(d => ({
           ...d,
           category: CONTENT_NORMALIZER[d.category] || CATEGORY_MAP[d.category] || d.category
         }));
-        setArticles(normalized);
+        const unique = Array.from(new Map(normalized.map(a => [a.id, a])).values());
+        setArticles(unique);
       } catch {
+        if (cancelled) return;
         console.warn("Backend unavailable, falling back to demo content");
         const normalized = DEMO_CONTENTS.map(d => ({
           ...d,
@@ -230,14 +235,16 @@ export default function Library() {
           file_type: "TEXT",
           is_premium: false
         }));
-        setArticles(normalized);
+        const unique = Array.from(new Map(normalized.map(a => [a.id, a])).values());
+        setArticles(unique);
         setError(null);
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
     };
 
     fetchContents();
+    return () => { cancelled = true; };
   }, []);
 
   const filtered = useMemo(() => {
