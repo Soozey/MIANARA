@@ -154,3 +154,70 @@ Vérifier si MIANARA est techniquement prêt à recevoir de vrais contenus et ex
 ### Priorité recommandée ensuite
 
 P0 : connecter le frontend au nouveau modèle QCM et implémenter les endpoints persistés favoris/notes/analytics avant création massive.
+
+## 2026-06-29 — Branche daily/mianara-local-validation-2026-06-29
+
+### Objectif
+
+Reprendre après Content Readiness, vérifier l’état réel du dépôt, corriger l’exemple d’environnement backend, lancer MIANARA localement et valider les pages/API principales avant GitHub.
+
+### Branche
+
+- Départ : `daily/mianara-content-readiness-2026-06-29` propre et poussée.
+- Travail : `daily/mianara-local-validation-2026-06-29`.
+
+### Vérifications fichiers
+
+- Documents Content Readiness présents : modèle de contenu, modèle exercices/quiz, guide d’import, checklist production, audit, roadmap et journal.
+- Exemple import présent : `backend/import_examples/content_readiness_minimal.json`.
+- `backend/.env.example` corrigé pour distinguer les variables réellement lues par `settings.py` et les informations documentaires SQLite/médias/JWT.
+- `frontend/.env.example` présent avec `VITE_API_ORIGIN` et `VITE_API_BASE_URL` locaux.
+
+### Corrections effectuées
+
+- Correction de `backend/.env.example` après alerte de cohérence.
+- Correction README : ligne Authorization Bearer, endpoints quiz, commandes locales check/migrate/tests, précision sur le fallback local Vite.
+- Correction frontend : en mode développement, `frontend/src/config.js` utilise par défaut `http://127.0.0.1:8000` au lieu du domaine production si aucune variable Vite n’est fournie.
+
+### Tests exécutés
+
+- Backend : `python manage.py check` — OK.
+- Backend : `python manage.py migrate --noinput` — OK, migrations appliquées localement.
+- Backend : `python manage.py test -v 2` — OK, 24 tests.
+- Frontend : `npm install` — OK.
+- Frontend : `npm run lint` — OK.
+- Frontend : `npm run build` — OK.
+- Frontend : `npm audit --json` — 0 vulnérabilité.
+
+### Lancement local
+
+- Backend lancé : `http://127.0.0.1:8000/`.
+- API contenus : `http://127.0.0.1:8000/api/contents/` — 200.
+- API quiz : `http://127.0.0.1:8000/api/contents/quizzes/` — 200.
+- Admin Django : `http://127.0.0.1:8000/admin/` — page login accessible.
+- Frontend lancé : `http://127.0.0.1:5173/`.
+
+### Pages / parcours vérifiés
+
+- Accueil `/` — 200, redirection SPA prévue vers bibliothèque.
+- Bibliothèque `/library` — 200.
+- Détail contenu `/content/1` — 200 côté SPA, API détail contenu 1 — 200.
+- Login `/login` — 200.
+- Register `/register` — 200.
+- Contribute `/contribute` et AddArticle `/add-article` — routes accessibles.
+- Inscription API testée : rôle forcé à `STUDENT` malgré tentative `ADMIN`.
+- Connexion API testée : token obtenu.
+- Profil API `/api/users/me/` testé : profil `STUDENT` retourné.
+
+### Erreurs / limites trouvées
+
+- Le navigateur automatisé Hermes a été instable au lancement Chrome ; la console disponible n’a pas remonté d’erreur, mais la validation visuelle complète reste à refaire manuellement dans un navigateur humain.
+- `backend/db.sqlite3` a été modifié localement par les migrations et le test d’inscription. Le fichier n’est pas ajouté au commit pour éviter de pousser une base locale.
+- Les quiz existent côté API mais aucun quiz publié n’est présent dans la base locale actuelle.
+- Interface modération/créateur encore partielle côté frontend.
+
+### Conclusion
+
+- Local lançable : oui.
+- GitHub à mettre à jour avec les corrections de configuration/documentation.
+- Contenus pilotes autorisés, mais création massive toujours déconseillée avant connexion frontend QCM + persistance favoris/notes/analytics.

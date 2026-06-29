@@ -33,6 +33,8 @@ Endpoints principaux :
 - `GET/PATCH /api/users/me/` : profil utilisateur authentifié.
 - `GET/POST /api/contents/` : contenus.
 - `GET/PATCH/DELETE /api/contents/<id>/` : détail contenu.
+- `GET/POST /api/contents/quizzes/` : quiz/QCM.
+- `POST /api/contents/quizzes/<id>/attempts/` : tentative et correction automatique.
 - `GET /api/students/...` : catalogue étudiant.
 
 ## Architecture frontend
@@ -47,7 +49,7 @@ Technologies :
 
 L’URL API est configurable via variables Vite. Le client Axios ajoute automatiquement le header JWT :
 
-`Authorization: Bearer <access_token>`
+`Authorization: Bearer <token>`
 
 ## Rôles
 
@@ -128,8 +130,10 @@ cd MIANARA
 ```bash
 cd backend
 python -m pip install -r requirements.txt
-python manage.py migrate
-python manage.py createsuperuser
+python manage.py check
+python manage.py migrate --noinput
+python manage.py test -v 2
+python manage.py createsuperuser  # optionnel pour accéder à /admin/
 python manage.py runserver 127.0.0.1:8000
 ```
 
@@ -149,7 +153,7 @@ npm install
 npm run dev
 ```
 
-Créer éventuellement `frontend/.env.local` :
+Créer éventuellement `frontend/.env.local` pour surcharger l’URL API. En développement, si aucune variable Vite n’est fournie, le frontend pointe maintenant par défaut vers `http://127.0.0.1:8000` ; en build production, le fallback reste `https://mianàra.com`.
 
 ```env
 VITE_API_ORIGIN=http://127.0.0.1:8000
