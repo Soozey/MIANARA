@@ -1,0 +1,110 @@
+{
+  "contents": [
+    {
+      "type": "article",
+      "title": "Comprendre l’eau potable au quotidien",
+      "slug": "pilote-eau-potable-quotidien",
+      "summary": "Un article court pour expliquer pourquoi l’eau propre protège la santé familiale.",
+      "body": "<p>L’eau potable est une eau que l’on peut boire sans danger. Pour réduire les maladies, il faut protéger la source, transporter l’eau dans un récipient propre et couvrir le stockage à la maison.</p><p>Quand l’eau est incertaine, il est conseillé de la faire bouillir ou de suivre les consignes sanitaires locales.</p>",
+      "language": "fr",
+      "level": "college",
+      "subject": "sante",
+      "competency": "hygiene_et_prevention",
+      "target_audience": "jeunes_et_familles",
+      "category": "SANTE",
+      "tags": ["eau", "santé", "hygiène"],
+      "status": "published",
+      "quiz": {
+        "title": "QCU — Eau potable",
+        "questions": [
+          {
+            "type": "single_choice",
+            "question": "Pourquoi faut-il couvrir l’eau stockée à la maison ?",
+            "choices": [
+              {"text": "Pour éviter les poussières et contaminations.", "is_correct": true},
+              {"text": "Pour changer automatiquement son goût.", "is_correct": false},
+              {"text": "Pour la rendre plus salée.", "is_correct": false}
+            ],
+            "explanation": "Couvrir l’eau limite les contaminations pendant le stockage."
+          }
+        ]
+      }
+    },
+    {
+      "type": "article",
+      "title": "Lire une consigne avant de répondre",
+      "slug": "pilote-lire-consigne-avant-repondre",
+      "summary": "Méthode simple pour aider les élèves à comprendre une consigne scolaire.",
+      "body": "<p>Avant de répondre, il faut lire toute la consigne, repérer le verbe d’action et vérifier le nombre d’éléments demandés.</p><p>Cette méthode évite de répondre trop vite et aide à mieux organiser sa pensée.</p>",
+      "language": "fr",
+      "level": "college",
+      "subject": "francais",
+      "competency": "comprehension_de_consigne",
+      "target_audience": "eleves_college",
+      "category": "SCOLAIRE",
+      "tags": ["lecture", "méthode", "consigne"],
+      "status": "published"
+    },
+    {
+      "type": "article",
+      "title": "Mitsinjo ny fandaniana kely isan’andro",
+      "slug": "pilote-fandaniana-kely-isanandro",
+      "summary": "Lahatsoratra fohy amin’ny teny malagasy momba ny fitantanana vola madinika.",
+      "body": "<p>Ny fandaniana kely isan’andro dia mety ho lasa vola be rehefa atambatra. Tsara ny manoratra izay lany, manavaka ny zavatra ilaina sy ny faniriana, ary manokana vola kely ho tahiry.</p>",
+      "language": "mg",
+      "level": "lycee",
+      "subject": "education_financiere",
+      "competency": "budget_personnel",
+      "target_audience": "jeunes",
+      "category": "FINANCE",
+      "tags": ["vola", "tahiry", "budget"],
+      "status": "published"
+    },
+    {
+      "type": "fiche",
+      "title": "Fiche méthode — Résumer un paragraphe",
+      "slug": "pilote-fiche-resumer-paragraphe",
+      "summary": "Fiche pédagogique courte pour apprendre à résumer un paragraphe.",
+      "body": "<h2>Objectif</h2><p>Identifier l’idée principale d’un paragraphe.</p><h2>Étapes</h2><ol><li>Lire le paragraphe.</li><li>Souligner les mots importants.</li><li>Écrire une phrase courte avec l’idée principale.</li></ol>",
+      "language": "fr",
+      "level": "college",
+      "subject": "francais",
+      "competency": "resume_de_texte",
+      "target_audience": "eleves_college",
+      "category": "SCOLAIRE",
+      "tags": ["fiche", "résumé", "français"],
+      "status": "published",
+      "quiz": {
+        "title": "QCM — Résumer un paragraphe",
+        "questions": [
+          {
+            "type": "multiple_choice",
+            "question": "Quelles actions aident à résumer un paragraphe ?",
+            "choices": [
+              {"text": "Repérer l’idée principale.", "is_correct": true},
+              {"text": "Copier toutes les phrases sans choisir.", "is_correct": false},
+              {"text": "Chercher les mots importants.", "is_correct": true},
+              {"text": "Ignorer la consigne.", "is_correct": false}
+            ],
+            "explanation": "Un résumé garde l’essentiel : idée principale et mots importants."
+          }
+        ]
+      }
+    },
+    {
+      "type": "fiche",
+      "title": "Fiche bilingue — Saluer avec respect / Miarahaba am-panajana",
+      "slug": "pilote-fiche-bilingue-saluer-respect",
+      "summary": "Fiche très courte en français et malgache pour travailler les salutations respectueuses.",
+      "body": "<h2>Français</h2><p>Saluer avec respect signifie regarder la personne, utiliser des mots polis et écouter la réponse.</p><h2>Malagasy</h2><p>Ny miarahaba am-panajana dia midika hoe mijery ilay olona, mampiasa teny malefaka ary mihaino ny valiny.</p>",
+      "language": "fr-mg",
+      "level": "primaire",
+      "subject": "langues",
+      "competency": "communication_respectueuse",
+      "target_audience": "enfants_et_parents",
+      "category": "LANGUE",
+      "tags": ["bilingue", "salutation", "respect"],
+      "status": "published"
+    }
+  ]
+}

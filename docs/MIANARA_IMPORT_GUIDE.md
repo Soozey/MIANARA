@@ -10,9 +10,10 @@ Définir un format stable avant la création massive de contenus, fiches, articl
 
 JSON est recommandé pour conserver une structure claire entre contenus, quiz, questions, réponses et explications.
 
-Exemple minimal disponible :
+Exemples disponibles :
 
-- `backend/import_examples/content_readiness_minimal.json`
+- `backend/import_examples/content_readiness_minimal.json` : exemple minimal de validation de structure.
+- `backend/import_examples/pilot_lot_2.json` : lot pilote limité avec 5 contenus publiables et 2 quiz QCU/QCM.
 
 ## Structure JSON proposée
 
@@ -72,14 +73,20 @@ Exemple minimal disponible :
 
 ## Commande d’import
 
-Aucune commande d’import automatisée n’a été ajoutée dans cette session afin d’éviter un import non validé avant accord humain.
-
-Commande cible proposée pour une prochaine session :
+Une commande d’import pilote est disponible côté backend. Elle valide le JSON, importe les contenus, crée les quiz/questions/choix et reste prudente par défaut : un statut `published` devient `PENDING` sauf si `--publish-pilot` est explicitement fourni pour un lot local validé.
 
 ```bash
-python manage.py import_mianara_content backend/import_examples/content_readiness_minimal.json --dry-run
-python manage.py import_mianara_content path/to/content.json
+cd backend
+python manage.py import_mianara_content import_examples/content_readiness_minimal.json --dry-run
+python manage.py import_mianara_content import_examples/pilot_lot_2.json --dry-run
+python manage.py import_mianara_content import_examples/pilot_lot_2.json --publish-pilot
 ```
+
+Options utiles :
+
+- `--dry-run` : valide sans écrire en base.
+- `--publish-pilot` : autorise la publication directe uniquement pour un pilote local contrôlé.
+- `--author <username>` : choisit le compte créateur utilisé pour l’import.
 
 ## Procédure de test recommandée
 

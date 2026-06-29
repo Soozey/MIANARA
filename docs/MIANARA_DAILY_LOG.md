@@ -221,3 +221,71 @@ Reprendre après Content Readiness, vérifier l’état réel du dépôt, corrig
 - Local lançable : oui.
 - GitHub à mettre à jour avec les corrections de configuration/documentation.
 - Contenus pilotes autorisés, mais création massive toujours déconseillée avant connexion frontend QCM + persistance favoris/notes/analytics.
+
+## 2026-06-29 — Branche daily/mianara-pilot-lot-2-2026-06-29
+
+### Objectif
+
+Continuer avec un deuxième lot pilote limité et lancer MIANARA en local sur l’ordinateur.
+
+### Branche
+
+- Départ : `daily/mianara-local-validation-2026-06-29`.
+- Travail : `daily/mianara-pilot-lot-2-2026-06-29`.
+
+### Contenu ajouté
+
+- Fichier pilote : `backend/import_examples/pilot_lot_2.json`.
+- Volume volontairement limité : 5 contenus publiables et 2 quiz.
+- Répartition :
+  - 3 articles ;
+  - 2 fiches pédagogiques ;
+  - 1 contenu en malgache ;
+  - 1 contenu bilingue français/malgache ;
+  - 2 quiz QCU/QCM liés à des contenus.
+
+### Import technique
+
+- Commande ajoutée : `python manage.py import_mianara_content <json>`.
+- Mode sécurisé : `--dry-run` valide sans écrire.
+- Publication directe bloquée par défaut : un statut `published` devient `PENDING` sans `--publish-pilot`.
+- Option pilote local : `--publish-pilot` autorise la publication contrôlée pour vérifier l’affichage.
+- Tests automatisés ajoutés pour dry-run et import avec quiz.
+
+### Import local exécuté
+
+```bash
+cd backend
+python manage.py import_mianara_content import_examples/pilot_lot_2.json --dry-run
+python manage.py import_mianara_content import_examples/pilot_lot_2.json --publish-pilot
+```
+
+Résultat :
+
+- Dry-run OK : 5 contenus, 2 quiz, 2 questions, 7 choix.
+- Import OK : 5 contenus, 2 quiz, 2 questions, 7 choix.
+- API quiz locale : `GET /api/contents/quizzes/` retourne des quiz publiés.
+
+### Lancement local
+
+- Backend Django disponible sur `http://127.0.0.1:8000/`.
+- Frontend Vite disponible sur `http://127.0.0.1:5173/`.
+- Page recommandée pour validation humaine : `http://127.0.0.1:5173/library`.
+
+### Vérifications exécutées
+
+- `python manage.py check` — OK.
+- `python manage.py test -v 2` — OK, 26 tests.
+- `npm install` — OK.
+- `npm run lint` — OK.
+- `npm run build` — OK.
+- `npm audit --json` — 0 vulnérabilité.
+- `GET http://127.0.0.1:8000/api/contents/` — 200.
+- `GET http://127.0.0.1:8000/api/contents/quizzes/` — 200 avec quiz publiés du lot pilote.
+- `GET http://127.0.0.1:5173/library` — 200.
+
+### Limites
+
+- `backend/db.sqlite3` est modifié localement par l’import pilote et ne doit pas être commitée.
+- Le lot 2 reste un pilote de validation, pas une création massive.
+- Prochaine priorité : connecter l’interface frontend aux quiz publiés, puis persister favoris/notes/analytics côté backend.

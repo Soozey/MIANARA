@@ -1,11 +1,14 @@
-from django.urls import reverse
+from pathlib import Path
+
+from django.core.files.uploadedfile import SimpleUploadedFile
+from django.core.management import call_command
 from django.test import override_settings
+from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
 from users.models import User
 from .models import AnswerChoice, Content, Quiz, QuizQuestion
 
-from django.core.files.uploadedfile import SimpleUploadedFile
 import shutil
 import tempfile
 
@@ -254,3 +257,24 @@ class QuizReadinessTests(APITestCase):
             format='json',
         )
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+
+class ImportMianaraContentCommandTests(APITestCase):
+    def import_example_path(self):
+        return Path(__file__).resolve().parents[1] / 'import_examples' / 'content_readiness_minimal.json'
+
+    def test_import_command_dry_run_does_not_create_content(self):
+        call_command('import_mianara_content', str(self.import_example_path()), dry_run=True)
+        self.assertEqual(Content.objects.count(), 0)
+        self.assertEqual(Quiz.objects.count(), 0)
+
+    def test_import_command_creates_published_pilot_content_and_quiz(self):
+        call_command('import_mianara_content', str(self.import_example_path()), publish_pilot=True)
+        self.assertEqual(Content.objects.count(), 1)
+        self.assertEqual(Quiz.objects.count(), 1)
+        content = Content.objects.get()
+        quiz = Quiz.objects.get()
+        self.assertEqual(content.status, Content.Status.DRAFT)
+        self.assertEqual(content.language, Content.Language.FR)
+        self.assertEqual(quiz.questions.count(), 1)
+        self.assertEqual(quiz.questions.first().choices.count(), 2)
