@@ -66,6 +66,8 @@ Le cahier des charges du Drive reste la référence principale. Tant que son con
 - Optimisation performance frontend : code splitting, bundle size.
 - Observabilité minimale : logs applicatifs et erreurs serveur.
 
-## Priorité recommandée après la branche 2026-06-16
+## Priorité recommandée après la branche Content Readiness 2026-06-29
 
-P0 : implémenter la persistance backend des favoris, notes personnelles et analytics simples, puis connecter les pages frontend aux nouveaux endpoints.
+P0 : connecter le frontend au nouveau modèle QCM et persister favoris, notes personnelles, commentaires et analytics simples côté backend avant création massive.
+
+P1 : ajouter des référentiels normalisés progressifs (`LearningLevel`, `Subject`, `Skill/Competency`) si le premier lot pilote montre que les champs textuels deviennent insuffisants.

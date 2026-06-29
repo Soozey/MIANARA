@@ -75,9 +75,41 @@ Reste à faire :
 ## Risques actifs
 
 - Vérifier les vraies valeurs d’environnement sur le serveur avant production.
-- npm audit : 0 vulnérabilité après mise à jour ciblée des dépendances frontend.
-- Des données de démonstration restent utilisées dans plusieurs services frontend.
+- npm audit : 0 vulnérabilité après `npm audit fix` sans `--force` le 2026-06-29.
+- Des données de démonstration restent utilisées dans plusieurs services frontend hors bibliothèque principale.
+
+## Audit Content Readiness — 2026-06-29
+
+### Corrections précédentes vérifiées
+
+Présent dans le code :
+
+- `backend/config/permissions.py` existe et centralise les rôles admin, modération et création.
+- `REST_FRAMEWORK` utilise `JWTAuthentication`.
+- Les permissions globales ne sont plus `AllowAny` en écriture.
+- Les endpoints étudiants utilisent `IsAdminRoleOrReadOnly`.
+- L’inscription force le rôle `STUDENT` et ignore l’auto-attribution `ADMIN` ou `CREATOR`.
+- Le bypass frontend `admin/admin123` n’est pas utilisé dans `AuthContext`/login.
+- `frontend/src/services/api.js` ajoute `Authorization: Bearer <token>`.
+- `.gitignore` couvre `backend/media/contents/test_*.txt`.
+- Des tests backend couvrent auth, rôles, contenus et étudiants.
+
+### Modèle contenu
+
+Prêt pour pilote limité : articles texte, fichiers média simples, langue, niveau, matière, compétence, tags, auteur, statut, publication, motif de refus.
+
+Encore incomplet pour création massive : référentiels normalisés `Subject/Level/Skill`, favoris, notes, commentaires, analytics persistés, interface frontend complète de modération.
+
+### Modèle exercices/quiz
+
+Ajout du socle QCM/QCU MVP : `Quiz`, `QuizQuestion`, `AnswerChoice`, `QuizAttempt`, `QuizAnswer`, endpoint de tentative et correction automatique.
+
+Limites : pas encore de parcours, statistiques agrégées ou interface frontend complète pour le nouveau modèle QCM.
+
+### Fallbacks demo
+
+Les pages principales bibliothèque/détail appellent l’API réelle avec états loading/error/empty. Des usages locaux restent pour notes/commentaires/ratings, explicitement temporaires, et doivent devenir des endpoints backend avant production avancée.
 
 ## Recommandation immédiate
 
-Continuer par le durcissement de la configuration production Django, puis l’harmonisation frontend/backend des rôles utilisateur et de la modération.
+Autoriser seulement un premier lot pilote de contenus et quiz. Ne pas lancer la création massive tant que favoris, notes, analytics et interface modération/créateur complète ne sont pas finalisés.

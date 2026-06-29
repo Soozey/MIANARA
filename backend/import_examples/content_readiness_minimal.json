@@ -1,0 +1,38 @@
+{
+  "contents": [
+    {
+      "type": "article",
+      "title": "Exemple minimal MIANARA",
+      "slug": "exemple-minimal-mianara",
+      "summary": "Exemple court utilisé uniquement pour valider le format d'import.",
+      "body": "Ce contenu sert à tester la structure d'import avant la création des vrais contenus pédagogiques.",
+      "language": "fr",
+      "level": "college",
+      "subject": "francais",
+      "competency": "comprehension_ecrite",
+      "category": "SCOLAIRE",
+      "tags": ["lecture", "test-import"],
+      "status": "draft",
+      "quiz": {
+        "title": "Quiz minimal associé",
+        "questions": [
+          {
+            "type": "single_choice",
+            "question": "À quoi sert cet exemple ?",
+            "choices": [
+              {
+                "text": "Valider le format d'import avant les vrais contenus.",
+                "is_correct": true
+              },
+              {
+                "text": "Remplacer le cahier des charges.",
+                "is_correct": false
+              }
+            ],
+            "explanation": "L'exemple valide uniquement la structure technique d'import."
+          }
+        ]
+      }
+    }
+  ]
+}

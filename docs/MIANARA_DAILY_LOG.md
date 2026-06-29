@@ -118,3 +118,39 @@ Finaliser la préparation production P0/P1 : documentation, suppression des fall
 ### Priorité recommandée demain
 
 P0 : implémenter les endpoints backend persistés pour favoris, notes personnelles et analytics simples, puis connecter le frontend sans localStorage de production.
+
+## 2026-06-29 — Branche daily/mianara-content-readiness-2026-06-29
+
+### Objectif
+
+Vérifier si MIANARA est techniquement prêt à recevoir de vrais contenus et exercices avant création massive.
+
+### Réalisé
+
+- Vérification Git : branche précédente `daily/mianara-2026-06-16` propre et poussée ; nouvelle branche dédiée créée.
+- Audit des corrections sécurité précédentes : JWT, permissions globales, rôles, inscription sécurisée, Authorization Bearer frontend et `.gitignore` ciblé confirmés.
+- Extension progressive du modèle `Content` : slug, langue, matière, compétence, public cible, tags, date de publication et motif de modération.
+- Filtrage public corrigé : seuls les contenus `PUBLISHED` sont lisibles publiquement ; auteurs et modérateurs gardent les vues nécessaires.
+- Ajout du socle QCM/QCU MVP : `Quiz`, `QuizQuestion`, `AnswerChoice`, `QuizAttempt`, `QuizAnswer`.
+- Ajout de l’endpoint `POST /api/contents/quizzes/<id>/attempts/` avec correction automatique.
+- Protection de la lecture publique des quiz : les bonnes réponses et explications ne sont pas exposées avant correction.
+- Admin Django enrichi pour contenus, quiz, questions, choix et tentatives.
+- Ajout d’un exemple JSON minimal d’import : `backend/import_examples/content_readiness_minimal.json`.
+- Création/mise à jour des docs Content Readiness : modèle de contenu, modèle d’exercices, guide d’import et checklist production.
+
+### Tests exécutés
+
+- Backend ciblé : `python manage.py test contents -v 2` — OK, 17 tests.
+- Backend complet : `python manage.py check && python manage.py test -v 2` — OK, 24 tests.
+- Frontend : `npm run lint` — OK.
+- Frontend : `npm run build` — OK.
+- Frontend : `npm audit --json` — 0 vulnérabilité après `npm audit fix` sans `--force`.
+
+### Résultat intermédiaire
+
+- Socle contenu/quiz backend prêt pour un pilote limité.
+- Création massive encore déconseillée tant que frontend QCM, favoris, notes, commentaires et analytics ne sont pas persistés.
+
+### Priorité recommandée ensuite
+
+P0 : connecter le frontend au nouveau modèle QCM et implémenter les endpoints persistés favoris/notes/analytics avant création massive.
