@@ -289,3 +289,36 @@ Résultat :
 - `backend/db.sqlite3` est modifié localement par l’import pilote et ne doit pas être commitée.
 - Le lot 2 reste un pilote de validation, pas une création massive.
 - Prochaine priorité : connecter l’interface frontend aux quiz publiés, puis persister favoris/notes/analytics côté backend.
+
+## 2026-06-30 — Branche daily/mianara-frontend-published-quizzes-2026-06-30
+
+### Objectif
+
+Connecter l’interface frontend aux quiz publiés liés aux contenus MIANARA, sans fuite des réponses correctes côté lecture publique.
+
+### Réalisé
+
+- Ajout du filtre backend `GET /api/contents/quizzes/?content=<id>` pour récupérer uniquement les quiz publiés liés au contenu affiché.
+- Ajout d’un test backend couvrant ce filtrage par contenu.
+- Ajout du service frontend `quizService` pour charger les quiz publiés et soumettre les tentatives.
+- Ajout du composant `PublishedQuizPanel` dans `ContentView.jsx` :
+  - affiche les QCU en boutons radio ;
+  - affiche les QCM en cases à cocher ;
+  - demande une connexion avant correction/soumission ;
+  - envoie les réponses à l’API `POST /api/contents/quizzes/<id>/attempts/` ;
+  - affiche score, pourcentage et explications retournées par l’API.
+- Ajout d’un script frontend `npm test` avec tests Node natifs pour les utilitaires quiz.
+
+### Vérifications exécutées
+
+- Backend : `python manage.py test -v 2` — OK, 27 tests.
+- Frontend : `npm test` — OK, 3 tests.
+- Frontend : `npm run lint` — OK.
+- Frontend : `npm run build` — OK.
+- Frontend : `npm audit --json` — 0 vulnérabilité.
+
+### Limites
+
+- La correction complète exige une connexion, conformément à l’API actuelle qui masque `is_correct` et `explanation` en lecture publique.
+- `backend/db.sqlite3` reste modifiée localement par les imports/tests pilotes et ne doit pas être commitée.
+- Prochaine priorité : persister favoris/notes personnelles/analytics côté backend ou améliorer l’expérience quiz anonyme si souhaité.

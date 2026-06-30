@@ -50,6 +50,9 @@ class QuizViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         user = self.request.user
         queryset = Quiz.objects.select_related('author', 'content').prefetch_related('questions__choices')
+        content_id = self.request.query_params.get('content')
+        if content_id:
+            queryset = queryset.filter(content_id=content_id)
         if has_moderation_access(user):
             return queryset
         if user and user.is_authenticated:

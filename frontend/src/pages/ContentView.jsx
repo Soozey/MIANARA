@@ -1,8 +1,10 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { contentService } from "../services/contentService";
+import { quizService } from "../services/quizService";
 import { useAuth } from "../context/AuthContext";
 import QuestionWithState from "../components/QuestionWithState";
+import PublishedQuizPanel from "../components/PublishedQuizPanel";
 
 export default function ContentView() {
   const { id } = useParams();
@@ -12,6 +14,9 @@ export default function ContentView() {
   const [content, setContent] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [publishedQuizzes, setPublishedQuizzes] = useState([]);
+  const [quizLoading, setQuizLoading] = useState(false);
+  const [quizError, setQuizError] = useState(null);
   const [articleScores, setArticleScores] = useState({});
   const [hoverRating, setHoverRating] = useState(0);
   const [ratingData, setRatingData] = useState({ average: 0, count: 0, userRating: 0 });
@@ -44,14 +49,31 @@ export default function ContentView() {
     }
   };
 
+  const fetchPublishedQuizzes = useCallback(async () => {
+    setQuizLoading(true);
+    setQuizError(null);
+    try {
+      const data = await quizService.getPublishedForContent(id);
+      setPublishedQuizzes(data);
+    } catch (err) {
+      setPublishedQuizzes([]);
+      setQuizError(err.message || "Impossible de charger les quiz publiés pour ce contenu.");
+    } finally {
+      setQuizLoading(false);
+    }
+  }, [id]);
+
   useEffect(() => {
     const fetchContent = async () => {
       try {
+        setLoading(true);
+        setError(null);
         const data = await contentService.getById(id);
         const fetchedRating = await contentService.getRating(id); // Fetch Rating
 
         setContent(data);
         setRatingData(fetchedRating || { average: 0, count: 0, userRating: 0 });
+        fetchPublishedQuizzes();
       } catch (err) {
         setContent(null);
         setError(err.message || "Impossible de charger ce contenu. Vérifiez votre connexion puis réessayez.");
@@ -61,7 +83,7 @@ export default function ContentView() {
     };
 
     fetchContent();
-  }, [id]);
+  }, [id, fetchPublishedQuizzes]);
 
   const handleScoreChange = (questionIndex, score) => {
     setArticleScores((prev) => ({
@@ -247,6 +269,14 @@ export default function ContentView() {
             </div>
           </section>
         )}
+
+        <PublishedQuizPanel
+          quizzes={publishedQuizzes}
+          loading={quizLoading}
+          error={quizError}
+          onRetry={fetchPublishedQuizzes}
+          user={user}
+        />
 
         {/* Footer Actions */}
         <div className="mt-12 pt-8 border-t border-gray-100 flex justify-between items-center">

@@ -258,6 +258,25 @@ class QuizReadinessTests(APITestCase):
         )
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
+    def test_quiz_list_can_filter_published_quizzes_by_content(self):
+        other_content = Content.objects.create(
+            author=self.creator,
+            title='Autre article publié',
+            file_type='TEXT',
+            status=Content.Status.PUBLISHED,
+        )
+        Quiz.objects.create(
+            author=self.creator,
+            content=other_content,
+            title='Quiz autre contenu',
+            status=Quiz.Status.PUBLISHED,
+        )
+
+        response = self.client.get(reverse('quiz-list'), {'content': self.content.pk}, format='json')
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual([item['id'] for item in response.data], [self.quiz.pk])
+
 
 class ImportMianaraContentCommandTests(APITestCase):
     def import_example_path(self):
